@@ -29,20 +29,26 @@ def load_json(filepath):
         data = json.load(file)
     return data
 
+def get_script_id_dict(content, filename=None):
+    tree = html.fromstring(content)
+    script_tags = tree.xpath("id('__NEXT_DATA__')")[0]
+    data_dict = json.loads(script_tags.text)
+
+    if filename:
+        with open(filename, "w") as f:
+            json.dump(data_dict, f, indent=4)
+
+    return data_dict
+
 # endregion
 
-def request_stats():
+def request_stats(url, filepath):
     # Get info from stats page
-    url = "https://www.pgatour.com/stats"
 
     content = make_request(url)
     # print(res.content)
     # save_xml_to_file(res.content, "sources/stats.html")
-    return content
-
-def request_player_stats():
-    url = "https://www.pgatour.com/player/46046/scottie-scheffler/stats"
-    # "/player/"
+    get_script_id_dict(content, filepath)
 
 # region player ids json
 
@@ -54,31 +60,42 @@ def get_player_ids():
     """
     players = dict()
     
-    with open('sources/stats.html', 'r', encoding='utf-8') as file:
-        html_content = file.read()
+    content = make_request("https://www.pgatour.com/players")
+    data_dict = get_script_id_dict(content)
 
-    soup = BeautifulSoup(html_content, 'lxml')
-    hrefs = [a.get("href") for a in soup.find_all("a", href=True)]
+    # with open(f"sources/player_{player_id}_script_stats.json", "w") as f:
+    #     json.dump(data_dict, f, indent=4)
+
+    # work way through dict to get stat info
+    queries = data_dict['props']['pageProps']['dehydratedState']['queries']
+    for i, q in enumerate(queries):
+        print(i)
+        # looking_for = 'playerProfileStatsFull'
+        q_data = q['state']['data']
+        if isinstance(q_data, dict):
+            if "players" in q_data.keys():
+                print(type(q_data["players"]))
+                if isinstance(q_data["players"], dict):
+                    print(f"dict keys: {q_data['players'].keys()}")
+
     
-    for url in hrefs:
-        if "/player/" in url:
-            print(f"href: {url}")
-            items = url.split("/")
-            id = items[2]
-            player = items[3]
-            player = player.replace("-", " ").title()
-            if player not in players.keys():
-                players[player] = {"id": id, "url": url}
+    # for url in hrefs:
+    #     if "/player/" in url:
+    #         print(f"href: {url}")
+    #         items = url.split("/")
+    #         id = items[2]
+    #         player = items[3]
+    #         player = player.replace("-", " ").title()
+    #         if player not in players.keys():
+    #             players[player] = {"id": id, "url": url}
 
     # Save to json file
-    with open("sources/players.json", "w") as file:
-        json.dump(players, file, indent=4)
+    # with open("sources/players.json", "w") as file:
+    #     json.dump(players, file, indent=4)
 
 # endregion
 
 # region player stats
-
-
 
 def get_player_stats():
     """
@@ -118,6 +135,9 @@ def get_player_stats():
         tree = html.fromstring(content)
         script_tags = tree.xpath("id('__NEXT_DATA__')")[0]
         data_dict = json.loads(script_tags.text)
+
+        # with open(f"sources/player_{player_id}_script_stats.json", "w") as f:
+        #     json.dump(data_dict, f, indent=4)
 
         # work way through dict to get stat info
         queries = data_dict['props']['pageProps']['dehydratedState']['queries']
@@ -188,9 +208,12 @@ def get_player_new_row(player_name, player_id, data_columns, stats):
 # endregion
 
 if __name__ == "__main__":
-    # request_stats()
-    # get_player_ids()
-    get_player_stats()
+    # url = "https://www.pgatour.com/stats"
+    # request_stats(url, "sources/stats_script_id.json")
+    # players_url = "https://www.pgatour.com/players"
+    # request_stats(players_url, filepath="sources/players_script_id.json")
+    get_player_ids()
+    # get_player_stats()
     # content = make_request("https://www.pgatour.com/stats/detail/02675")
     # save_xml_to_file(content, "sources/stats_detail.html")
 
