@@ -116,9 +116,7 @@ def get_player_stats():
         player_id = value["id"]
 
         # Get url and make request
-        full_url = BASE_URL + value["url"]
-        print(f"full url: {full_url}")
-        content = make_request(full_url)
+        content = make_request(value["url"])
 
         # Parse request content
         # all stat data is located in a script tag with id '__NEXT_DATA__'
@@ -136,11 +134,17 @@ def get_player_stats():
             q_data = q['state']['data']
             if isinstance(q_data, dict):
                 if looking_for in q_data.keys():
-                    player_stats_dict = q_data[looking_for][0]
-                    stats_list = player_stats_dict['stats']
-                    for stats in stats_list:
-                        new_row = get_player_new_row(player_name, player_id, data_columns, stats)
-                        new_rows.append(new_row)
+                    if q_data[looking_for] == []:
+                        # add nones if no stats available 
+                        new_row = [None for _ in range(len(data_columns)-2)]
+                        new_row.insert(0, player_name)
+                        new_row.insert(0, player_id)
+                    else:
+                        player_stats_dict = q_data[looking_for][0]
+                        stats_list = player_stats_dict['stats']
+                        for stats in stats_list:
+                            new_row = get_player_new_row(player_name, player_id, data_columns, stats)
+                            new_rows.append(new_row)
 
     # Add new rows to dataframe
     for row in new_rows:
@@ -199,11 +203,12 @@ def get_player_new_row(player_name, player_id, data_columns, stats):
 
 if __name__ == "__main__":
     # url = "https://www.pgatour.com/stats"
-    # request_stats(url, "sources/stats_script_id.json")
+    # url = "https://www.pgatour.com/player/64828/lilia-vu/stats"
+    # request_stats(url, "sources/stats_unavailable.json")
     # players_url = "https://www.pgatour.com/players"
     # request_stats(players_url, filepath="sources/players_script_id.json")
-    get_player_ids()
-    # get_player_stats()
+    # get_player_ids()
+    get_player_stats()
     # content = make_request("https://www.pgatour.com/stats/detail/02675")
     # save_xml_to_file(content, "sources/stats_detail.html")
 
