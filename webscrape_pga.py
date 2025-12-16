@@ -63,35 +63,25 @@ def get_player_ids():
     content = make_request("https://www.pgatour.com/players")
     data_dict = get_script_id_dict(content)
 
-    # with open(f"sources/player_{player_id}_script_stats.json", "w") as f:
-    #     json.dump(data_dict, f, indent=4)
-
     # work way through dict to get stat info
     queries = data_dict['props']['pageProps']['dehydratedState']['queries']
     for i, q in enumerate(queries):
-        print(i)
-        # looking_for = 'playerProfileStatsFull'
         q_data = q['state']['data']
-        if isinstance(q_data, dict):
-            if "players" in q_data.keys():
-                print(type(q_data["players"]))
-                if isinstance(q_data["players"], dict):
-                    print(f"dict keys: {q_data['players'].keys()}")
-
-    
-    # for url in hrefs:
-    #     if "/player/" in url:
-    #         print(f"href: {url}")
-    #         items = url.split("/")
-    #         id = items[2]
-    #         player = items[3]
-    #         player = player.replace("-", " ").title()
-    #         if player not in players.keys():
-    #             players[player] = {"id": id, "url": url}
+        if "players" in q_data.keys():
+            if isinstance(q_data["players"], list):
+                if len(q_data["players"]) > 15:
+                    for player in q_data["players"]:
+                        name = player["displayName"]
+                        players[name] = {
+                            "id": player["id"],
+                            "firstName": player["firstName"],
+                            "lastName": player["lastName"],
+                            "url": f"{BASE_URL}/player/{player['id']}/{player['firstName'].lower()}-{player['lastName'].lower()}/stats"
+                            }
 
     # Save to json file
-    # with open("sources/players.json", "w") as file:
-    #     json.dump(players, file, indent=4)
+    with open("sources/players.json", "w") as file:
+        json.dump(players, file, indent=4)
 
 # endregion
 
@@ -111,7 +101,7 @@ def get_player_stats():
     """
     players_dict = load_json("sources/players.json")
 
-    # initilaize pandas dataframe
+    # initialize pandas dataframe
     data_columns = [
         "playerId", "player", "statId", "title", "value", 
         "rank", "category", "aboveOrBelow", "fieldAverage", 
