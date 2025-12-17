@@ -5,52 +5,10 @@ from lxml import etree, html
 import json
 import pandas
 
-# https://www.geeksforgeeks.org/python/python-web-scraping-tutorial/
-# https://www.geeksforgeeks.org/python/how-to-use-lxml-with-beautifulsoup-in-python/
-BASE_URL = "https://www.pgatour.com"
+from utils import make_request, get_script_id_dict, BASE_URL, load_json
 
-# region Helper Functions
 
-def make_request(url):
-    res = requests.get(url)
-    if res.status_code == 200:
-        print("Success!")
-        return res.content
-    else:
-        raise ValueError(f"Request failed with code: {res.status_code}")
-
-def save_xml_to_file(content, filepath):
-    soup = BeautifulSoup(content, "html.parser")
-    with open(filepath, "w") as file:
-        file.write(soup.prettify())
-
-def load_json(filepath):
-    with open(filepath, 'r') as file:
-        data = json.load(file)
-    return data
-
-def get_script_id_dict(content, filename=None):
-    tree = html.fromstring(content)
-    script_tags = tree.xpath("id('__NEXT_DATA__')")[0]
-    data_dict = json.loads(script_tags.text)
-
-    if filename:
-        with open(filename, "w") as f:
-            json.dump(data_dict, f, indent=4)
-
-    return data_dict
-
-# endregion
-
-def request_stats(url, filepath):
-    # Get info from stats page
-
-    content = make_request(url)
-    # print(res.content)
-    # save_xml_to_file(res.content, "sources/stats.html")
-    get_script_id_dict(content, filepath)
-
-# region player ids json
+# region player ids JSON
 
 def get_player_ids():
     """
@@ -123,9 +81,6 @@ def get_player_stats():
         tree = html.fromstring(content)
         script_tags = tree.xpath("id('__NEXT_DATA__')")[0]
         data_dict = json.loads(script_tags.text)
-
-        # with open(f"sources/player_{player_id}_script_stats.json", "w") as f:
-        #     json.dump(data_dict, f, indent=4)
 
         # work way through dict to get stat info
         queries = data_dict['props']['pageProps']['dehydratedState']['queries']
@@ -202,18 +157,6 @@ def get_player_new_row(player_name, player_id, data_columns, stats):
 # endregion
 
 if __name__ == "__main__":
-    # url = "https://www.pgatour.com/stats"
-    # url = "https://www.pgatour.com/player/64828/lilia-vu/stats"
-    # request_stats(url, "sources/stats_unavailable.json")
-    # players_url = "https://www.pgatour.com/players"
-    # request_stats(players_url, filepath="sources/players_script_id.json")
     # get_player_ids()
     get_player_stats()
-    # content = make_request("https://www.pgatour.com/stats/detail/02675")
-    # save_xml_to_file(content, "sources/stats_detail.html")
-
-    # data = json.loads(content)
-    # stats = data['props']['pageProps']['dehydratedState']['queries']
-    # player_stats = next(q for q in stats if 'playerProfileStatsFull' in q['queryHash'])
-    # print(player_stats)
-    # Access stats like player_stats['state']['data']['playerProfileStatsFull']
+    
