@@ -1,0 +1,883 @@
+rank,courseName,hole,par,yards,avg,+/-,eagle-,birdie,par,bogey,dblBogey,dblBogey+
+1,Oakmont Country Club,9,4,472,4.520,+.520,0,21,214,170,35,4
+2,Oakmont Country Club,15,4,507,4.505,+.505,0,25,216,163,35,5
+3,Port Royal Golf Course,15,4,412,4.470,+.470,0,19,202,122,33,3
+4,Torrey Pines Golf Course (North Course),2,4,495,4.469,+.469,0,2,84,53,7,1
+5,Oakmont Country Club,8,3,289,3.466,+.466,0,12,239,168,24,1
+6,Oakmont Country Club,3,4,462,4.450,+.450,1,34,221,149,32,7
+7,Hurstbourne Country Club (Championship Course),1,4,515,4.434,+.434,0,38,227,139,36,7
+8,Vidanta Vallarta,10,4,475,4.431,+.431,0,29,216,140,30,3
+9,Quail Hollow Club,18,4,494,4.410,+.410,0,43,235,133,46,2
+10,Caves Valley Golf Club,12,4,521,4.395,+.395,0,17,105,55,15,3
+11,Quail Hollow Club,17,3,223,3.394,+.394,0,33,251,141,30,4
+12,Torrey Pines Golf Course (North Course),13,4,459,4.374,+.374,0,12,78,49,6,2
+13,Oakmont Country Club,18,4,502,4.367,+.367,0,34,235,156,16,3
+14,Torrey Pines Golf Course (South Course),4,4,490,4.363,+.363,0,15,172,91,12,2
+15,Colonial Country Club,5,4,476,4.354,+.354,0,27,260,102,30,5
+16,Torrey Pines Golf Course (South Course),12,4,505,4.349,+.349,1,15,170,94,11,1
+16,Oakmont Country Club,1,4,488,4.349,+.349,1,31,253,132,25,2
+18,Torrey Pines Golf Course (North Course),4,4,479,4.340,+.340,0,10,86,42,9,0
+19,Quail Hollow Club,16,4,529,4.327,+.327,0,26,273,144,16,0
+20,The Renaissance Club,7,4,505,4.325,+.325,0,34,270,142,22,0
+21,Augusta National Golf Club,5,4,495,4.324,+.324,0,18,178,88,10,2
+22,Muirfield Village Golf Club,10,4,472,4.323,+.323,0,15,158,71,12,1
+23,Torrey Pines Golf Course (North Course),12,3,203,3.320,+.320,0,11,87,41,7,1
+23,Hurstbourne Country Club (Championship Course),6,3,233,3.320,+.320,0,17,284,133,12,1
+25,Muirfield Village Golf Club,12,3,180,3.319,+.319,0,29,147,56,21,4
+26,Torrey Pines Golf Course (South Course),12,4,505,4.317,+.317,0,14,153,76,9,0
+27,Oakmont Country Club,2,4,346,4.313,+.313,0,53,236,125,24,6
+28,Oakmont Country Club,7,4,485,4.309,+.309,0,34,262,127,19,2
+29,TPC San Antonio (Oaks Course),1,4,454,4.305,+.305,0,31,247,127,13,2
+29,Sedgefield Country Club,14,4,505,4.305,+.305,2,44,249,137,19,4
+31,Royal Portrush Golf Club,14,4,466,4.303,+.303,0,30,273,134,12,3
+32,Yokohama Country Club,14,4,508,4.301,+.301,0,28,191,71,15,7
+33,Oakmont Country Club,16,3,236,3.300,+.300,0,30,269,128,16,1
+34,Innisbrook Resort (Copperhead Course),16,4,475,4.298,+.298,0,44,275,109,26,6
+34,Port Royal Golf Course,16,3,235,3.298,+.298,0,30,223,113,9,4
+36,Hurstbourne Country Club (Championship Course),17,3,216,3.293,+.293,0,34,268,127,16,2
+37,TPC San Antonio (Oaks Course),9,4,474,4.286,+.286,0,40,238,125,16,1
+38,Caves Valley Golf Club,2,4,525,4.282,+.282,0,14,122,50,8,1
+39,Quail Hollow Club,6,3,249,3.281,+.281,1,20,298,130,9,1
+40,Vidanta Vallarta,16,4,505,4.278,+.278,0,29,256,121,12,0
+41,TPC Toronto at Osprey Valley (North Course),17,4,530,4.277,+.277,0,29,273,133,8,1
+42,TPC Sawgrass (THE PLAYERS Stadium Course),14,4,485,4.276,+.276,0,43,261,103,16,8
+43,Hurstbourne Country Club (Championship Course),11,4,486,4.273,+.273,0,36,265,134,12,0
+44,TPC Southwind,5,4,529,4.272,+.272,0,21,167,81,6,1
+44,Port Royal Golf Course,13,3,235,3.272,+.272,0,19,249,100,11,0
+46,Quail Hollow Club,9,4,530,4.270,+.270,0,24,294,134,7,0
+47,Puntacana Resort (Corales Golf Course),17,3,214,3.266,+.266,0,30,250,112,8,3
+48,Pebble Beach Golf Links,9,4,504,4.263,+.263,0,19,143,68,5,1
+48,Royal Portrush Golf Club,4,4,502,4.263,+.263,0,35,285,116,13,3
+50,Arnold Palmer's Bay Hill Club & Lodge,15,4,467,4.260,+.260,0,22,149,65,9,1
+50,TPC San Antonio (Oaks Course),13,3,241,3.260,+.260,0,17,280,120,3,0
+52,PGA National Resort (The Champion Course),6,4,479,4.259,+.259,0,38,258,108,20,0
+53,TPC Sawgrass (THE PLAYERS Stadium Course),18,4,462,4.258,+.258,1,50,251,102,20,7
+53,East Lake Golf Club,1,4,510,4.258,+.258,0,12,71,32,4,1
+55,TPC Craig Ranch,12,4,493,4.257,+.257,0,50,266,108,24,3
+56,Pete Dye Stadium Course,13,3,214,3.256,+.256,1,20,146,46,9,5
+57,The Philadelphia Cricket Club (Wissahickon Course),18,4,517,4.254,+.254,0,27,167,80,8,1
+58,TPC Twin Cities,9,4,502,4.251,+.251,0,58,257,124,23,1
+59,TPC San Antonio (Oaks Course),4,4,481,4.248,+.248,0,29,265,119,7,0
+59,The Renaissance Club,2,4,493,4.248,+.248,0,27,305,129,7,0
+59,Royal Portrush Golf Club,11,4,475,4.248,+.248,0,45,269,122,14,2
+62,Quail Hollow Club,11,4,462,4.246,+.246,0,42,275,129,13,0
+62,Black Desert Resort,11,4,532,4.246,+.246,0,40,243,85,19,4
+64,Port Royal Golf Course,8,3,213,3.245,+.245,0,26,244,100,8,1
+65,Augusta National Golf Club,18,4,465,4.243,+.243,0,30,180,75,7,4
+66,TPC Deere Run,9,4,503,4.242,+.242,0,38,272,113,14,1
+67,Muirfield Village Golf Club,17,4,503,4.241,+.241,0,26,156,64,9,2
+68,Augusta National Golf Club,11,4,520,4.240,+.240,0,14,211,58,12,1
+69,Torrey Pines Golf Course (South Course),11,3,225,3.238,+.238,0,23,156,63,10,0
+70,Innisbrook Resort (Copperhead Course),9,4,442,4.237,+.237,0,35,289,128,8,0
+71,Arnold Palmer's Bay Hill Club & Lodge,14,3,215,3.236,+.236,0,12,169,60,5,0
+72,Muirfield Village Golf Club,6,4,455,4.233,+.233,0,27,159,56,14,1
+72,The Renaissance Club,11,4,511,4.233,+.233,0,40,291,126,10,1
+74,Arnold Palmer's Bay Hill Club & Lodge,17,3,221,3.232,+.232,0,26,153,51,16,0
+74,Oakmont Country Club,10,4,461,4.232,+.232,0,44,270,114,15,1
+76,Torrey Pines Golf Course (North Course),18,4,486,4.231,+.231,0,15,87,41,4,0
+76,TPC Deere Run,18,4,476,4.231,+.231,0,48,271,94,21,4
+78,Augusta National Golf Club,17,4,440,4.230,+.230,1,33,169,83,10,0
+78,TPC River Highlands,4,4,481,4.230,+.230,0,24,174,72,8,0
+80,TPC Craig Ranch,8,4,509,4.228,+.228,0,47,269,124,9,2
+81,Dunes Golf and Beach Club,8,4,475,4.226,+.226,2,34,251,104,9,2
+82,Pete Dye Stadium Course,18,4,439,4.225,+.225,0,20,156,33,16,2
+83,Hurstbourne Country Club (Championship Course),18,4,481,4.221,+.221,0,51,262,119,14,1
+83,Caves Valley Golf Club,17,3,245,3.221,+.221,1,23,111,52,8,0
+85,Pete Dye Stadium Course,6,3,227,3.220,+.220,0,16,158,41,11,1
+85,Quail Hollow Club,1,4,505,4.220,+.220,0,37,289,128,5,0
+85,Sedgefield Country Club,11,4,486,4.220,+.220,0,49,288,94,18,6
+88,Quail Hollow Club,3,4,483,4.218,+.218,1,42,283,122,11,0
+89,Black Desert Resort,13,4,519,4.217,+.217,0,51,235,80,20,5
+90,Torrey Pines Golf Course (South Course),11,3,225,3.216,+.216,0,25,182,82,3,0
+90,TPC Sawgrass (THE PLAYERS Stadium Course),8,3,236,3.216,+.216,0,37,275,109,9,1
+90,Port Royal Golf Course,4,4,458,4.216,+.216,0,28,255,83,12,1
+93,TPC Sawgrass (THE PLAYERS Stadium Course),5,4,469,4.213,+.213,0,45,275,89,19,3
+94,Memorial Park Golf Course,1,4,522,4.212,+.212,0,21,310,109,3,0
+95,Torrey Pines Golf Course (North Course),8,3,214,3.211,+.211,0,8,100,39,0,0
+96,Colonial Country Club,4,3,248,3.210,+.210,0,24,293,101,6,0
+97,Torrey Pines Golf Course (South Course),16,3,227,3.209,+.209,0,24,186,79,3,0
+97,Augusta National Golf Club,4,3,240,3.209,+.209,0,22,193,78,3,0
+99,TPC Scottsdale (Stadium Course),11,4,472,4.207,+.207,0,36,270,99,10,1
+100,Dunes Golf and Beach Club,14,4,500,4.206,+.206,0,28,272,93,9,0
+101,TPC Deere Run,15,4,484,4.205,+.205,1,52,266,95,23,1
+101,Yokohama Country Club,11,4,510,4.205,+.205,0,24,217,54,17,0
+103,Torrey Pines Golf Course (North Course),3,3,241,3.204,+.204,0,8,104,32,3,0
+103,Torrey Pines Golf Course (North Course),6,4,416,4.204,+.204,0,15,91,38,2,1
+105,TPC Twin Cities,2,4,468,4.203,+.203,0,68,275,86,27,7
+106,The Philadelphia Cricket Club (Wissahickon Course),17,4,498,4.201,+.201,0,38,163,70,11,1
+107,Torrey Pines Golf Course (South Course),15,4,480,4.199,+.199,0,25,187,78,1,1
+108,Royal Portrush Golf Club,1,4,420,4.197,+.197,0,48,289,97,15,3
+109,Innisbrook Resort (Copperhead Course),3,4,455,4.196,+.196,1,22,332,96,9,0
+109,Puntacana Resort (Corales Golf Course),5,4,465,4.196,+.196,0,35,262,99,6,1
+109,Yokohama Country Club,16,3,237,3.196,+.196,0,16,221,73,2,0
+112,Muirfield Village Golf Club,18,4,480,4.195,+.195,0,35,148,65,7,2
+113,The Philadelphia Cricket Club (Wissahickon Course),8,3,240,3.194,+.194,0,26,182,69,6,0
+113,The Renaissance Club,18,4,483,4.194,+.194,0,50,291,114,12,1
+115,Waialae Country Club,4,3,204,3.193,+.193,0,32,293,107,3,1
+115,Port Royal Golf Course,18,4,410,4.193,+.193,0,45,228,94,12,0
+117,Hurstbourne Country Club (Championship Course),3,4,487,4.192,+.192,0,54,275,97,20,1
+117,Royal Portrush Golf Club,16,3,236,3.192,+.192,0,38,300,103,11,0
+117,Silverado Resort (North Course),9,4,458,4.192,+.192,0,43,282,91,14,2
+120,Sedgefield Country Club,18,4,507,4.191,+.191,0,58,275,101,19,2
+121,Torrey Pines Golf Course (South Course),4,4,490,4.190,+.190,0,28,157,59,7,1
+121,The Renaissance Club,9,3,218,3.190,+.190,0,40,312,106,8,2
+123,Spyglass Hill Golf Course,18,4,430,4.188,+.188,0,12,44,21,3,0
+124,Muirfield Village Golf Club,4,3,210,3.187,+.187,0,23,167,63,4,0
+125,Innisbrook Resort (Copperhead Course),8,3,235,3.185,+.185,0,43,295,116,6,0
+126,Puntacana Resort (Corales Golf Course),11,3,265,3.184,+.184,0,28,277,94,4,0
+127,TPC Toronto at Osprey Valley (North Course),16,4,513,4.182,+.182,0,34,309,89,10,2
+128,TPC Southwind,14,3,205,3.181,+.181,0,23,199,37,15,2
+129,Arnold Palmer's Bay Hill Club & Lodge,2,3,231,3.179,+.179,0,23,163,53,7,0
+130,TPC Toronto at Osprey Valley (North Course),13,4,526,4.178,+.178,1,33,303,100,7,0
+131,Spyglass Hill Golf Course,5,3,203,3.175,+.175,0,4,60,14,2,0
+131,Vidanta Vallarta,17,3,226,3.175,+.175,0,38,285,79,16,0
+133,Black Desert Resort,1,4,501,4.174,+.174,0,41,252,89,7,2
+134,The Renaissance Club,8,4,448,4.173,+.173,0,44,308,107,9,0
+135,Torrey Pines Golf Course (South Course),7,4,462,4.171,+.171,0,45,161,78,7,1
+135,Torrey Pines Golf Course (South Course),5,4,454,4.171,+.171,0,34,147,66,4,1
+135,Arnold Palmer's Bay Hill Club & Lodge,18,4,458,4.171,+.171,1,43,130,60,9,3
+135,TPC Toronto at Osprey Valley (North Course),9,4,500,4.171,+.171,0,33,308,97,6,0
+135,Black Desert Resort,2,4,403,4.171,+.171,0,57,240,69,20,5
+140,Oakmont Country Club,6,3,200,3.167,+.167,1,60,263,108,9,3
+140,East Lake Golf Club,14,4,530,4.167,+.167,0,12,77,30,1,0
+142,Augusta National Golf Club,1,4,445,4.166,+.166,0,25,202,64,5,0
+143,Hurstbourne Country Club (Championship Course),14,4,438,4.163,+.163,1,53,278,102,13,0
+144,Augusta National Golf Club,10,4,495,4.162,+.162,0,38,182,67,8,1
+144,Dunes Golf and Beach Club,9,3,219,3.162,+.162,0,33,274,92,3,0
+146,Quail Hollow Club,12,4,456,4.161,+.161,0,48,300,103,6,2
+147,TPC San Antonio (Oaks Course),15,4,464,4.160,+.160,0,52,254,109,5,0
+147,Muirfield Village Golf Club,1,4,490,4.160,+.160,0,28,164,61,4,0
+149,Arnold Palmer's Bay Hill Club & Lodge,8,4,460,4.159,+.159,0,34,148,56,7,1
+149,Quail Hollow Club,13,3,205,3.159,+.159,0,42,306,107,4,0
+151,Waialae Country Club,13,4,477,4.158,+.158,0,37,297,98,4,0
+151,East Lake Golf Club,15,3,215,3.158,+.158,0,19,76,13,11,1
+153,Pebble Beach Golf Links,8,4,428,4.157,+.157,0,28,151,50,6,1
+154,Torrey Pines Golf Course (North Course),15,3,202,3.156,+.156,0,20,88,35,4,0
+154,Harbour Town Golf Links,3,4,469,4.156,+.156,0,23,204,54,7,0
+156,Torrey Pines Golf Course (South Course),14,4,437,4.155,+.155,0,32,154,61,5,0
+157,Torrey Pines Golf Course (South Course),1,4,451,4.154,+.154,0,40,174,72,5,1
+157,Torrey Pines Golf Course (South Course),17,4,443,4.154,+.154,0,31,191,64,6,0
+157,Arnold Palmer's Bay Hill Club & Lodge,11,4,438,4.154,+.154,0,37,153,41,12,3
+157,Innisbrook Resort (Copperhead Course),13,3,200,3.154,+.154,0,56,296,95,8,5
+161,Oakmont Country Club,5,4,408,4.153,+.153,0,55,286,88,11,4
+162,Torrey Pines Golf Course (South Course),5,4,454,4.151,+.151,0,30,194,62,6,0
+163,PGA National Resort (The Champion Course),15,3,179,3.149,+.149,0,63,274,54,30,3
+163,Colonial Country Club,17,4,399,4.149,+.149,0,62,248,104,9,1
+165,La Quinta Country Club,2,4,434,4.148,+.148,0,18,101,32,3,1
+165,La Quinta Country Club,14,4,469,4.148,+.148,0,14,108,31,0,2
+167,Dunes Golf and Beach Club,18,4,441,4.147,+.147,0,47,256,93,5,1
+167,The Renaissance Club,1,4,464,4.147,+.147,1,57,287,118,5,0
+169,Vidanta Vallarta,8,4,476,4.146,+.146,0,52,275,72,17,2
+169,Silverado Resort (North Course),7,3,212,3.146,+.146,0,47,283,95,6,1
+171,Torrey Pines Golf Course (South Course),7,4,462,4.143,+.143,0,24,173,50,5,0
+172,Royal Portrush Golf Club,8,4,434,4.142,+.142,0,49,307,82,11,3
+173,Augusta National Golf Club,12,3,155,3.139,+.139,0,40,190,53,12,1
+173,Augusta National Golf Club,16,3,170,3.139,+.139,0,44,181,59,10,2
+173,Puntacana Resort (Corales Golf Course),13,4,446,4.139,+.139,0,48,260,86,9,0
+173,Quail Hollow Club,2,4,452,4.139,+.139,0,74,266,101,17,1
+177,Spyglass Hill Golf Course,13,4,460,4.138,+.138,0,11,50,16,3,0
+178,Nicklaus Tournament Course,8,3,172,3.136,+.136,0,23,98,22,11,0
+179,Torrey Pines Golf Course (South Course),10,4,454,4.135,+.135,0,22,178,48,4,0
+179,Innisbrook Resort (Copperhead Course),18,4,445,4.135,+.135,0,46,312,97,4,1
+179,Yokohama Country Club,12,4,458,4.135,+.135,0,34,206,68,4,0
+182,Torrey Pines Golf Course (South Course),14,4,437,4.134,+.134,0,39,188,53,11,1
+182,El Cardonal at Diamante,4,4,483,4.134,+.134,0,56,249,64,18,2
+184,East Lake Golf Club,16,4,460,4.133,+.133,0,20,73,21,3,3
+185,Pete Dye Stadium Course,15,4,468,4.132,+.132,0,22,157,44,4,0
+186,Pebble Beach Golf Links,5,3,195,3.131,+.131,0,30,149,53,4,0
+187,Puntacana Resort (Corales Golf Course),2,3,239,3.129,+.129,1,35,278,89,0,0
+188,Detroit Golf Club,11,3,233,3.128,+.128,0,41,347,89,7,0
+188,The Renaissance Club,15,4,488,4.128,+.128,0,63,288,111,6,0
+190,Pebble Beach Golf Links,17,3,178,3.127,+.127,0,20,168,46,2,0
+190,PGA National Resort (The Champion Course),14,4,465,4.127,+.127,0,56,273,82,11,2
+192,Hurstbourne Country Club (Championship Course),5,4,430,4.125,+.125,0,55,293,89,8,2
+193,Waialae Country Club,2,4,423,4.124,+.124,1,45,295,89,6,0
+193,Waialae Country Club,6,4,460,4.124,+.124,0,56,285,81,13,1
+193,TPC San Antonio (Oaks Course),3,3,171,3.124,+.124,0,46,296,60,16,2
+193,TPC Craig Ranch,10,4,491,4.124,+.124,0,47,303,99,2,0
+193,Royal Portrush Golf Club,9,4,432,4.124,+.124,0,61,282,102,6,1
+198,Torrey Pines Golf Course (South Course),16,3,227,3.123,+.123,0,31,164,52,5,0
+199,Sea Island Golf Club (Plantation Course),11,3,216,3.122,+.122,0,9,122,23,1,1
+200,TPC Craig Ranch,13,4,512,4.120,+.120,0,60,283,102,6,0
+200,The Philadelphia Cricket Club (Wissahickon Course),16,3,215,3.120,+.120,0,34,189,52,8,0
+200,TPC Southwind,7,4,482,4.120,+.120,0,29,187,58,2,0
+200,Silverado Resort (North Course),11,3,189,3.120,+.120,0,49,293,80,9,1
+204,Royal Portrush Golf Club,18,4,474,4.119,+.119,0,41,324,80,6,1
+205,Arnold Palmer's Bay Hill Club & Lodge,9,4,480,4.118,+.118,0,35,153,52,6,0
+205,Detroit Golf Club,12,4,489,4.118,+.118,0,46,343,87,8,0
+207,Vidanta Vallarta,4,4,520,4.117,+.117,0,44,283,89,2,0
+207,Muirfield Village Golf Club,16,3,218,3.117,+.117,0,39,160,48,9,1
+209,Torrey Pines Golf Course (South Course),13,5,621,5.116,+.116,0,41,187,57,3,4
+209,TPC Sawgrass (THE PLAYERS Stadium Course),6,4,413,4.116,+.116,0,66,260,94,11,0
+209,Hurstbourne Country Club (Championship Course),13,3,186,3.116,+.116,0,43,315,86,1,2
+212,Dunes Golf and Beach Club,5,3,216,3.114,+.114,0,43,274,81,4,0
+213,Memorial Park Golf Course,7,3,216,3.113,+.113,0,50,307,73,12,1
+213,Caves Valley Golf Club,13,3,245,3.113,+.113,0,17,144,29,5,0
+213,The Country Club of Jackson,6,4,482,4.113,+.113,0,40,280,71,7,0
+216,Plantation Course at Kapalua,1,4,520,4.111,+.111,0,17,178,38,1,1
+216,TPC Scottsdale (Stadium Course),12,3,192,3.111,+.111,0,38,307,59,11,1
+216,TPC Sawgrass (THE PLAYERS Stadium Course),17,3,141,3.111,+.111,0,69,281,53,22,6
+216,The Country Club of Jackson,10,3,223,3.111,+.111,0,40,278,76,4,0
+220,Detroit Golf Club,9,3,207,3.110,+.110,0,62,316,98,7,1
+221,Silverado Resort (North Course),2,3,197,3.109,+.109,0,38,312,79,3,0
+222,TPC River Highlands,12,4,411,4.108,+.108,0,38,185,44,9,2
+223,Black Desert Resort,16,4,506,4.105,+.105,0,54,261,63,9,4
+224,TPC Sawgrass (THE PLAYERS Stadium Course),13,3,183,3.104,+.104,1,53,292,70,15,0
+224,Memorial Park Golf Course,11,3,237,3.104,+.104,0,41,318,81,3,0
+226,La Quinta Country Club,12,3,202,3.103,+.103,0,13,115,25,2,0
+226,Caves Valley Golf Club,18,4,470,4.103,+.103,0,29,127,30,8,1
+228,Innisbrook Resort (Copperhead Course),2,4,435,4.102,+.102,0,70,290,85,13,2
+229,TPC Scottsdale (Stadium Course),7,3,215,3.101,+.101,0,39,297,79,1,0
+229,PGA National Resort (The Champion Course),2,4,464,4.101,+.101,0,40,309,68,6,1
+229,Colonial Country Club,15,4,431,4.101,+.101,0,56,280,77,11,0
+232,TPC San Antonio (Oaks Course),7,3,207,3.100,+.100,0,41,297,81,1,0
+233,The Country Club of Jackson,16,4,479,4.098,+.098,0,62,253,67,14,2
+234,PGA National Resort (The Champion Course),7,3,226,3.097,+.097,0,44,300,75,5,0
+234,Muirfield Village Golf Club,9,4,417,4.097,+.097,0,39,167,40,9,2
+234,Royal Portrush Golf Club,3,3,176,3.097,+.097,0,56,305,83,7,1
+237,Waialae Country Club,11,3,194,3.096,+.096,0,44,315,69,7,1
+237,Innisbrook Resort (Copperhead Course),7,4,420,4.096,+.096,0,55,317,78,9,1
+237,Quail Hollow Club,5,4,449,4.096,+.096,0,51,318,85,5,0
+240,Detroit Golf Club,6,4,461,4.095,+.095,0,49,345,86,3,1
+240,Silverado Resort (North Course),3,4,424,4.095,+.095,0,59,285,78,8,2
+242,TPC Scottsdale (Stadium Course),6,4,432,4.094,+.094,0,62,262,83,9,0
+243,Pete Dye Stadium Course,3,4,471,4.093,+.093,0,22,166,35,4,0
+243,Innisbrook Resort (Copperhead Course),6,4,465,4.093,+.093,0,62,301,89,8,0
+243,Muirfield Village Golf Club,2,4,459,4.093,+.093,0,33,175,42,6,1
+243,Yokohama Country Club,10,4,431,4.093,+.093,0,48,199,56,6,3
+247,Colonial Country Club,12,4,457,4.092,+.092,0,50,290,79,5,0
+247,Oakmont Country Club,11,4,400,4.092,+.092,0,65,286,82,9,2
+247,Caves Valley Golf Club,6,3,220,3.092,+.092,0,14,152,26,3,0
+250,Augusta National Golf Club,7,4,450,4.091,+.091,0,44,186,61,5,0
+251,TPC San Antonio (Oaks Course),5,4,401,4.090,+.090,0,64,269,75,9,3
+252,Torrey Pines Golf Course (South Course),10,4,454,4.089,+.089,0,45,181,61,5,0
+253,Torrey Pines Golf Course (North Course),14,4,451,4.088,+.088,0,14,106,27,0,0
+253,Spyglass Hill Golf Course,2,4,349,4.088,+.088,0,4,66,9,1,0
+255,Puntacana Resort (Corales Golf Course),1,4,433,4.087,+.087,0,50,284,59,6,4
+255,Dunes Golf and Beach Club,7,4,426,4.087,+.087,0,56,261,79,6,0
+255,Caves Valley Golf Club,15,4,491,4.087,+.087,0,28,129,31,7,0
+255,Yokohama Country Club,18,4,475,4.087,+.087,0,48,195,63,6,0
+259,Arnold Palmer's Bay Hill Club & Lodge,1,4,461,4.085,+.085,0,39,157,43,4,3
+260,Memorial Park Golf Course,15,3,155,3.084,+.084,0,54,314,61,13,1
+261,PGA National Resort (The Champion Course),16,4,434,4.083,+.083,0,56,292,66,6,4
+261,TPC River Highlands,16,3,171,3.083,+.083,0,32,199,40,6,1
+261,East Lake Golf Club,4,4,465,4.083,+.083,0,12,89,16,3,0
+264,Torrey Pines Golf Course (South Course),8,3,177,3.082,+.082,0,39,194,55,4,0
+264,Caves Valley Golf Club,1,4,481,4.082,+.082,0,37,114,36,7,1
+266,Arnold Palmer's Bay Hill Club & Lodge,7,3,199,3.081,+.081,0,22,184,38,2,0
+267,TPC Southwind,17,4,505,4.080,+.080,0,45,171,53,7,0
+268,Memorial Park Golf Course,4,4,490,4.079,+.079,0,43,324,74,2,0
+268,Puntacana Resort (Corales Golf Course),16,4,461,4.079,+.079,0,41,293,65,4,0
+270,The Philadelphia Cricket Club (Wissahickon Course),10,4,449,4.078,+.078,0,34,196,50,3,0
+270,Colonial Country Club,3,4,475,4.078,+.078,0,47,301,73,2,1
+272,La Quinta Country Club,3,3,202,3.077,+.077,0,10,128,13,3,1
+272,Sedgefield Country Club,16,3,175,3.077,+.077,0,52,325,70,7,1
+274,Harbour Town Golf Links,10,4,451,4.076,+.076,0,32,210,41,4,1
+274,Silverado Resort (North Course),17,3,182,3.076,+.076,0,61,295,60,14,2
+276,TPC Scottsdale (Stadium Course),14,4,490,4.075,+.075,0,50,292,68,5,1
+276,Torrey Pines Golf Course (South Course),1,4,451,4.075,+.075,1,25,181,44,1,0
+278,TPC Sawgrass (THE PLAYERS Stadium Course),15,4,470,4.074,+.074,0,57,299,62,12,1
+278,Muirfield Village Golf Club,8,3,200,3.074,+.074,0,42,158,53,4,0
+280,Harbour Town Golf Links,11,4,436,4.073,+.073,0,37,196,52,3,0
+280,TPC Deere Run,12,3,215,3.073,+.073,0,57,298,77,6,0
+280,TPC Twin Cities,3,4,501,4.073,+.073,0,65,306,86,5,1
+283,Torrey Pines Golf Course (South Course),15,4,480,4.071,+.071,0,31,176,41,4,0
+284,Innisbrook Resort (Copperhead Course),10,4,445,4.070,+.070,0,62,312,79,6,1
+284,Oakmont Country Club,14,4,379,4.070,+.070,1,72,279,80,11,1
+284,The Country Club of Jackson,4,3,181,3.070,+.070,2,46,276,70,4,0
+287,Arnold Palmer's Bay Hill Club & Lodge,3,4,434,4.069,+.069,0,43,151,46,4,2
+288,Memorial Park Golf Course,18,4,503,4.068,+.068,1,52,315,67,7,1
+288,Colonial Country Club,14,4,456,4.068,+.068,0,45,308,68,3,0
+288,TPC Toronto at Osprey Valley (North Course),11,3,225,3.068,+.068,0,88,276,49,25,6
+288,Sedgefield Country Club,7,3,223,3.068,+.068,0,69,297,81,6,2
+292,TPC Craig Ranch,16,4,492,4.067,+.067,0,45,335,67,4,0
+293,Black Desert Resort,4,4,488,4.066,+.066,0,68,245,68,6,4
+293,Sea Island Golf Club (Seaside Course),10,4,418,4.066,+.066,0,45,201,47,9,0
+295,Nicklaus Tournament Course,3,3,192,3.065,+.065,0,15,115,23,1,0
+295,Memorial Park Golf Course,6,4,443,4.065,+.065,0,54,314,67,8,0
+297,Pebble Beach Golf Links,10,4,446,4.064,+.064,0,37,153,41,4,1
+297,PGA National Resort (The Champion Course),5,3,217,3.064,+.064,0,49,312,51,11,1
+297,Sedgefield Country Club,10,4,440,4.064,+.064,0,63,305,82,5,0
+297,Sedgefield Country Club,6,4,423,4.064,+.064,0,68,303,74,8,2
+297,Black Desert Resort,15,3,202,3.064,+.064,0,45,282,59,4,1
+297,Sea Island Golf Club (Plantation Course),9,4,481,4.064,+.064,0,23,104,25,4,0
+303,Spyglass Hill Golf Course,8,4,399,4.063,+.063,0,7,61,12,0,0
+303,TPC Sawgrass (THE PLAYERS Stadium Course),4,4,387,4.063,+.063,0,90,247,74,17,3
+303,TPC Toronto at Osprey Valley (North Course),10,4,416,4.063,+.063,0,81,280,67,11,5
+306,Pete Dye Stadium Course,9,4,452,4.062,+.062,0,25,166,33,3,0
+306,Pete Dye Stadium Course,10,4,405,4.062,+.062,2,27,158,35,5,0
+306,Caves Valley Golf Club,14,4,469,4.062,+.062,0,29,127,37,2,0
+309,TPC River Highlands,1,4,434,4.061,+.061,0,45,181,43,8,1
+309,Yokohama Country Club,7,3,182,3.061,+.061,0,35,228,46,2,1
+311,Royal Portrush Golf Club,13,3,199,3.060,+.060,1,55,318,72,6,0
+312,TPC Toronto at Osprey Valley (North Course),7,3,237,3.059,+.059,0,46,330,64,4,0
+312,El Cardonal at Diamante,15,4,462,4.059,+.059,0,87,230,50,16,6
+314,Muirfield Village Golf Club,3,4,392,4.058,+.058,1,54,146,45,8,3
+315,The Country Club of Jackson,7,3,214,3.055,+.055,0,37,303,57,1,0
+316,TPC River Highlands,17,4,431,4.054,+.054,0,40,190,42,5,1
+316,TPC Southwind,10,4,465,4.054,+.054,0,43,182,45,5,1
+318,Silverado Resort (North Course),14,4,360,4.053,+.053,0,77,273,66,14,2
+318,Port Royal Golf Course,12,4,383,4.053,+.053,1,46,269,58,5,0
+320,Harbour Town Golf Links,4,3,200,3.052,+.052,0,30,221,29,8,0
+321,Torrey Pines Golf Course (South Course),3,3,201,3.051,+.051,0,44,198,44,3,3
+321,TPC Southwind,18,4,453,4.051,+.051,0,54,167,44,10,1
+321,Caves Valley Golf Club,3,3,197,3.051,+.051,0,28,130,36,1,0
+321,Caves Valley Golf Club,10,4,467,4.051,+.051,0,25,136,33,1,0
+325,Waialae Country Club,15,4,398,4.050,+.050,0,53,315,61,7,0
+325,Colonial Country Club,8,3,194,3.050,+.050,0,54,300,65,5,0
+325,TPC River Highlands,5,3,223,3.050,+.050,0,27,211,39,1,0
+325,TPC River Highlands,8,3,202,3.050,+.050,0,38,193,42,5,0
+325,East Lake Golf Club,9,3,260,3.050,+.050,0,11,92,17,0,0
+330,Harbour Town Golf Links,14,3,192,3.049,+.049,0,34,213,34,7,0
+330,The Renaissance Club,12,3,204,3.049,+.049,0,45,358,62,3,0
+332,Innisbrook Resort (Copperhead Course),17,3,215,3.048,+.048,2,55,325,75,3,0
+333,Pebble Beach Golf Links,12,3,202,3.047,+.047,0,38,153,42,2,1
+333,Memorial Park Golf Course,14,4,529,4.047,+.047,1,58,308,71,5,0
+335,TPC Sawgrass (THE PLAYERS Stadium Course),7,4,450,4.046,+.046,1,74,272,73,10,1
+335,Innisbrook Resort (Copperhead Course),4,3,195,3.046,+.046,0,50,340,69,1,0
+335,Royal Portrush Golf Club,6,3,193,3.046,+.046,0,51,335,61,4,1
+338,TPC San Antonio (Oaks Course),6,4,403,4.045,+.045,0,51,306,57,5,1
+338,Harbour Town Golf Links,17,3,198,3.045,+.045,0,34,213,35,6,0
+338,Harbour Town Golf Links,12,4,430,4.045,+.045,0,40,199,45,4,0
+341,Vidanta Vallarta,9,3,174,3.043,+.043,0,64,283,63,6,2
+341,Detroit Golf Club,18,4,455,4.043,+.043,0,63,346,66,9,0
+341,Hurstbourne Country Club (Championship Course),9,3,162,3.043,+.043,0,53,324,68,2,0
+344,TPC Deere Run,7,3,226,3.041,+.041,0,75,273,87,3,0
+345,Pete Dye Stadium Course,17,3,165,3.040,+.040,0,28,176,12,8,3
+345,Puntacana Resort (Corales Golf Course),18,4,501,4.040,+.040,0,53,287,57,6,0
+345,Colonial Country Club,10,4,407,4.040,+.040,2,57,293,66,6,0
+348,TPC Sawgrass (THE PLAYERS Stadium Course),1,4,424,4.039,+.039,1,67,286,68,9,0
+349,Grand Reserve Golf Club,17,3,236,3.038,+.038,0,49,311,55,3,1
+349,Grand Reserve Golf Club,13,4,455,4.038,+.038,0,62,290,57,9,1
+349,TPC San Antonio (Oaks Course),10,4,447,4.038,+.038,1,58,291,64,6,0
+349,Harbour Town Golf Links,7,3,217,3.038,+.038,0,40,199,47,2,0
+349,Colonial Country Club,13,3,199,3.038,+.038,1,60,288,72,3,0
+349,Black Desert Resort,6,4,450,4.038,+.038,0,69,253,56,12,1
+355,Arnold Palmer's Bay Hill Club & Lodge,5,4,390,4.037,+.037,0,31,177,36,2,0
+355,Innisbrook Resort (Copperhead Course),12,4,380,4.037,+.037,0,72,304,80,3,1
+355,Silverado Resort (North Course),4,4,407,4.037,+.037,1,79,262,83,7,0
+358,Grand Reserve Golf Club,5,4,459,4.036,+.036,0,53,301,62,3,0
+359,Colonial Country Club,7,4,480,4.035,+.035,0,63,287,70,4,0
+360,TPC Scottsdale (Stadium Course),8,4,475,4.034,+.034,0,52,300,62,2,0
+360,TPC Deere Run,16,3,158,3.034,+.034,0,66,295,73,4,0
+360,Hurstbourne Country Club (Championship Course),4,4,358,4.034,+.034,2,73,294,65,12,1
+360,The Renaissance Club,17,3,203,3.034,+.034,0,65,326,73,4,0
+364,Quail Hollow Club,4,3,184,3.033,+.033,1,58,326,73,1,0
+364,Colonial Country Club,9,4,413,4.033,+.033,1,63,300,43,15,2
+364,Royal Portrush Golf Club,10,4,450,4.033,+.033,1,65,313,64,9,0
+367,TPC Sawgrass (THE PLAYERS Stadium Course),3,3,182,3.032,+.032,0,71,281,74,4,1
+367,Oakmont Country Club,13,3,182,3.032,+.032,0,61,309,73,1,0
+369,TPC Scottsdale (Stadium Course),2,4,442,4.031,+.031,0,61,284,68,3,0
+369,Harbour Town Golf Links,8,4,473,4.031,+.031,0,39,206,38,5,0
+369,Muirfield Village Golf Club,13,4,455,4.031,+.031,0,42,166,48,1,0
+372,Waialae Country Club,17,3,194,3.030,+.030,0,63,301,69,2,1
+372,Innisbrook Resort (Copperhead Course),15,3,215,3.030,+.030,0,60,326,74,0,0
+372,Silverado Resort (North Course),16,4,422,4.030,+.030,0,66,295,63,8,0
+375,TPC Craig Ranch,7,3,232,3.029,+.029,0,58,327,61,5,0
+375,TPC Craig Ranch,1,4,431,4.029,+.029,0,64,316,66,4,1
+377,PGA National Resort (The Champion Course),11,4,450,4.028,+.028,0,71,286,53,12,2
+378,Torrey Pines Golf Course (North Course),16,4,393,4.027,+.027,0,29,91,22,4,1
+378,Puntacana Resort (Corales Golf Course),15,4,421,4.027,+.027,0,69,260,69,4,1
+380,TPC Scottsdale (Stadium Course),5,4,470,4.026,+.026,0,61,292,55,7,1
+381,The Philadelphia Cricket Club (Wissahickon Course),11,4,487,4.025,+.025,0,49,183,48,2,1
+381,TPC River Highlands,10,4,462,4.025,+.025,0,40,195,39,4,0
+381,TPC River Highlands,7,4,443,4.025,+.025,0,40,193,43,2,0
+384,Torrey Pines Golf Course (South Course),2,4,389,4.024,+.024,0,50,186,55,1,0
+385,Puntacana Resort (Corales Golf Course),10,4,496,4.022,+.022,0,57,282,62,2,0
+386,Augusta National Golf Club,6,3,180,3.020,+.020,0,41,208,47,0,0
+386,Black Desert Resort,3,3,198,3.020,+.020,0,65,258,63,5,0
+388,Nicklaus Tournament Course,18,4,453,4.019,+.019,0,26,106,18,3,1
+388,TPC Sawgrass (THE PLAYERS Stadium Course),10,4,419,4.019,+.019,1,84,270,63,9,4
+390,Oakmont Country Club,12,5,632,5.018,+.018,5,106,231,84,14,4
+391,Grand Reserve Golf Club,2,3,192,3.017,+.017,0,51,312,54,2,0
+391,TPC Twin Cities,13,3,228,3.017,+.017,0,71,319,67,6,0
+393,TPC Craig Ranch,11,4,467,4.016,+.016,0,67,316,63,4,1
+394,Vidanta Vallarta,2,4,498,4.014,+.014,1,62,288,64,3,0
+394,The Philadelphia Cricket Club (Wissahickon Course),12,4,424,4.014,+.014,1,40,202,34,6,0
+396,Nicklaus Tournament Course,17,3,209,3.013,+.013,0,22,108,24,0,0
+396,Spyglass Hill Golf Course,6,4,446,4.013,+.013,0,13,53,14,0,0
+398,TPC Craig Ranch,3,4,420,4.011,+.011,0,70,312,63,6,0
+399,Grand Reserve Golf Club,15,3,203,3.010,+.010,0,63,290,65,1,0
+399,Harbour Town Golf Links,18,4,472,4.010,+.010,1,49,192,41,2,3
+401,Dunes Golf and Beach Club,12,3,195,3.007,+.007,0,58,290,49,3,2
+402,TPC Scottsdale (Stadium Course),16,3,163,3.005,+.005,1,69,279,61,6,0
+403,Plantation Course at Kapalua,17,4,550,4.004,+.004,0,31,179,21,3,1
+403,Plantation Course at Kapalua,2,3,219,3.004,+.004,0,30,175,29,1,0
+403,Muirfield Village Golf Club,11,5,588,5.004,+.004,1,64,139,42,9,2
+406,Grand Reserve Golf Club,3,4,465,4.002,+.002,1,71,281,58,8,0
+406,Memorial Park Golf Course,17,4,405,4.002,+.002,3,81,280,71,7,1
+406,Sedgefield Country Club,12,3,235,3.002,+.002,0,76,307,67,5,0
+409,La Quinta Country Club,10,4,405,4.000,E,0,32,101,15,5,2
+409,Spyglass Hill Golf Course,4,4,370,4.000,E,0,14,54,10,2,0
+409,Sea Island Golf Club (Plantation Course),7,3,156,3.000,E,0,24,112,16,4,0
+412,TPC Scottsdale (Stadium Course),9,4,453,3.998,-.002,0,66,290,56,3,1
+412,Puntacana Resort (Corales Golf Course),8,4,399,3.998,-.002,2,75,271,35,17,3
+412,TPC Craig Ranch,15,3,216,2.998,-.002,0,64,330,52,4,1
+412,The Renaissance Club,6,3,147,2.998,-.002,1,76,320,66,4,1
+412,Hurstbourne Country Club (Championship Course),15,4,377,3.998,-.002,0,91,289,49,14,4
+417,Sea Island Golf Club (Seaside Course),3,3,204,2.997,-.003,1,40,221,39,1,0
+418,Arnold Palmer's Bay Hill Club & Lodge,10,4,400,3.996,-.004,0,50,153,37,6,0
+418,The Philadelphia Cricket Club (Wissahickon Course),7,4,435,3.996,-.004,0,51,186,42,4,0
+418,Sedgefield Country Club,4,4,428,3.996,-.004,0,90,291,62,10,2
+421,El Cardonal at Diamante,12,4,401,3.995,-.005,0,89,236,43,19,2
+422,Augusta National Golf Club,14,4,440,3.993,-.007,1,60,179,52,4,0
+422,Dunes Golf and Beach Club,2,4,485,3.993,-.007,0,60,290,47,5,0
+422,Dunes Golf and Beach Club,3,4,454,3.993,-.007,0,62,284,53,3,0
+422,Sedgefield Country Club,2,4,442,3.993,-.007,0,94,284,64,12,1
+422,TPC Southwind,13,4,472,3.993,-.007,0,46,190,37,2,1
+427,TPC Toronto at Osprey Valley (North Course),5,4,497,3.991,-.009,1,77,297,65,3,1
+427,Oakmont Country Club,4,5,611,4.991,-.009,5,115,225,81,13,5
+429,Torrey Pines Golf Course (South Course),17,4,443,3.988,-.012,1,52,155,39,4,1
+429,Dunes Golf and Beach Club,11,4,450,3.988,-.012,0,72,268,57,5,0
+429,Dunes Golf and Beach Club,17,3,170,2.988,-.012,0,53,304,42,3,0
+432,La Quinta Country Club,15,3,206,2.987,-.013,0,27,103,25,0,0
+432,Spyglass Hill Golf Course,16,4,476,3.987,-.013,0,11,60,8,1,0
+432,Sedgefield Country Club,1,4,418,3.987,-.013,0,80,308,60,7,0
+435,Caves Valley Golf Club,5,4,367,3.985,-.015,0,44,114,33,4,0
+436,Torrey Pines Golf Course (South Course),8,3,177,2.984,-.016,0,34,188,30,0,0
+436,TPC Toronto at Osprey Valley (North Course),2,4,481,3.984,-.016,1,75,302,62,4,0
+436,Yokohama Country Club,17,4,439,3.984,-.016,0,60,205,40,6,1
+439,The Renaissance Club,4,4,422,3.983,-.017,0,85,313,63,7,0
+440,TPC Southwind,1,4,434,3.982,-.018,0,47,190,36,3,0
+441,TPC San Antonio (Oaks Course),16,3,183,2.981,-.019,1,65,297,55,2,0
+441,TPC San Antonio (Oaks Course),8,5,604,4.981,-.019,4,82,266,57,8,3
+441,Detroit Golf Club,15,3,160,2.981,-.019,0,86,325,69,4,0
+441,Detroit Golf Club,16,4,446,3.981,-.019,0,77,344,58,5,0
+441,Sea Island Golf Club (Plantation Course),5,4,473,3.981,-.019,0,22,117,16,0,1
+446,Puntacana Resort (Corales Golf Course),6,4,387,3.980,-.020,0,80,254,66,3,0
+446,Sea Island Golf Club (Seaside Course),12,3,223,2.980,-.020,0,38,232,32,0,0
+446,Sea Island Golf Club (Seaside Course),4,4,429,3.980,-.020,0,58,201,37,4,2
+449,TPC Deere Run,3,3,186,2.979,-.021,0,64,322,49,3,0
+449,El Cardonal at Diamante,13,4,475,3.979,-.021,0,76,255,51,5,2
+449,Port Royal Golf Course,14,4,393,3.979,-.021,0,74,248,52,2,3
+449,Port Royal Golf Course,3,3,148,2.979,-.021,0,65,262,47,5,0
+453,Vidanta Vallarta,5,3,208,2.978,-.022,0,70,288,59,1,0
+453,TPC Twin Cities,17,3,202,2.978,-.022,0,82,323,45,12,1
+455,Silverado Resort (North Course),6,4,417,3.977,-.023,1,75,292,61,3,0
+456,TPC Scottsdale (Stadium Course),4,3,183,2.976,-.024,0,58,313,43,1,1
+456,Grand Reserve Golf Club,16,4,448,3.976,-.024,1,68,294,52,4,0
+458,TPC Southwind,4,3,196,2.975,-.025,0,46,197,29,3,1
+458,East Lake Golf Club,2,3,205,2.975,-.025,0,14,96,9,1,0
+458,Silverado Resort (North Course),1,4,436,3.975,-.025,1,86,275,64,5,1
+461,TPC Scottsdale (Stadium Course),10,4,428,3.974,-.026,1,64,296,55,0,0
+461,PGA National Resort (The Champion Course),12,4,438,3.974,-.026,0,63,312,46,3,0
+461,TPC Twin Cities,11,4,467,3.974,-.026,1,82,315,59,5,1
+461,Black Desert Resort,12,4,459,3.974,-.026,0,62,280,46,3,0
+461,El Cardonal at Diamante,11,3,189,2.974,-.026,0,62,276,50,1,0
+461,El Cardonal at Diamante,8,4,474,3.974,-.026,1,67,266,51,4,0
+461,Sea Island Golf Club (Seaside Course),18,4,470,3.974,-.026,0,43,226,31,2,0
+468,TPC Twin Cities,14,4,437,3.972,-.028,0,91,307,53,11,1
+469,Vidanta Vallarta,15,4,459,3.971,-.029,0,77,282,54,4,1
+469,Port Royal Golf Course,1,4,438,3.971,-.029,0,70,262,38,7,2
+471,Sea Island Golf Club (Seaside Course),17,3,192,2.970,-.030,0,44,223,35,0,0
+471,Sea Island Golf Club (Seaside Course),2,4,415,3.970,-.030,1,50,210,39,2,0
+473,TPC Scottsdale (Stadium Course),1,4,403,3.969,-.031,0,64,302,49,1,0
+473,PGA National Resort (The Champion Course),17,3,175,2.969,-.031,0,73,301,41,8,1
+473,TPC San Antonio (Oaks Course),12,4,410,3.969,-.031,0,86,268,60,5,1
+476,Waialae Country Club,7,3,176,2.968,-.032,0,76,303,53,3,1
+476,TPC River Highlands,9,4,389,3.968,-.032,0,46,199,29,4,0
+476,TPC River Highlands,18,4,444,3.968,-.032,0,50,188,39,1,0
+479,The Country Club of Jackson,18,4,505,3.967,-.033,0,65,286,42,5,0
+480,Torrey Pines Golf Course (North Course),11,4,339,3.966,-.034,1,26,98,21,1,0
+480,TPC Scottsdale (Stadium Course),18,4,442,3.966,-.034,1,85,264,61,3,2
+482,Harbour Town Golf Links,1,4,410,3.965,-.035,0,41,220,23,4,0
+482,Dunes Golf and Beach Club,6,4,450,3.965,-.035,0,63,291,47,1,0
+484,TPC Southwind,9,4,457,3.964,-.036,1,55,178,38,3,1
+485,Spyglass Hill Golf Course,9,4,431,3.962,-.038,0,16,51,13,0,0
+485,Vidanta Vallarta,13,3,170,2.962,-.038,0,57,322,37,2,0
+485,Grand Reserve Golf Club,10,4,447,3.962,-.038,0,67,302,49,1,0
+485,The Renaissance Club,13,4,418,3.962,-.038,1,86,330,35,13,3
+489,The Philadelphia Cricket Club (Wissahickon Course),3,3,172,2.961,-.039,0,48,201,31,3,0
+490,Pete Dye Stadium Course,7,4,346,3.960,-.040,0,66,124,20,15,2
+490,Puntacana Resort (Corales Golf Course),9,3,204,2.960,-.040,0,65,291,45,2,0
+490,Hurstbourne Country Club (Championship Course),16,4,446,3.960,-.040,0,82,301,64,0,0
+490,Sea Island Golf Club (Seaside Course),14,4,442,3.960,-.040,0,59,204,33,4,2
+494,Memorial Park Golf Course,12,4,496,3.959,-.041,1,73,314,53,2,0
+494,TPC Toronto at Osprey Valley (North Course),4,3,158,2.959,-.041,0,87,291,63,3,0
+496,TPC San Antonio (Oaks Course),11,4,405,3.957,-.043,1,72,292,54,1,0
+496,TPC Toronto at Osprey Valley (North Course),3,4,440,3.957,-.043,0,88,290,63,3,0
+496,Sea Island Golf Club (Seaside Course),9,4,452,3.957,-.043,0,53,213,32,4,0
+499,Augusta National Golf Club,9,4,460,3.956,-.044,1,60,191,39,5,0
+499,Silverado Resort (North Course),8,4,391,3.956,-.044,1,99,270,48,8,6
+499,El Cardonal at Diamante,7,4,489,3.956,-.044,0,72,269,42,5,1
+502,The Country Club of Jackson,2,4,418,3.955,-.045,0,78,264,52,4,0
+502,Sea Island Golf Club (Plantation Course),6,4,452,3.955,-.045,0,24,117,13,2,0
+504,Pebble Beach Golf Links,3,4,404,3.953,-.047,1,45,156,32,2,0
+504,TPC River Highlands,3,4,440,3.953,-.047,0,53,189,32,4,0
+506,Grand Reserve Golf Club,1,4,430,3.952,-.048,1,69,301,45,3,0
+507,Arnold Palmer's Bay Hill Club & Lodge,13,4,382,3.951,-.049,0,52,163,23,7,1
+508,East Lake Golf Club,7,4,495,3.950,-.050,0,18,90,12,0,0
+509,Plantation Course at Kapalua,4,4,422,3.949,-.051,0,44,168,16,5,2
+510,La Quinta Country Club,16,4,454,3.948,-.052,0,31,103,19,2,0
+510,Nicklaus Tournament Course,9,4,461,3.948,-.052,0,35,98,17,3,1
+512,Pete Dye Stadium Course,14,4,389,3.947,-.053,0,49,147,26,4,1
+513,Torrey Pines Golf Course (North Course),1,4,421,3.946,-.054,1,31,92,21,2,0
+513,Memorial Park Golf Course,9,3,182,2.946,-.054,0,75,318,49,1,0
+513,Colonial Country Club,6,4,410,3.946,-.054,1,81,283,58,1,0
+513,TPC Twin Cities,15,4,451,3.946,-.054,2,84,321,49,7,0
+513,TPC Southwind,12,4,406,3.946,-.054,0,68,165,34,8,1
+518,Waialae Country Club,1,4,480,3.945,-.055,0,77,311,43,5,0
+518,TPC Deere Run,11,4,432,3.945,-.055,2,82,300,48,4,2
+518,Royal Portrush Golf Club,15,4,429,3.945,-.055,0,78,322,51,1,0
+521,Black Desert Resort,8,3,152,2.944,-.056,0,73,274,38,5,1
+522,Detroit Golf Club,2,4,453,3.942,-.058,1,88,339,50,6,0
+522,TPC Southwind,8,3,171,2.942,-.058,0,46,200,30,0,0
+522,Yokohama Country Club,9,4,432,3.942,-.058,0,73,192,40,6,1
+525,TPC Deere Run,1,4,416,3.941,-.059,0,85,300,47,6,0
+526,Waialae Country Club,8,4,454,3.940,-.060,0,90,288,52,6,0
+526,Waialae Country Club,14,4,430,3.940,-.060,1,85,292,55,3,0
+526,TPC San Antonio (Oaks Course),18,5,591,4.940,-.060,3,87,270,54,4,2
+526,TPC Craig Ranch,4,3,219,2.940,-.060,0,73,334,42,2,0
+530,TPC River Highlands,14,4,421,3.939,-.061,0,56,184,37,1,0
+531,Vidanta Vallarta,1,4,415,3.938,-.062,0,94,272,36,16,0
+531,Puntacana Resort (Corales Golf Course),3,4,410,3.938,-.062,0,82,276,35,9,1
+533,Spyglass Hill Golf Course,3,3,172,2.937,-.063,0,15,55,10,0,0
+533,Torrey Pines Golf Course (South Course),2,4,389,3.937,-.063,1,57,154,37,3,0
+535,Grand Reserve Golf Club,7,3,202,2.936,-.064,0,75,298,44,2,0
+536,TPC Southwind,15,4,395,3.935,-.065,0,65,169,38,3,1
+536,The Country Club of Jackson,12,4,449,3.935,-.065,2,84,260,43,8,1
+538,Pete Dye Stadium Course,4,3,170,2.934,-.066,0,37,169,20,1,0
+539,Silverado Resort (North Course),13,4,375,3.933,-.067,0,100,267,60,4,1
+539,Yokohama Country Club,2,4,418,3.933,-.067,0,54,228,27,3,0
+541,Grand Reserve Golf Club,18,4,450,3.931,-.069,0,84,286,43,6,0
+541,Hurstbourne Country Club (Championship Course),2,4,395,3.931,-.069,1,93,293,56,4,0
+543,Dunes Golf and Beach Club,1,4,425,3.930,-.070,0,85,264,50,2,1
+544,Torrey Pines Golf Course (South Course),3,3,201,2.929,-.071,2,47,172,29,2,0
+545,Plantation Course at Kapalua,11,3,161,2.928,-.072,0,48,160,23,4,0
+545,Pebble Beach Golf Links,13,4,445,3.928,-.072,0,45,163,28,0,0
+545,Caves Valley Golf Club,9,4,470,3.928,-.072,0,35,139,21,0,0
+545,El Cardonal at Diamante,9,3,200,2.928,-.072,0,62,293,34,0,0
+549,Sedgefield Country Club,9,4,416,3.927,-.073,1,107,288,45,12,2
+550,Augusta National Golf Club,15,5,550,4.926,-.074,6,77,161,38,13,1
+550,Port Royal Golf Course,2,5,553,4.926,-.074,1,90,234,44,10,0
+552,Pebble Beach Golf Links,1,4,381,3.924,-.076,0,44,167,24,1,0
+552,TPC River Highlands,11,3,158,2.924,-.076,0,62,179,33,4,0
+554,Plantation Course at Kapalua,8,3,199,2.923,-.077,0,48,160,24,3,0
+554,Plantation Course at Kapalua,13,4,383,3.923,-.077,0,49,156,29,1,0
+554,Yokohama Country Club,1,4,475,3.923,-.077,0,68,205,35,3,1
+557,The Philadelphia Cricket Club (Wissahickon Course),4,4,427,3.922,-.078,2,53,193,35,0,0
+557,Muirfield Village Golf Club,14,4,360,3.922,-.078,1,69,143,39,3,2
+559,Pete Dye Stadium Course,16,5,600,4.921,-.079,1,64,130,26,2,4
+559,Torrey Pines Golf Course (South Course),13,5,621,4.921,-.079,2,59,154,31,6,0
+561,Innisbrook Resort (Copperhead Course),5,5,605,4.920,-.080,1,104,289,63,3,0
+561,Yokohama Country Club,5,4,436,3.920,-.080,2,72,193,41,2,2
+561,El Cardonal at Diamante,5,4,438,3.920,-.080,0,77,270,39,2,1
+564,Colonial Country Club,18,4,442,3.917,-.083,1,76,306,39,2,0
+564,The Country Club of Jackson,13,3,168,2.917,-.083,0,79,279,35,4,1
+564,Yokohama Country Club,3,3,168,2.917,-.083,0,62,216,32,2,0
+567,Pebble Beach Golf Links,16,4,403,3.915,-.085,0,44,169,22,1,0
+568,Sedgefield Country Club,3,3,174,2.914,-.086,1,99,294,60,1,0
+569,Waialae Country Club,16,4,417,3.913,-.087,0,78,322,33,2,1
+570,Grand Reserve Golf Club,12,4,386,3.912,-.088,0,76,305,37,1,0
+571,Colonial Country Club,16,3,197,2.910,-.090,0,81,302,39,2,0
+572,Augusta National Golf Club,3,4,350,3.909,-.091,0,73,181,39,2,1
+572,TPC Deere Run,4,4,454,3.909,-.091,0,91,305,37,2,3
+572,TPC Southwind,6,4,433,3.909,-.091,0,63,180,30,1,2
+575,Memorial Park Golf Course,10,4,456,3.907,-.093,0,93,299,50,1,0
+575,TPC Twin Cities,4,3,177,2.907,-.093,0,85,338,38,2,0
+577,Plantation Course at Kapalua,7,4,522,3.906,-.094,0,45,168,21,1,0
+577,Waialae Country Club,5,4,467,3.906,-.094,0,78,321,37,0,0
+579,TPC Craig Ranch,2,4,466,3.905,-.095,1,110,281,50,8,1
+579,The Country Club of Jackson,8,4,403,3.905,-.095,1,85,265,45,2,0
+581,The Renaissance Club,14,3,161,2.904,-.096,1,86,340,39,2,0
+582,La Quinta Country Club,18,4,412,3.903,-.097,0,31,108,16,0,0
+583,Grand Reserve Golf Club,8,4,411,3.902,-.098,0,85,293,38,3,0
+583,El Cardonal at Diamante,2,3,208,2.902,-.098,0,71,288,27,3,0
+583,Port Royal Golf Course,6,4,370,3.902,-.098,1,65,283,30,0,0
+586,Memorial Park Golf Course,2,3,167,2.901,-.099,0,89,309,45,0,0
+586,The Philadelphia Cricket Club (Wissahickon Course),13,4,423,3.901,-.099,0,59,195,27,2,0
+588,Royal Portrush Golf Club,17,4,409,3.900,-.100,0,111,284,49,7,1
+588,East Lake Golf Club,11,3,225,2.900,-.100,0,20,92,8,0,0
+590,Pete Dye Stadium Course,12,4,363,3.899,-.101,1,50,150,23,3,0
+591,TPC Deere Run,5,4,433,3.897,-.103,2,108,265,59,4,0
+592,Arnold Palmer's Bay Hill Club & Lodge,4,5,590,4.894,-.106,1,65,145,29,6,0
+592,The Philadelphia Cricket Club (Wissahickon Course),1,4,365,3.894,-.106,0,72,171,38,2,0
+592,The Country Club of Jackson,1,4,411,3.894,-.106,0,85,270,43,0,0
+595,Black Desert Resort,17,3,151,2.893,-.107,0,79,277,33,2,0
+596,PGA National Resort (The Champion Course),9,4,421,3.892,-.108,0,99,276,45,4,0
+596,East Lake Golf Club,5,4,450,3.892,-.108,0,25,83,12,0,0
+598,Sea Island Golf Club (Plantation Course),3,3,219,2.891,-.109,0,30,113,13,0,0
+598,Sea Island Golf Club (Seaside Course),6,3,179,2.891,-.109,0,54,227,21,0,0
+600,Waialae Country Club,10,4,351,3.890,-.110,0,97,293,43,3,0
+600,Nicklaus Tournament Course,5,4,364,3.890,-.110,0,41,91,20,2,0
+602,Vidanta Vallarta,3,4,445,3.888,-.112,0,100,268,48,1,1
+603,Memorial Park Golf Course,13,4,406,3.887,-.113,2,112,270,52,7,0
+603,Caves Valley Golf Club,8,4,476,3.887,-.113,0,44,131,18,2,0
+603,Silverado Resort (North Course),10,4,412,3.887,-.113,1,95,291,42,3,0
+606,Harbour Town Golf Links,13,4,373,3.885,-.115,0,77,176,29,4,2
+606,Yokohama Country Club,8,4,357,3.885,-.115,2,76,196,32,6,0
+608,Detroit Golf Club,10,4,425,3.884,-.116,0,109,322,53,0,0
+609,Grand Reserve Golf Club,4,4,410,3.883,-.117,1,93,282,40,3,0
+610,Black Desert Resort,10,4,447,3.880,-.120,1,92,255,39,4,0
+611,Sea Island Golf Club (Plantation Course),16,3,158,2.878,-.122,0,28,119,9,0,0
+612,Plantation Course at Kapalua,6,4,424,3.877,-.123,0,59,147,28,1,0
+612,Caves Valley Golf Club,11,4,334,3.877,-.123,0,61,102,27,5,0
+614,Port Royal Golf Course,5,4,380,3.876,-.124,0,87,257,30,5,0
+615,Waialae Country Club,12,4,440,3.874,-.126,1,95,300,38,2,0
+615,The Country Club of Jackson,9,4,421,3.874,-.126,2,80,284,30,2,0
+617,TPC Twin Cities,7,4,381,3.873,-.127,0,121,291,43,5,3
+617,Port Royal Golf Course,9,4,383,3.873,-.127,0,79,269,31,0,0
+619,Detroit Golf Club,8,4,372,3.872,-.128,1,126,294,61,1,1
+620,TPC Toronto at Osprey Valley (North Course),8,4,440,3.869,-.131,0,95,315,31,3,0
+621,Vidanta Vallarta,11,3,195,2.868,-.132,0,92,294,27,5,0
+621,PGA National Resort (The Champion Course),4,4,395,3.868,-.132,1,114,254,50,5,0
+621,TPC Sawgrass (THE PLAYERS Stadium Course),12,4,365,3.868,-.132,0,98,294,37,2,0
+621,Detroit Golf Club,5,3,167,2.868,-.132,0,109,333,39,3,0
+621,Sea Island Golf Club (Seaside Course),13,4,408,3.868,-.132,0,79,193,23,5,2
+626,Caves Valley Golf Club,7,4,434,3.867,-.133,1,49,124,17,4,0
+627,Torrey Pines Golf Course (South Course),9,5,615,4.866,-.134,0,75,184,30,3,0
+627,Dunes Golf and Beach Club,10,4,375,3.866,-.134,1,104,247,48,2,0
+629,Nicklaus Tournament Course,16,4,440,3.864,-.136,0,31,114,8,1,0
+630,TPC Deere Run,6,4,367,3.863,-.137,4,112,269,47,5,1
+631,Plantation Course at Kapalua,3,4,424,3.860,-.140,1,61,146,25,1,1
+631,Waialae Country Club,3,4,422,3.860,-.140,1,100,297,35,3,0
+633,Hurstbourne Country Club (Championship Course),12,4,382,3.859,-.141,2,116,277,47,5,0
+633,Sea Island Golf Club (Plantation Course),12,4,409,3.859,-.141,0,33,113,9,1,0
+635,La Quinta Country Club,7,3,168,2.858,-.142,0,28,121,6,0,0
+635,Harbour Town Golf Links,16,4,434,3.858,-.142,1,65,198,22,2,0
+635,East Lake Golf Club,17,4,445,3.858,-.142,0,34,70,15,1,0
+635,Port Royal Golf Course,10,4,350,3.858,-.142,2,96,238,40,3,0
+639,Nicklaus Tournament Course,12,3,165,2.857,-.143,1,29,116,7,1,0
+639,Nicklaus Tournament Course,6,4,462,3.857,-.143,0,36,105,12,1,0
+641,Muirfield Village Golf Club,5,5,547,4.856,-.144,2,75,145,29,5,1
+641,El Cardonal at Diamante,16,3,154,2.856,-.144,1,94,260,28,6,0
+641,El Cardonal at Diamante,17,4,462,3.856,-.144,1,87,273,23,5,0
+644,The Philadelphia Cricket Club (Wissahickon Course),9,4,426,3.855,-.145,0,72,181,29,1,0
+645,TPC Twin Cities,8,3,204,2.853,-.147,1,104,322,34,2,0
+646,Pebble Beach Golf Links,7,3,106,2.852,-.148,1,57,155,22,1,0
+646,Royal Portrush Golf Club,5,4,372,3.852,-.148,3,118,281,46,3,1
+646,The Country Club of Jackson,17,4,436,3.852,-.148,0,85,287,26,0,0
+649,Pete Dye Stadium Course,1,4,445,3.850,-.150,0,52,157,18,0,0
+649,Spyglass Hill Golf Course,12,3,178,2.850,-.150,0,18,56,6,0,0
+649,Spyglass Hill Golf Course,14,5,560,4.850,-.150,0,21,50,9,0,0
+649,Hurstbourne Country Club (Championship Course),8,4,344,3.850,-.150,3,133,248,54,9,0
+653,TPC Craig Ranch,17,3,147,2.849,-.151,0,104,315,28,4,0
+653,TPC Deere Run,13,4,424,3.849,-.151,1,108,286,42,1,0
+655,The Philadelphia Cricket Club (Wissahickon Course),6,4,447,3.848,-.152,0,69,188,26,0,0
+656,TPC Deere Run,8,4,428,3.847,-.153,0,111,284,42,1,0
+657,La Quinta Country Club,8,4,389,3.845,-.155,0,42,99,10,4,0
+657,Oakmont Country Club,17,4,312,3.845,-.155,3,141,229,64,7,0
+659,TPC Southwind,11,3,168,2.844,-.156,0,67,191,12,6,0
+660,Colonial Country Club,2,4,385,3.842,-.158,0,111,269,44,0,0
+660,Sedgefield Country Club,13,4,405,3.842,-.158,1,136,254,62,2,0
+662,The Philadelphia Cricket Club (Wissahickon Course),2,4,373,3.841,-.159,0,78,176,25,4,0
+662,TPC Southwind,2,4,408,3.841,-.159,0,74,174,26,2,0
+664,Memorial Park Golf Course,5,4,440,3.840,-.160,1,104,305,31,2,0
+664,TPC Twin Cities,16,4,411,3.840,-.160,2,131,277,46,6,1
+666,Silverado Resort (North Course),15,5,572,4.838,-.162,5,144,220,45,15,3
+666,Sea Island Golf Club (Seaside Course),11,4,425,3.838,-.162,0,82,196,18,3,3
+668,Yokohama Country Club,13,4,337,3.837,-.163,3,108,152,38,8,3
+669,Dunes Golf and Beach Club,16,4,370,3.836,-.164,0,102,265,34,1,0
+670,Sea Island Golf Club (Seaside Course),1,4,417,3.834,-.166,0,76,200,26,0,0
+670,Sea Island Golf Club (Seaside Course),16,4,407,3.834,-.166,1,86,185,23,6,1
+672,Torrey Pines Golf Course (South Course),9,5,615,4.833,-.167,0,78,141,30,3,0
+672,Harbour Town Golf Links,6,4,419,3.833,-.167,0,61,215,11,1,0
+672,Detroit Golf Club,3,4,393,3.833,-.167,0,122,321,41,0,0
+672,Detroit Golf Club,13,4,393,3.833,-.167,2,116,330,34,1,1
+676,Sedgefield Country Club,17,4,406,3.831,-.169,3,113,299,38,2,0
+676,Sea Island Golf Club (Seaside Course),8,4,368,3.831,-.169,1,78,198,22,2,1
+678,Yokohama Country Club,15,4,387,3.830,-.170,0,83,200,28,1,0
+679,Augusta National Golf Club,13,5,545,4.828,-.172,6,98,146,35,10,1
+680,La Quinta Country Club,1,4,382,3.826,-.174,0,40,105,8,1,1
+681,Nicklaus Tournament Course,10,4,370,3.825,-.175,0,38,108,6,1,1
+681,Spyglass Hill Golf Course,10,4,407,3.825,-.175,0,23,49,7,1,0
+683,TPC Toronto at Osprey Valley (North Course),15,4,434,3.822,-.178,0,113,300,28,3,0
+683,Detroit Golf Club,1,4,397,3.822,-.178,2,115,336,29,2,0
+685,Port Royal Golf Course,11,4,443,3.821,-.179,1,89,267,21,1,0
+686,Nicklaus Tournament Course,2,4,444,3.818,-.182,0,39,104,11,0,0
+686,Port Royal Golf Course,7,5,517,4.818,-.182,8,131,175,56,6,3
+688,PGA National Resort (The Champion Course),8,4,427,3.814,-.186,0,115,275,32,2,0
+688,Colonial Country Club,11,5,639,4.814,-.186,4,129,238,48,5,0
+690,Arnold Palmer's Bay Hill Club & Lodge,12,5,574,4.813,-.187,1,79,135,28,2,1
+691,Pebble Beach Golf Links,15,4,397,3.809,-.191,0,59,164,12,1,0
+691,Muirfield Village Golf Club,7,5,582,4.809,-.191,5,79,140,26,7,0
+691,TPC River Highlands,2,4,341,3.809,-.191,2,81,167,24,4,0
+694,East Lake Golf Club,10,4,425,3.808,-.192,0,32,79,9,0,0
+694,Sea Island Golf Club (Seaside Course),5,4,409,3.808,-.192,1,87,187,24,2,1
+696,Arnold Palmer's Bay Hill Club & Lodge,6,5,555,4.805,-.195,11,86,110,25,10,4
+697,TPC Twin Cities,10,4,379,3.803,-.197,0,126,305,29,3,0
+698,Innisbrook Resort (Copperhead Course),14,5,590,4.800,-.200,5,151,245,51,6,2
+698,East Lake Golf Club,13,4,450,3.800,-.200,0,37,70,13,0,0
+700,The Philadelphia Cricket Club (Wissahickon Course),14,3,122,2.799,-.201,0,82,176,25,0,0
+701,TPC Deere Run,14,4,361,3.795,-.205,5,135,248,45,5,0
+701,TPC Twin Cities,1,4,416,3.795,-.205,1,124,309,27,2,0
+703,Black Desert Resort,9,5,587,4.793,-.207,9,144,181,41,11,5
+704,Puntacana Resort (Corales Golf Course),14,5,626,4.789,-.211,2,124,239,33,5,0
+705,TPC Toronto at Osprey Valley (North Course),12,4,375,3.784,-.216,2,144,249,46,3,0
+706,TPC Sawgrass (THE PLAYERS Stadium Course),9,5,601,4.782,-.218,7,145,218,57,4,0
+706,Sea Island Golf Club (Plantation Course),13,4,437,3.782,-.218,0,50,91,14,1,0
+708,Torrey Pines Golf Course (South Course),18,5,570,4.781,-.219,4,92,165,27,3,1
+709,TPC Sawgrass (THE PLAYERS Stadium Course),11,5,573,4.780,-.220,5,155,209,54,8,0
+710,Quail Hollow Club,8,4,346,3.778,-.222,5,153,248,45,8,0
+711,TPC Toronto at Osprey Valley (North Course),14,3,144,2.775,-.225,0,118,308,18,0,0
+711,TPC Twin Cities,5,4,424,3.775,-.225,0,135,298,29,1,0
+713,Sedgefield Country Club,8,4,374,3.774,-.226,1,136,286,29,3,0
+714,Pete Dye Stadium Course,5,5,535,4.771,-.229,1,100,91,23,11,1
+714,Pete Dye Stadium Course,11,5,591,4.771,-.229,3,74,124,24,2,0
+714,Pete Dye Stadium Course,2,4,371,3.771,-.229,1,65,147,13,1,0
+714,PGA National Resort (The Champion Course),1,4,365,3.771,-.229,0,114,293,17,0,0
+714,PGA National Resort (The Champion Course),13,4,388,3.771,-.229,1,136,252,29,6,0
+719,Hurstbourne Country Club (Championship Course),7,5,555,4.770,-.230,14,163,201,54,11,4
+720,Pebble Beach Golf Links,4,4,331,3.767,-.233,0,75,143,16,2,0
+720,Pebble Beach Golf Links,11,4,390,3.767,-.233,0,69,154,12,1,0
+722,Nicklaus Tournament Course,1,4,378,3.766,-.234,0,56,79,18,1,0
+723,Innisbrook Resort (Copperhead Course),11,5,575,4.763,-.237,5,160,239,51,5,0
+723,Sea Island Golf Club (Plantation Course),2,4,382,3.763,-.237,0,45,104,6,1,0
+725,La Quinta Country Club,4,4,384,3.761,-.239,0,46,100,9,0,0
+726,Nicklaus Tournament Course,13,4,419,3.760,-.240,1,48,93,11,1,0
+726,Nicklaus Tournament Course,15,5,572,4.760,-.240,0,62,73,15,3,1
+728,Royal Portrush Golf Club,2,5,575,4.759,-.241,9,149,242,47,4,1
+728,The Country Club of Jackson,14,5,584,4.759,-.241,5,129,224,37,3,0
+730,East Lake Golf Club,3,4,415,3.758,-.242,0,43,63,14,0,0
+731,The Country Club of Jackson,11,5,554,4.754,-.246,6,131,223,32,5,1
+732,Dunes Golf and Beach Club,13,5,625,4.751,-.249,2,141,219,35,5,0
+733,La Quinta Country Club,9,4,399,3.748,-.252,0,48,98,9,0,0
+733,Silverado Resort (North Course),12,5,571,4.748,-.252,6,154,224,40,7,1
+735,Sea Island Golf Club (Plantation Course),4,5,623,4.737,-.263,1,56,86,10,2,1
+736,La Quinta Country Club,17,4,421,3.735,-.265,0,47,102,6,0,0
+737,Quail Hollow Club,10,5,592,4.734,-.266,4,166,239,48,2,0
+738,East Lake Golf Club,12,4,390,3.733,-.267,0,42,70,6,2,0
+739,El Cardonal at Diamante,3,4,351,3.730,-.270,5,134,218,27,3,2
+740,TPC San Antonio (Oaks Course),17,4,347,3.729,-.271,3,145,242,24,5,1
+741,Torrey Pines Golf Course (North Course),9,5,556,4.728,-.272,1,52,81,12,1,0
+741,TPC Scottsdale (Stadium Course),17,4,332,3.728,-.272,9,149,210,43,4,1
+741,Caves Valley Golf Club,16,5,599,4.728,-.272,4,68,104,16,2,1
+744,Spyglass Hill Golf Course,15,3,130,2.725,-.275,1,21,57,1,0,0
+745,TPC Scottsdale (Stadium Course),15,5,553,4.724,-.276,10,168,179,46,12,1
+745,TPC Sawgrass (THE PLAYERS Stadium Course),2,5,555,4.724,-.276,6,163,215,40,6,1
+747,Plantation Course at Kapalua,10,4,384,3.723,-.277,0,75,150,10,0,0
+747,Plantation Course at Kapalua,12,4,424,3.723,-.277,2,78,142,10,2,1
+747,Royal Portrush Golf Club,7,5,607,4.723,-.277,9,164,231,40,7,1
+750,Pebble Beach Golf Links,6,5,523,4.720,-.280,4,94,111,18,9,0
+751,Vidanta Vallarta,12,5,637,4.718,-.282,2,138,255,22,1,0
+751,Sea Island Golf Club (Plantation Course),17,4,350,3.718,-.282,0,49,102,5,0,0
+753,Sea Island Golf Club (Seaside Course),7,5,582,4.715,-.285,3,121,151,18,7,2
+754,TPC San Antonio (Oaks Course),2,5,602,4.712,-.288,4,143,244,28,1,0
+754,Quail Hollow Club,14,4,344,3.712,-.288,10,175,218,50,5,1
+754,Sea Island Golf Club (Plantation Course),15,4,365,3.712,-.288,0,51,99,6,0,0
+757,Quail Hollow Club,7,5,546,4.708,-.292,9,192,199,45,11,3
+758,Sea Island Golf Club (Plantation Course),10,4,327,3.705,-.295,1,56,87,12,0,0
+759,Black Desert Resort,5,4,320,3.701,-.299,5,143,213,26,2,2
+760,Sea Island Golf Club (Plantation Course),1,4,373,3.699,-.301,0,54,95,7,0,0
+761,TPC Toronto at Osprey Valley (North Course),6,4,350,3.698,-.302,1,158,263,19,2,1
+762,Grand Reserve Golf Club,9,5,630,4.697,-.303,5,157,220,34,3,0
+763,Silverado Resort (North Course),18,5,575,4.694,-.306,9,140,258,24,1,0
+764,TPC River Highlands,15,4,296,3.691,-.309,3,106,145,22,2,0
+765,Plantation Course at Kapalua,16,4,369,3.689,-.311,0,81,146,8,0,0
+766,Torrey Pines Golf Course (North Course),7,4,322,3.687,-.313,0,54,85,8,0,0
+767,Sea Island Golf Club (Plantation Course),18,5,560,4.686,-.314,11,50,76,15,4,0
+768,Grand Reserve Golf Club,6,5,600,4.683,-.317,7,161,216,29,5,1
+769,TPC Craig Ranch,6,4,361,3.681,-.319,2,165,261,22,0,1
+770,Puntacana Resort (Corales Golf Course),12,5,623,4.680,-.320,5,149,224,21,3,1
+771,Detroit Golf Club,4,5,635,4.674,-.326,5,186,260,30,1,2
+772,TPC Sawgrass (THE PLAYERS Stadium Course),16,5,537,4.673,-.327,13,174,198,34,11,1
+773,TPC River Highlands,13,5,523,4.669,-.331,14,121,102,29,9,3
+774,El Cardonal at Diamante,6,5,601,4.668,-.332,5,150,207,23,4,0
+775,The Renaissance Club,10,5,594,4.667,-.333,8,185,237,32,5,1
+776,Muirfield Village Golf Club,15,5,561,4.661,-.339,6,111,112,21,6,1
+777,Innisbrook Resort (Copperhead Course),1,5,560,4.657,-.343,9,184,228,34,5,0
+778,Harbour Town Golf Links,15,5,588,4.656,-.344,4,118,143,19,4,0
+778,El Cardonal at Diamante,10,4,344,3.656,-.344,6,156,198,24,5,0
+780,Pebble Beach Golf Links,18,5,543,4.653,-.347,8,109,92,18,5,4
+781,Memorial Park Golf Course,16,5,616,4.648,-.352,10,184,208,35,5,1
+782,TPC Deere Run,10,5,596,4.646,-.354,9,168,232,27,2,0
+783,Pebble Beach Golf Links,14,5,580,4.644,-.356,4,100,111,18,3,0
+784,TPC Southwind,3,5,579,4.634,-.366,6,120,122,25,3,0
+784,Silverado Resort (North Course),5,5,538,4.634,-.366,6,181,217,22,5,1
+786,TPC Twin Cities,18,5,596,4.633,-.367,22,214,167,43,11,6
+786,East Lake Golf Club,8,4,390,3.633,-.367,1,50,61,8,0,0
+786,The Country Club of Jackson,15,4,330,3.633,-.367,3,170,197,26,2,0
+789,TPC River Highlands,6,5,574,4.629,-.371,7,123,117,28,3,0
+790,Spyglass Hill Golf Course,1,5,595,4.625,-.375,1,31,45,3,0,0
+790,Spyglass Hill Golf Course,17,4,325,3.625,-.375,0,33,44,3,0,0
+790,Memorial Park Golf Course,8,5,625,4.625,-.375,6,186,220,30,1,0
+793,Torrey Pines Golf Course (North Course),17,5,520,4.619,-.381,6,61,66,12,1,1
+793,Quail Hollow Club,15,5,577,4.619,-.381,16,191,213,34,2,3
+795,Augusta National Golf Club,8,5,570,4.618,-.382,3,123,157,10,3,0
+795,The Renaissance Club,3,5,600,4.618,-.382,6,200,233,26,2,1
+795,The Country Club of Jackson,5,5,612,4.618,-.382,10,160,200,28,0,0
+798,Vidanta Vallarta,6,5,603,4.617,-.383,7,186,188,34,3,0
+798,El Cardonal at Diamante,14,5,554,4.617,-.383,6,190,150,35,6,2
+800,Augusta National Golf Club,2,5,585,4.615,-.385,9,117,151,17,2,0
+800,Caves Valley Golf Club,4,5,590,4.615,-.385,2,81,102,10,0,0
+802,The Philadelphia Cricket Club (Wissahickon Course),5,5,546,4.601,-.399,4,128,132,15,4,0
+802,Detroit Golf Club,14,5,555,4.601,-.399,9,233,190,47,4,1
+804,Plantation Course at Kapalua,14,4,301,3.600,-.400,5,111,98,15,6,0
+805,Nicklaus Tournament Course,14,4,442,3.597,-.403,0,67,82,5,0,0
+806,The Renaissance Club,5,4,347,3.596,-.404,13,193,235,24,3,0
+807,Vidanta Vallarta,14,5,585,4.593,-.407,7,202,170,33,5,1
+808,The Country Club of Jackson,3,5,591,4.590,-.410,4,176,197,21,0,0
+809,Colonial Country Club,1,5,581,4.585,-.415,12,183,200,27,2,0
+809,Sedgefield Country Club,15,5,545,4.585,-.415,14,220,173,37,11,0
+811,Plantation Course at Kapalua,9,5,550,4.583,-.417,2,110,110,11,1,1
+811,Harbour Town Golf Links,9,4,332,3.583,-.417,4,126,146,10,2,0
+813,Black Desert Resort,7,5,589,4.581,-.419,17,195,132,31,14,2
+814,Torrey Pines Golf Course (South Course),6,5,564,4.575,-.425,7,136,128,17,3,1
+814,Spyglass Hill Golf Course,7,5,549,4.575,-.425,2,38,35,2,3,0
+816,TPC Craig Ranch,5,5,635,4.574,-.426,10,208,200,31,1,1
+817,The Renaissance Club,16,5,576,4.573,-.427,17,200,218,32,1,0
+818,Torrey Pines Golf Course (South Course),18,5,570,4.560,-.440,6,122,104,17,3,0
+819,Torrey Pines Golf Course (North Course),5,5,525,4.558,-.442,1,71,67,8,0,0
+820,TPC Deere Run,2,5,561,4.557,-.443,25,207,159,33,12,2
+821,TPC San Antonio (Oaks Course),14,5,553,4.552,-.448,14,196,178,28,4,0
+822,TPC Craig Ranch,14,4,362,3.548,-.452,9,216,201,22,1,2
+823,Hurstbourne Country Club (Championship Course),10,5,565,4.537,-.463,11,214,199,17,6,0
+824,Dunes Golf and Beach Club,4,5,532,4.532,-.468,8,198,173,20,3,0
+825,TPC Twin Cities,6,5,594,4.529,-.471,23,205,203,31,1,0
+826,Port Royal Golf Course,17,5,507,4.522,-.478,31,186,108,45,6,3
+827,Harbour Town Golf Links,5,5,569,4.514,-.486,4,152,113,18,1,0
+827,TPC Toronto at Osprey Valley (North Course),18,5,581,4.514,-.486,18,217,178,25,6,0
+829,Royal Portrush Golf Club,12,5,532,4.509,-.491,19,219,182,29,3,0
+830,The Philadelphia Cricket Club (Wissahickon Course),15,5,553,4.498,-.502,13,141,106,22,0,1
+831,Harbour Town Golf Links,2,5,550,4.497,-.503,6,143,129,10,0,0
+832,PGA National Resort (The Champion Course),18,5,556,4.491,-.509,14,212,178,18,0,2
+833,TPC Scottsdale (Stadium Course),3,5,558,4.486,-.514,19,196,182,18,1,0
+834,Plantation Course at Kapalua,18,5,677,4.481,-.519,6,125,91,12,0,1
+835,Dunes Golf and Beach Club,15,5,539,4.480,-.520,16,196,172,17,1,0
+836,Black Desert Resort,18,5,595,4.478,-.522,10,231,114,28,5,3
+837,El Cardonal at Diamante,18,5,585,4.473,-.527,14,205,145,22,3,0
+838,Yokohama Country Club,4,5,536,4.465,-.535,13,174,99,20,5,1
+838,Black Desert Resort,14,4,322,3.465,-.535,17,209,140,19,4,2
+840,La Quinta Country Club,13,5,547,4.458,-.542,5,87,55,3,5,0
+841,TPC Scottsdale (Stadium Course),13,5,558,4.457,-.543,15,213,171,17,0,0
+842,Torrey Pines Golf Course (South Course),6,5,564,4.444,-.556,10,132,98,12,0,0
+843,Torrey Pines Golf Course (North Course),10,5,536,4.442,-.558,11,67,63,5,1,0
+844,Pete Dye Stadium Course,8,5,559,4.436,-.564,4,123,97,3,0,0
+845,TPC Twin Cities,12,5,593,4.417,-.583,18,252,175,18,0,0
+846,Nicklaus Tournament Course,7,5,527,4.416,-.584,1,95,51,7,0,0
+847,Detroit Golf Club,17,5,577,4.415,-.585,16,266,187,15,0,0
+848,Vidanta Vallarta,18,5,548,4.411,-.589,11,246,141,18,2,0
+849,PGA National Resort (The Champion Course),10,5,550,4.410,-.590,14,228,176,6,0,0
+850,La Quinta Country Club,11,5,543,4.406,-.594,8,81,62,3,1,0
+851,Sea Island Golf Club (Plantation Course),14,5,550,4.404,-.596,4,93,51,8,0,0
+852,Puntacana Resort (Corales Golf Course),7,5,515,4.402,-.598,17,219,156,10,1,0
+852,TPC Southwind,16,5,530,4.402,-.598,11,149,110,6,0,0
+854,PGA National Resort (The Champion Course),3,5,538,4.394,-.606,22,235,147,18,2,0
+854,TPC Toronto at Osprey Valley (North Course),1,5,542,4.394,-.606,18,257,147,20,2,0
+856,Waialae Country Club,18,5,551,4.388,-.612,19,244,159,13,1,0
+856,Detroit Golf Club,7,5,552,4.388,-.612,24,273,166,18,2,1
+858,TPC Craig Ranch,18,5,552,4.384,-.616,16,263,155,17,0,0
+859,East Lake Golf Club,18,5,585,4.383,-.617,3,75,36,5,1,0
+860,Pebble Beach Golf Links,2,5,516,4.381,-.619,11,139,74,9,3,0
+860,TPC Deere Run,17,5,569,4.381,-.619,20,253,145,18,2,0
+862,Memorial Park Golf Course,3,5,587,4.377,-.623,12,259,165,7,0,0
+863,TPC Craig Ranch,9,5,564,4.368,-.632,31,259,133,22,4,2
+864,Spyglass Hill Golf Course,11,5,561,4.362,-.638,2,49,27,2,0,0
+865,Vidanta Vallarta,7,4,297,3.361,-.639,19,245,139,14,1,0
+866,Nicklaus Tournament Course,4,5,549,4.357,-.643,10,87,50,6,1,0
+867,La Quinta Country Club,5,5,516,4.342,-.658,12,87,49,5,2,0
+868,Arnold Palmer's Bay Hill Club & Lodge,16,5,511,4.337,-.663,17,143,74,10,2,0
+869,Plantation Course at Kapalua,15,5,541,4.336,-.664,15,145,58,15,2,0
+870,Grand Reserve Golf Club,14,5,535,4.334,-.666,24,244,138,13,0,0
+871,Yokohama Country Club,6,5,529,4.333,-.667,11,196,96,8,1,0
+872,Waialae Country Club,9,5,506,4.328,-.672,28,262,126,17,2,1
+873,Sedgefield Country Club,5,5,529,4.327,-.673,27,270,141,16,0,1
+874,Grand Reserve Golf Club,11,5,547,4.308,-.692,31,243,133,9,3,0
+874,Sea Island Golf Club (Seaside Course),15,5,565,4.308,-.692,12,192,91,7,0,0
+876,Nicklaus Tournament Course,11,5,528,4.299,-.701,7,98,46,2,1,0
+877,La Quinta Country Club,6,5,527,4.297,-.703,12,89,52,1,0,1
+878,East Lake Golf Club,6,5,525,4.275,-.725,4,79,37,0,0,0
+879,Puntacana Resort (Corales Golf Course),4,5,565,4.261,-.739,14,278,103,8,0,0
+880,Sea Island Golf Club (Plantation Course),8,5,529,4.256,-.744,11,104,31,10,0,0
+881,El Cardonal at Diamante,1,5,582,4.221,-.779,30,268,72,13,6,0
+882,Plantation Course at Kapalua,5,5,526,4.123,-.877,21,171,38,2,3,0
