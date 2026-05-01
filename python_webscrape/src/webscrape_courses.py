@@ -6,7 +6,7 @@ import json
 import pandas
 from datetime import datetime 
 
-from utils import make_request, get_script_id_dict, get_script_queries_dict, save_html_to_file, request_stats, load_json, BASE_URL
+from python_webscrape.src.utils import make_request, get_script_id_dict, get_script_queries_dict, save_html_to_file, request_stats, load_json, BASE_URL
 
 
 

@@ -5,7 +5,7 @@ from lxml import etree, html
 import json
 import pandas
 
-from utils import make_request, get_script_id_dict, BASE_URL, load_json
+from python_webscrape.src.utils import make_request, get_script_id_dict, BASE_URL, load_json
 
 
 # region player ids JSON

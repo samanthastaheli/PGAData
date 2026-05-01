@@ -5,14 +5,14 @@ from lxml import etree, html
 import json
 import pandas
 
-from utils import make_request, get_script_id_dict, BASE_URL, load_json, save_html_to_file
+from python_webscrape.src.utils import make_request, get_script_id_dict, BASE_URL, load_json, save_html_to_file
 
 
 # region Hole Locations
 
 def get_hole_locations():
     content = make_request("https://www.pgatour.com/tournaments/2026/cadillac-championship/R2026556/course-stats")
-    data_dict = get_script_id_dict(content, filename="data/cadillac_championship/hole_locations.json")
+    data_dict = get_script_id_dict(content, filename="data/cadillac_championship/hole_locations_raw.json")
     # save_html_to_file(content, "data/cadillac_championship/hole_locations.html")
     
     hole_locations = {}
@@ -28,7 +28,6 @@ def get_hole_locations():
                         hole_stats = q_data["courses"][0]["roundHoleStats"][0]["holeStats"]
                         for item in hole_stats:
                             if item["__typename"] == "CourseHoleStats":
-                                print(item["courseHoleNum"])
                                 hole_locations[item["courseHoleNum"]] = {
                                     "parValue": item["parValue"],
                                     "yards": item["yards"],
@@ -41,9 +40,19 @@ def get_hole_locations():
 
 # endregion
 
+# region Tour Cast
+
+def get_tour_cast():
+    # url = "https://www.pgatour.com/tournaments/2026/cadillac-championship/R2026556/tourcast"
+    # url = "https://tourcast.pgatour.com/tourcast.html?id=R2026556#/hole-view?pid=&round=1&hole=17&gv=false"
+    url = "https://tourcast.pgatour.com/tourcast.html?id=R2026556#/hole-view?pid=57366&round=1&hole=15&gv=false" # Cam Young Hole 15
+    content = make_request(url)
+    save_html_to_file(content, "data/cadillac_championship/tour_cast.html")
+    # data_dict = get_script_id_dict(content, filename="data/cadillac_championship/tour_cast_raw2.json")
 
 # endregion
 
 if __name__ == "__main__":
-    get_hole_locations()
+    # get_hole_locations()
+    get_tour_cast()
     
