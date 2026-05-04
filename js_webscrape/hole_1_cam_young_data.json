@@ -1,0 +1,30 @@
+[
+  {
+    "shotDist": "323 yds",
+    "toHole": "247 yds",
+    "location": "Left Intermediate",
+    "shotNumber": "1"
+  },
+  {
+    "shotDist": "238 yds",
+    "toHole": "94 ft 8 in.",
+    "location": "Left Cart Path",
+    "shotNumber": "2"
+  },
+  {
+    "shotDist": "40 yds",
+    "toHole": "15 ft 9 in.",
+    "location": "Right Green",
+    "shotNumber": "3"
+  },
+  {
+    "shotDist": "16 ft 5 in.",
+    "toHole": "13 in",
+    "location": "Left Green",
+    "shotNumber": "4"
+  },
+  {
+    "shotDist": "13 in",
+    "shotNumber": "5"
+  }
+]
