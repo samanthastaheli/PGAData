@@ -2,6 +2,7 @@ import puppeteer from "puppeteer";
 import fs from "fs"; // file system module
 
 const getHoleData = async () => {
+  const start = performance.now();
   // const browser = await puppeteer.launch({
   //   args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
   //   headless: false, // Headless must be true for Docker
@@ -10,10 +11,20 @@ const getHoleData = async () => {
 
   // const page = await browser.newPage();
   // const url = "https://tourcast.pgatour.com/tourcast.html?id=R2026556#/hole-view?pid=57366&round=1&hole=1&gv=false";
-  const urls = Array.from({ length: 18 }, (_, i) => ({
-    hole: i + 1,
-    url: `https://tourcast.pgatour.com/tourcast.html?id=R2026556#/hole-view?pid=57366&round=1&hole=${i + 1}&gv=false`
-  }));
+  // const urls = Array.from({ length: 18 }, (_, i) => ({
+  //   hole: i + 1,
+  //   url: `https://tourcast.pgatour.com/tourcast.html?id=R2026556#/hole-view?pid=57366&round=1&hole=${i + 1}&gv=false`
+  // }));
+  const rounds = [1, 2, 3, 4];
+  const holes = Array.from({ length: 18 }, (_, i) => i + 1);
+
+  const urls = rounds.flatMap(r => 
+    holes.map(h => ({
+      round: r,
+      hole: h,
+      url: `https://tourcast.pgatour.com/tourcast.html?id=R2026556#/hole-view?pid=57366&round=${r}&hole=${h}&gv=false`
+    }))
+  );
 
   const finalTournamentData = {};
 
@@ -27,7 +38,7 @@ const getHoleData = async () => {
     const page = await browser.newPage();
 
     // Navigate to url
-    console.log(`Navigating to Hole ${item.hole}...`);
+    console.log(`Navigating to Hole ${item.hole} Round ${item.round}...`);
     console.log(`URL: ${item.url}`);
     await page.goto(item.url, { waitUntil: "networkidle2" });
 
@@ -112,9 +123,15 @@ const getHoleData = async () => {
         console.log(`Scraped Shot ${shotLabel}:`, data);
       }
     } 
+
+    // Initialize the round object if it doesn't exist yet
+    if (!finalTournamentData[`Round_${item.round}`]) {
+      finalTournamentData[`Round_${item.round}`] = {};
+    }
+
     // Save this holes data to the master object
-    finalTournamentData[`Hole_${item.hole}`] = allShotsData;
-    console.log(`Finished Hole ${item.hole}`);
+    finalTournamentData[`Round_${item.round}`][`Hole_${item.hole}`] = allShotsData;
+    console.log(`Finished Round ${item.round} - Hole ${item.hole}`);
 
     await browser.close();
   }
@@ -129,6 +146,10 @@ const getHoleData = async () => {
   }
 
   // await browser.close();
+  // End time 
+  const end = performance.now();
+  const elapsed = (end - start) / 1000; 
+  console.log(`Execution time: ${elapsed.toFixed(3)} seconds`);
 };
 
 getHoleData();
