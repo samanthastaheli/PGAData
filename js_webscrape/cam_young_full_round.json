@@ -31,512 +31,356 @@
   ],
   "Hole_2": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
-      "location": "Left Intermediate",
+      "shotDist": "317 yds",
+      "toHole": "154 yds",
+      "location": "Right Fairway",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "154 yds",
+      "toHole": "2 in",
+      "location": "Right Green",
       "shotNumber": "2"
     },
     {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
-      "location": "Right Green",
+      "shotDist": "2 in",
       "shotNumber": "3"
-    },
-    {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
-      "location": "Left Green",
-      "shotNumber": "4"
-    },
-    {
-      "shotDist": "13 in",
-      "shotNumber": "5"
     }
   ],
   "Hole_3": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
-      "location": "Left Intermediate",
+      "shotDist": "287 yds",
+      "toHole": "169 yds",
+      "location": "Left Rough",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "184 yds",
+      "toHole": "58 ft 9 in.",
+      "location": "Left Rough",
       "shotNumber": "2"
     },
     {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
+      "shotDist": "63 ft 9 in.",
+      "toHole": "4 ft 8 in.",
       "location": "Right Green",
       "shotNumber": "3"
     },
     {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
-      "location": "Left Green",
+      "shotDist": "4 ft 8 in.",
       "shotNumber": "4"
-    },
-    {
-      "shotDist": "13 in",
-      "shotNumber": "5"
     }
   ],
   "Hole_4": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
-      "location": "Left Intermediate",
+      "shotDist": "212 yds",
+      "toHole": "41 ft 5 in.",
+      "location": "Left Green",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "41 ft 5 in.",
       "shotNumber": "2"
-    },
-    {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
-      "location": "Right Green",
-      "shotNumber": "3"
-    },
-    {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
-      "location": "Left Green",
-      "shotNumber": "4"
-    },
-    {
-      "shotDist": "13 in",
-      "shotNumber": "5"
     }
   ],
   "Hole_5": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
-      "location": "Left Intermediate",
+      "shotDist": "332 yds",
+      "toHole": "77 yds",
+      "location": "Right Fairway",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "78 yds",
+      "toHole": "2 ft 6 in.",
+      "location": "Right Green",
       "shotNumber": "2"
     },
     {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
-      "location": "Right Green",
+      "shotDist": "2 ft 6 in.",
       "shotNumber": "3"
-    },
-    {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
-      "location": "Left Green",
-      "shotNumber": "4"
-    },
-    {
-      "shotDist": "13 in",
-      "shotNumber": "5"
     }
   ],
   "Hole_6": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
-      "location": "Left Intermediate",
+      "shotDist": "287 yds",
+      "toHole": "127 yds",
+      "location": "Left Bunker",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "142 yds",
+      "toHole": "51 ft 6 in.",
+      "location": "Right Bunker",
       "shotNumber": "2"
     },
     {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
-      "location": "Right Green",
+      "shotDist": "56 ft 1 in.",
+      "toHole": "4 ft 3 in.",
+      "location": "Left Green",
       "shotNumber": "3"
     },
     {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
-      "location": "Left Green",
+      "shotDist": "4 ft 3 in.",
       "shotNumber": "4"
-    },
-    {
-      "shotDist": "13 in",
-      "shotNumber": "5"
     }
   ],
   "Hole_7": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
-      "location": "Left Intermediate",
+      "shotDist": "316 yds",
+      "toHole": "165 yds",
+      "location": "Right Fairway",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "159 yds",
+      "toHole": "27 ft 9 in.",
+      "location": "Right Fairway",
       "shotNumber": "2"
     },
     {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
-      "location": "Right Green",
+      "shotDist": "27 ft 9 in.",
       "shotNumber": "3"
-    },
-    {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
-      "location": "Left Green",
-      "shotNumber": "4"
-    },
-    {
-      "shotDist": "13 in",
-      "shotNumber": "5"
     }
   ],
   "Hole_8": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
-      "location": "Left Intermediate",
+      "shotDist": "315 yds",
+      "toHole": "251 yds",
+      "location": "Right Fairway",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "260 yds",
+      "toHole": "79 ft 4 in.",
+      "location": "Right Bunker",
       "shotNumber": "2"
     },
     {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
+      "shotDist": "60 ft 4 in.",
+      "toHole": "21 ft 6 in.",
       "location": "Right Green",
       "shotNumber": "3"
     },
     {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
+      "shotDist": "18 ft 9 in.",
+      "toHole": "2 ft 8 in.",
       "location": "Left Green",
       "shotNumber": "4"
     },
     {
-      "shotDist": "13 in",
+      "shotDist": "2 ft 8 in.",
       "shotNumber": "5"
     }
   ],
   "Hole_9": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
-      "location": "Left Intermediate",
+      "shotDist": "228 yds",
+      "toHole": "16 ft 2 in.",
+      "location": "Right Rough",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "13 ft 6 in.",
+      "toHole": "3 ft 1 in.",
+      "location": "Right Green",
       "shotNumber": "2"
     },
     {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
-      "location": "Right Green",
+      "shotDist": "3 ft 1 in.",
       "shotNumber": "3"
-    },
-    {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
-      "location": "Left Green",
-      "shotNumber": "4"
-    },
-    {
-      "shotDist": "13 in",
-      "shotNumber": "5"
     }
   ],
   "Hole_10": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
-      "location": "Left Intermediate",
+      "shotDist": "311 yds",
+      "toHole": "302 yds",
+      "location": "Left Fairway",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "280 yds",
+      "toHole": "74 ft 11 in.",
+      "location": "Right Rough",
       "shotNumber": "2"
     },
     {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
+      "shotDist": "75 ft 3 in.",
+      "toHole": "2 ft 6 in.",
       "location": "Right Green",
       "shotNumber": "3"
     },
     {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
-      "location": "Left Green",
+      "shotDist": "2 ft 6 in.",
       "shotNumber": "4"
-    },
-    {
-      "shotDist": "13 in",
-      "shotNumber": "5"
     }
   ],
   "Hole_11": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
-      "location": "Left Intermediate",
+      "shotDist": "312 yds",
+      "toHole": "128 yds",
+      "location": "Left Fairway",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "133 yds",
+      "toHole": "13 ft 5 in.",
+      "location": "Left Green",
       "shotNumber": "2"
     },
     {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
-      "location": "Right Green",
+      "shotDist": "13 ft 5 in.",
       "shotNumber": "3"
-    },
-    {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
-      "location": "Left Green",
-      "shotNumber": "4"
-    },
-    {
-      "shotDist": "13 in",
-      "shotNumber": "5"
     }
   ],
   "Hole_12": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
+      "shotDist": "345 yds",
+      "toHole": "311 yds",
       "location": "Left Intermediate",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "304 yds",
+      "toHole": "44 ft 4 in.",
+      "location": "Right Bunker",
       "shotNumber": "2"
     },
     {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
-      "location": "Right Green",
+      "shotDist": "16 ft 10 in.",
+      "toHole": "27 ft 10 in.",
+      "location": "Right Bunker",
       "shotNumber": "3"
     },
     {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
-      "location": "Left Green",
+      "shotDist": "32 ft 6 in.",
+      "toHole": "4 ft 6 in.",
+      "location": "Right Green",
       "shotNumber": "4"
     },
     {
-      "shotDist": "13 in",
+      "shotDist": "4 ft 6 in.",
       "shotNumber": "5"
     }
   ],
   "Hole_13": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
-      "location": "Left Intermediate",
+      "shotDist": "247 yds",
+      "toHole": "26 ft 0 in.",
+      "location": "Right Fairway",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "22 ft 6 in.",
+      "toHole": "3 ft 10 in.",
+      "location": "Left Green",
       "shotNumber": "2"
     },
     {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
-      "location": "Right Green",
+      "shotDist": "3 ft 10 in.",
       "shotNumber": "3"
-    },
-    {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
-      "location": "Left Green",
-      "shotNumber": "4"
-    },
-    {
-      "shotDist": "13 in",
-      "shotNumber": "5"
     }
   ],
   "Hole_14": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
-      "location": "Left Intermediate",
+      "shotDist": "304 yds",
+      "toHole": "191 yds",
+      "location": "Right Bunker",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "176 yds",
+      "toHole": "48 ft 9 in.",
+      "location": "Left Green",
       "shotNumber": "2"
     },
     {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
-      "location": "Right Green",
+      "shotDist": "50 ft 3 in.",
+      "toHole": "23 in",
+      "location": "Left Green",
       "shotNumber": "3"
     },
     {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
-      "location": "Left Green",
+      "shotDist": "23 in",
       "shotNumber": "4"
-    },
-    {
-      "shotDist": "13 in",
-      "shotNumber": "5"
     }
   ],
   "Hole_15": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
-      "location": "Left Intermediate",
+      "shotDist": "149 yds",
+      "toHole": "25 ft 2 in.",
+      "location": "Right Fairway",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "25 ft 2 in.",
       "shotNumber": "2"
-    },
-    {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
-      "location": "Right Green",
-      "shotNumber": "3"
-    },
-    {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
-      "location": "Left Green",
-      "shotNumber": "4"
-    },
-    {
-      "shotDist": "13 in",
-      "shotNumber": "5"
     }
   ],
   "Hole_16": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
-      "location": "Left Intermediate",
+      "shotDist": "217 yds",
+      "toHole": "129 yds",
+      "location": "Left Fairway",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "130 yds",
+      "toHole": "3 ft 5 in.",
+      "location": "Right Green",
       "shotNumber": "2"
     },
     {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
-      "location": "Right Green",
+      "shotDist": "3 ft 5 in.",
       "shotNumber": "3"
-    },
-    {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
-      "location": "Left Green",
-      "shotNumber": "4"
-    },
-    {
-      "shotDist": "13 in",
-      "shotNumber": "5"
     }
   ],
   "Hole_17": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
-      "location": "Left Intermediate",
+      "shotDist": "297 yds",
+      "toHole": "172 yds",
+      "location": "Left Bunker",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "139 yds",
+      "toHole": "47 yds",
+      "location": "Right Rough",
       "shotNumber": "2"
     },
     {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
-      "location": "Right Green",
+      "shotDist": "49 yds",
+      "toHole": "6 ft 0 in.",
+      "location": "Left Green",
       "shotNumber": "3"
     },
     {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
-      "location": "Left Green",
+      "shotDist": "6 ft 0 in.",
       "shotNumber": "4"
-    },
-    {
-      "shotDist": "13 in",
-      "shotNumber": "5"
     }
   ],
   "Hole_18": [
     {
-      "shotDist": "323 yds",
-      "toHole": "247 yds",
-      "location": "Left Intermediate",
+      "shotDist": "288 yds",
+      "toHole": "175 yds",
+      "location": "Right Rough",
       "shotNumber": "1"
     },
     {
-      "shotDist": "238 yds",
-      "toHole": "94 ft 8 in.",
-      "location": "Left Cart Path",
+      "shotDist": "187 yds",
+      "toHole": "36 ft 9 in.",
+      "location": "Right Green",
       "shotNumber": "2"
     },
     {
-      "shotDist": "40 yds",
-      "toHole": "15 ft 9 in.",
-      "location": "Right Green",
+      "shotDist": "34 ft 7 in.",
+      "toHole": "2 ft 2 in.",
+      "location": "Left Green",
       "shotNumber": "3"
     },
     {
-      "shotDist": "16 ft 5 in.",
-      "toHole": "13 in",
-      "location": "Left Green",
+      "shotDist": "2 ft 2 in.",
       "shotNumber": "4"
-    },
-    {
-      "shotDist": "13 in",
-      "shotNumber": "5"
     }
   ]
 }

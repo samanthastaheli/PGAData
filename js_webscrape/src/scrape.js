@@ -2,14 +2,13 @@ import puppeteer from "puppeteer";
 import fs from "fs"; // file system module
 
 const getHoleData = async () => {
-  const browser = await puppeteer.launch({
-    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
-    // Headless must be true for standard Docker environments
-    headless: false, 
-    defaultViewport: { width: 1280, height: 800 },
-  });
+  // const browser = await puppeteer.launch({
+  //   args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+  //   headless: false, // Headless must be true for Docker
+  //   defaultViewport: { width: 1280, height: 800 },
+  // });
 
-  const page = await browser.newPage();
+  // const page = await browser.newPage();
   // const url = "https://tourcast.pgatour.com/tourcast.html?id=R2026556#/hole-view?pid=57366&round=1&hole=1&gv=false";
   const urls = Array.from({ length: 18 }, (_, i) => ({
     hole: i + 1,
@@ -19,7 +18,17 @@ const getHoleData = async () => {
   const finalTournamentData = {};
 
   for (const item of urls) { 
+    // Start new browser instance for each hole
+    const browser = await puppeteer.launch({
+      args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+      headless: false, // Headless must be true for Docker
+      defaultViewport: { width: 1280, height: 800 },
+    });
+    const page = await browser.newPage();
+
+    // Navigate to url
     console.log(`Navigating to Hole ${item.hole}...`);
+    console.log(`URL: ${item.url}`);
     await page.goto(item.url, { waitUntil: "networkidle2" });
 
     // Dismiss Pop-up
@@ -106,6 +115,8 @@ const getHoleData = async () => {
     // Save this holes data to the master object
     finalTournamentData[`Hole_${item.hole}`] = allShotsData;
     console.log(`Finished Hole ${item.hole}`);
+
+    await browser.close();
   }
 
   // Save the master object to the JSON file outside the loop
@@ -117,7 +128,7 @@ const getHoleData = async () => {
     console.error("Error writing to JSON file:", err);
   }
 
-  await browser.close();
+  // await browser.close();
 };
 
 getHoleData();
