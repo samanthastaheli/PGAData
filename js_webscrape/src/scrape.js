@@ -1,32 +1,13 @@
 import puppeteer from "puppeteer";
 import fs from "fs"; // file system module
-import { loadPlayerIds } from './utils.js';
+import { loadPlayerIds, generateTourCastUrls } from './utils.js';
 
 const getHoleData = async () => {
   const start = performance.now();
-  // const browser = await puppeteer.launch({
-  //   args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
-  //   headless: false, // Headless must be true for Docker
-  //   defaultViewport: { width: 1280, height: 800 },
-  // });
-
-  // const page = await browser.newPage();
-  // const url = "https://tourcast.pgatour.com/tourcast.html?id=R2026556#/hole-view?pid=57366&round=1&hole=1&gv=false";
-  // const urls = Array.from({ length: 18 }, (_, i) => ({
-  //   hole: i + 1,
-  //   url: `https://tourcast.pgatour.com/tourcast.html?id=R2026556#/hole-view?pid=57366&round=1&hole=${i + 1}&gv=false`
-  // }));
-  // for player in player id list try and see if they are actually in the tournament
-  const rounds = [1, 2, 3, 4];
-  const holes = Array.from({ length: 18 }, (_, i) => i + 1);
-
-  const urls = rounds.flatMap(r => 
-    holes.map(h => ({
-      round: r,
-      hole: h,
-      url: `https://tourcast.pgatour.com/tourcast.html?id=R2026556#/hole-view?pid=57366&round=${r}&hole=${h}&gv=false`
-    }))
-  );
+  
+  // Get urls
+  const currentTournamentId = "R2026556" // cadillac tournament
+  const urls = generateTourCastUrls(currentTournamentId)
 
   const finalTournamentData = {};
 
@@ -40,106 +21,205 @@ const getHoleData = async () => {
     const page = await browser.newPage();
 
     // Navigate to url
-    console.log(`Navigating to Hole ${item.hole} Round ${item.round}...`);
-    console.log(`URL: ${item.url}`);
-    await page.goto(item.url, { waitUntil: "networkidle2" });
-
-    // Dismiss Pop-up
+    // for player in player id list try and see if they are actually in the tournament
     try {
-      const closeSelector = 'div[class*="informationContent_close"]';
-      await page.waitForSelector(closeSelector, { visible: true, timeout: 8000 });
-      await page.evaluate((sel) => {
-        const btn = document.querySelector(sel);
-        if (btn) btn.click();
-      }, closeSelector);
-      console.log("Pop-up dismissed.");
-    } catch (e) {
-      console.log("No pop-up detected.");
-    }
+      console.log(`Navigating to Player ${item.playerId} Hole ${item.hole} Round ${item.round}...`);
+      console.log(`URL: ${item.url}`);
+      await page.goto(item.url, { waitUntil: "networkidle2" });
 
-    await new Promise(r => setTimeout(r, 1000));
-
-    // Identify all shot buttons
-    const shotButtonSelector = 'div[class*="shot_shotNum"]';
-    try {
-        await page.waitForSelector(shotButtonSelector, { timeout: 5000 });
-    } catch (e) {
-        console.log(`No shots found for hole ${item.hole}, skipping.`);
-        continue; 
-    }
-    
-    // Get the count of shots available
-    const shotCount = await page.evaluate((sel) => document.querySelectorAll(sel).length, shotButtonSelector);
-    const allShotsData = [];
-
-    // Loop through each shot
-    for (let i = 0; i < shotCount; i++) {
-      // Re-fetch buttons each iteration to avoid stale references
-      const shotLabel = await page.evaluate((index, sel) => {
-        const btns = document.querySelectorAll(sel);
-        const target = btns[index];
-        if (target) {
-          const opts = { bubbles: true, cancelable: true, view: window };
-          target.dispatchEvent(new PointerEvent('pointerdown', opts));
-          target.dispatchEvent(new PointerEvent('pointerup', opts));
-          target.click();
-          return target.textContent.trim();
-        }
-        return null;
-      }, i, shotButtonSelector);
-  
-      // Wait for the UI data container to match the shot number we just clicked
+      // Dismiss Pop-up
       try {
-        await page.waitForFunction((expected) => {
-          const root = document.querySelector('[class*="primaryPlayerController_shotsContainer"]');
-          return root && root.textContent.includes(`Shot ${expected}`);
-        }, { timeout: 5000 }, shotLabel);
+        const closeSelector = 'div[class*="informationContent_close"]';
+        await page.waitForSelector(closeSelector, { visible: true, timeout: 8000 });
+        await page.evaluate((sel) => {
+          const btn = document.querySelector(sel);
+          if (btn) btn.click();
+        }, closeSelector);
+        console.log("Pop-up dismissed.");
+        
       } catch (e) {
-        console.log(`Timed out waiting for Shot ${shotLabel} UI to update.`);
+        console.log("No pop-up detected.");
       }
 
-      // Scrape the data for the current shot
-      const data = await page.evaluate(() => {
-        const rootContainer = document.querySelector('[class*="primaryPlayerController_shotsContainer"]');
-        if (!rootContainer) return null;
+      await new Promise(r => setTimeout(r, 1000));
+      // if no shot buttons then not correct player 
+      const shotButtonSelector = 'div[class*="shot_shotNum"]';
+      try {
+          await page.waitForSelector(shotButtonSelector, { timeout: 5000 });
+      } catch (e) {
+          console.log(`No shots found for hole ${item.hole}, skipping.`);
+          continue; 
+      }
 
-        const rows = rootContainer.querySelectorAll('[class*="primaryPlayerController_shotsData"]');
-        const results = {};
+      // Get the count of shots available
+      const shotCount = await page.evaluate((sel) => document.querySelectorAll(sel).length, shotButtonSelector);
+      const allShotsData = [];
 
-        rows.forEach(div => {
-          const fullText = div.textContent.trim(); 
-          const label = div.querySelector('span')?.textContent.trim();
-          const value = fullText.replace(label, '').trim();
+      // Loop through each shot
+      for (let i = 0; i < shotCount; i++) {
+        // Re-fetch buttons each iteration to avoid stale references
+        const shotLabel = await page.evaluate((index, sel) => {
+          const btns = document.querySelectorAll(sel);
+          const target = btns[index];
+          if (target) {
+            const opts = { bubbles: true, cancelable: true, view: window };
+            target.dispatchEvent(new PointerEvent('pointerdown', opts));
+            target.dispatchEvent(new PointerEvent('pointerup', opts));
+            target.click();
+            return target.textContent.trim();
+          }
+          return null;
+        }, i, shotButtonSelector);
+    
+        // Wait for the UI data container to match the shot number we just clicked
+        try {
+          await page.waitForFunction((expected) => {
+            const root = document.querySelector('[class*="primaryPlayerController_shotsContainer"]');
+            return root && root.textContent.includes(`Shot ${expected}`);
+          }, { timeout: 5000 }, shotLabel);
+        } catch (e) {
+          console.log(`Timed out waiting for Shot ${shotLabel} UI to update.`);
+        }
 
-          if (label?.includes('Shot')) results.shotDist = value;
-          else if (label === 'To Hole') results.toHole = value;
-          else if (label === 'Loc') results.location = value;
+        // Scrape the data for the current shot
+        const data = await page.evaluate(() => {
+          const rootContainer = document.querySelector('[class*="primaryPlayerController_shotsContainer"]');
+          if (!rootContainer) return null;
+
+          const rows = rootContainer.querySelectorAll('[class*="primaryPlayerController_shotsData"]');
+          const results = {};
+
+          rows.forEach(div => {
+            const fullText = div.textContent.trim(); 
+            const label = div.querySelector('span')?.textContent.trim();
+            const value = fullText.replace(label, '').trim();
+
+            if (label?.includes('Shot')) results.shotDist = value;
+            else if (label === 'To Hole') results.toHole = value;
+            else if (label === 'Loc') results.location = value;
+          });
+
+          return results;
         });
 
-        return results;
-      });
+        if (data) {
+          data.shotNumber = shotLabel; // Add the shot ID to the object
+          allShotsData.push(data);
+          console.log(`Scraped Shot ${shotLabel}:`, data);
+        }
+      } 
 
-      if (data) {
-        data.shotNumber = shotLabel; // Add the shot ID to the object
-        allShotsData.push(data);
-        console.log(`Scraped Shot ${shotLabel}:`, data);
+      // Initialize the round object if it doesn't exist yet
+      if (!finalTournamentData[`Round_${item.round}`]) {
+        finalTournamentData[`Round_${item.round}`] = {};
       }
-    } 
 
-    // Initialize the round object if it doesn't exist yet
-    if (!finalTournamentData[`Round_${item.round}`]) {
-      finalTournamentData[`Round_${item.round}`] = {};
+      // Save this holes data to the master object
+      finalTournamentData[`Round_${item.round}`][`Hole_${item.hole}`] = allShotsData;
+      console.log(`Finished Round ${item.round} - Hole ${item.hole}`);
+
+      await browser.close();
+
+    } catch (e) {
+      console.log("Player ", item.playerId, " not found.");
+      continue;
     }
+    // // Dismiss Pop-up
+    // try {
+    //   const closeSelector = 'div[class*="informationContent_close"]';
+    //   await page.waitForSelector(closeSelector, { visible: true, timeout: 8000 });
+    //   await page.evaluate((sel) => {
+    //     const btn = document.querySelector(sel);
+    //     if (btn) btn.click();
+    //   }, closeSelector);
+    //   console.log("Pop-up dismissed.");
+    // } catch (e) {
+    //   console.log("No pop-up detected.");
+    // }
 
-    // Save this holes data to the master object
-    finalTournamentData[`Round_${item.round}`][`Hole_${item.hole}`] = allShotsData;
-    console.log(`Finished Round ${item.round} - Hole ${item.hole}`);
+    // await new Promise(r => setTimeout(r, 1000));
 
-    await browser.close();
+    // Identify all shot buttons
+    // const shotButtonSelector = 'div[class*="shot_shotNum"]';
+    // try {
+    //     await page.waitForSelector(shotButtonSelector, { timeout: 5000 });
+    // } catch (e) {
+    //     console.log(`No shots found for hole ${item.hole}, skipping.`);
+    //     continue; 
+    // }
+    
+    // // Get the count of shots available
+    // const shotCount = await page.evaluate((sel) => document.querySelectorAll(sel).length, shotButtonSelector);
+    // const allShotsData = [];
+
+    // // Loop through each shot
+    // for (let i = 0; i < shotCount; i++) {
+    //   // Re-fetch buttons each iteration to avoid stale references
+    //   const shotLabel = await page.evaluate((index, sel) => {
+    //     const btns = document.querySelectorAll(sel);
+    //     const target = btns[index];
+    //     if (target) {
+    //       const opts = { bubbles: true, cancelable: true, view: window };
+    //       target.dispatchEvent(new PointerEvent('pointerdown', opts));
+    //       target.dispatchEvent(new PointerEvent('pointerup', opts));
+    //       target.click();
+    //       return target.textContent.trim();
+    //     }
+    //     return null;
+    //   }, i, shotButtonSelector);
+  
+    //   // Wait for the UI data container to match the shot number we just clicked
+    //   try {
+    //     await page.waitForFunction((expected) => {
+    //       const root = document.querySelector('[class*="primaryPlayerController_shotsContainer"]');
+    //       return root && root.textContent.includes(`Shot ${expected}`);
+    //     }, { timeout: 5000 }, shotLabel);
+    //   } catch (e) {
+    //     console.log(`Timed out waiting for Shot ${shotLabel} UI to update.`);
+    //   }
+
+    //   // Scrape the data for the current shot
+    //   const data = await page.evaluate(() => {
+    //     const rootContainer = document.querySelector('[class*="primaryPlayerController_shotsContainer"]');
+    //     if (!rootContainer) return null;
+
+    //     const rows = rootContainer.querySelectorAll('[class*="primaryPlayerController_shotsData"]');
+    //     const results = {};
+
+    //     rows.forEach(div => {
+    //       const fullText = div.textContent.trim(); 
+    //       const label = div.querySelector('span')?.textContent.trim();
+    //       const value = fullText.replace(label, '').trim();
+
+    //       if (label?.includes('Shot')) results.shotDist = value;
+    //       else if (label === 'To Hole') results.toHole = value;
+    //       else if (label === 'Loc') results.location = value;
+    //     });
+
+    //     return results;
+    //   });
+
+    //   if (data) {
+    //     data.shotNumber = shotLabel; // Add the shot ID to the object
+    //     allShotsData.push(data);
+    //     console.log(`Scraped Shot ${shotLabel}:`, data);
+    //   }
+    // } 
+
+    // // Initialize the round object if it doesn't exist yet
+    // if (!finalTournamentData[`Round_${item.round}`]) {
+    //   finalTournamentData[`Round_${item.round}`] = {};
+    // }
+
+    // // Save this holes data to the master object
+    // finalTournamentData[`Round_${item.round}`][`Hole_${item.hole}`] = allShotsData;
+    // console.log(`Finished Round ${item.round} - Hole ${item.hole}`);
+
+    // await browser.close();
   }
 
   // Save the master object to the JSON file outside the loop
-  const fileName = 'cam_young_full_round.json';
+  const fileName = `${currentTournamentId}_data.json`;
   try {
     fs.writeFileSync(fileName, JSON.stringify(finalTournamentData, null, 2));
     console.log(`Successfully saved all 18 holes to ${fileName}`);
