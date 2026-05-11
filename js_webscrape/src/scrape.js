@@ -1,5 +1,6 @@
 import puppeteer from "puppeteer";
 import fs from "fs"; // file system module
+import { loadPlayerIds } from './utils.js';
 
 const getHoleData = async () => {
   const start = performance.now();
@@ -15,6 +16,7 @@ const getHoleData = async () => {
   //   hole: i + 1,
   //   url: `https://tourcast.pgatour.com/tourcast.html?id=R2026556#/hole-view?pid=57366&round=1&hole=${i + 1}&gv=false`
   // }));
+  // for player in player id list try and see if they are actually in the tournament
   const rounds = [1, 2, 3, 4];
   const holes = Array.from({ length: 18 }, (_, i) => i + 1);
 
