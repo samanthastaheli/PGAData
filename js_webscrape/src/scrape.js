@@ -3,6 +3,8 @@ import fs from "fs"; // file system module
 import { loadPlayerIds, generateTourCastUrls } from './utils.js';
 
 
+// region Helper Functions
+
 const dismissPopUp = async (page) => {
   try {
     const closeSelector = 'div[class*="informationContent_close"]';
@@ -126,6 +128,12 @@ const updateTournamentData = (masterObj, task, shotData) => {
     return masterObj;
 };
 
+// endregion Helper Functions
+
+
+// region Main Function
+
+
 const getHoleData = async () => {
   const start = performance.now();
   
@@ -136,7 +144,7 @@ const getHoleData = async () => {
   const finalTournamentData = {};
 
   for (const item of urls) { 
-    // Start new browser instance for each hole
+    // * Start new browser instance for each hole
     const browser = await puppeteer.launch({
       args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
       headless: false, // Headless must be true for Docker
@@ -144,14 +152,14 @@ const getHoleData = async () => {
     });
     const page = await browser.newPage();
 
-    // Navigate to url
+    // * Navigate to url
     // for player in player id list try and see if they are actually in the tournament
     try {
       console.log(`Navigating to Player ${item.playerId} Hole ${item.hole} Round ${item.round}...`);
       console.log(`URL: ${item.url}`);
       await page.goto(item.url, { waitUntil: "networkidle2" });
 
-      // Dismiss Pop-up
+      // * Dismiss Pop-up
       await dismissPopUp(page)
 
       // if no shot buttons then not correct player 
@@ -162,10 +170,10 @@ const getHoleData = async () => {
           continue; 
       }
 
-      // Get the count of shots available
+      // * Get the count of shots available
       const shotsData = getShotData();
 
-      // Update the master object using the utility
+      // * Update the master object using the utility
       updateTournamentData(finalTournamentData, task, allShotsData);
 
       await browser.close();
@@ -176,7 +184,7 @@ const getHoleData = async () => {
     }
   }
 
-  // Save the master object to the JSON file outside the loop
+  // * Save the master object to the JSON file outside the loop
   const fileName = `${currentTournamentId}_data.json`;
   try {
     fs.writeFileSync(fileName, JSON.stringify(finalTournamentData, null, 2));
@@ -185,7 +193,6 @@ const getHoleData = async () => {
     console.error("Error writing to JSON file:", err);
   }
 
-  // await browser.close();
   // End time 
   const end = performance.now();
   const elapsed = (end - start) / 1000; 
@@ -193,3 +200,5 @@ const getHoleData = async () => {
 };
 
 getHoleData();
+
+// endregion Main Function
