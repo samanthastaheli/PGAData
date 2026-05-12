@@ -133,25 +133,13 @@ const updateTournamentData = (masterObj, holeInfo, shotData) => {
     return masterObj;
 };
 
-// /**
-//  * Generate an array of URLs for players that actually contain info.
-//  * @param {string} tournamentId - The unique ID for the tournament (e.g., 'R2026556')
-//  */
-// const getPlayerUrls = (tournamentId) => {
-//   return generateTourCastUrlsForPlayer(currentTournamentId)
-// }
-
-// endregion Helper Functions
-
-// ***************************************************************************************
-// region Main Function
-// ***************************************************************************************
-
-const getHoleData = async () => {
-  const start = performance.now();
-  
-  // * Get urls
-  const currentTournamentId = "R2026556" // cadillac tournament
+/**
+ * Generate an array of players IDs that are in the tournament.
+ * @param {string} tournamentId - The unique ID for the tournament (e.g., 'R2026556')
+ */
+const getPlayersInTournament = (tournamentId) => {
+  // TODO: this method didn't work so try using this url to get the list from here:
+  // https://www.pgatour.com/tournaments/2026/truist-championship/R2026480/tourcast
   // for player in player id list try and see if they are actually in the tournament
   const playerIds = getPlayerIds();
   console.log(chalk.green(`Player Ids: ${playerIds}`));
@@ -177,6 +165,21 @@ const getHoleData = async () => {
     }
   }
   console.log(chalk.purple("Players in tournament:", playersInTournament))
+}
+
+// endregion Helper Functions
+
+// ***************************************************************************************
+// region Main Function
+// ***************************************************************************************
+
+const getHoleData = async () => {
+  const start = performance.now();
+  
+  // * Get urls
+  const currentTournamentId = "R2026556" // cadillac tournament
+  // const currentTournamentId = "R2026480" // Truist Championship
+  const playersInTournament = getPlayersInTournament(currentTournamentId);
   const urls = generateTourCastUrlsForPlayer(currentTournamentId, playersInTournament)
 
   const finalTournamentData = {};
