@@ -24,7 +24,7 @@ const loadAndProcessJSON = (filePath) => {
 /**
  * Loads players Ids as an array.
  */
-export const loadPlayerIds = () => {
+export const getPlayerIds = () => {
     const data = loadAndProcessJSON('../../sources/players.json');
 
     if (!data) {
@@ -60,14 +60,15 @@ export const loadPlayers = () => {
 };
 
 /**
- * Generates a flat list of all URLs for specified players, rounds, and holes.
+ * Generates a flat list of all URLs for specified tournament and player with 4 rounds and 18 holes.
  * @param {string} tournamentId - The unique ID for the tournament (e.g., 'R2026556')
+ * @param {string} playerIds - An array of unique IDs for the player (e.g., ['57366'])
  */
-export const generateTourCastUrls = (tournamentId) => {
+export const generateTourCastUrlsForPlayer = (tournamentId, playerIds) => {
     const rounds = [1, 2, 3, 4];
     const holes = Array.from({ length: 18 }, (_, i) => i + 1);
-    const playerIds = loadPlayerIds()
-    // Use flatMap to create one long list of 72 tasks per player
+
+    // Use flatMap to create one long list of 72 urls per player
     return playerIds.flatMap(pid =>
         rounds.flatMap(r =>
             holes.map(h => ({
@@ -78,6 +79,15 @@ export const generateTourCastUrls = (tournamentId) => {
             }))
         )
     );
+};
+
+/**
+ * Generates a URL for specified tournament and player with round 1 and hole 1 to test if player is in tournament.
+ * @param {string} tournamentId - The unique ID for the tournament (e.g., 'R2026556')
+ * @param {string} playerId - The unique ID for the player (e.g., '57366')
+ */
+export const generateTestUrlForPlayer = (tournamentId, playerId) => {
+    return `https://tourcast.pgatour.com/tourcast.html?id=${tournamentId}#/hole-view?pid=${playerId}&round=1&hole=1&gv=false`;
 };
 
 /**

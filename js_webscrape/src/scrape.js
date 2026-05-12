@@ -1,10 +1,11 @@
 import puppeteer from "puppeteer";
 import fs from "fs"; // file system module
-import { loadPlayerIds, generateTourCastUrls } from './utils.js';
+import { getPlayerIds, generateTourCastUrlsForPlayer, generateTestUrlForPlayer } from './utils.js';
 import chalk from 'chalk'; // change color in terminal
 
-
+// ***************************************************************************************
 // region Helper Functions
+// ***************************************************************************************
 
 const dismissPopUp = async (page) => {
   try {
@@ -98,17 +99,20 @@ const getShotData = async () => {
       console.log(chalk.pink(`Scraped Shot ${shotLabel}:`), data);
     }
   }
+
+
+
   return allShotsData;
 };
 
 /**
  * Safely nests and saves hole data into the master tournament object.
  * @param {object} masterObj - The main finalTournamentData object
- * @param {object} task - The current task (contains playerId, round, hole)
+ * @param {object} holeInfo - The current holeInfo (contains playerId, round, hole)
  * @param {array} shotData - The array of shots scraped from the page
  */
-const updateTournamentData = (masterObj, task, shotData) => {
-    const { playerId, round, hole } = task;
+const updateTournamentData = (masterObj, holeInfo, shotData) => {
+    const { playerId, round, hole } = holeInfo;
 
     // 1. Ensure the Player exists
     if (!masterObj[playerId]) {
@@ -129,22 +133,55 @@ const updateTournamentData = (masterObj, task, shotData) => {
     return masterObj;
 };
 
+// /**
+//  * Generate an array of URLs for players that actually contain info.
+//  * @param {string} tournamentId - The unique ID for the tournament (e.g., 'R2026556')
+//  */
+// const getPlayerUrls = (tournamentId) => {
+//   return generateTourCastUrlsForPlayer(currentTournamentId)
+// }
+
 // endregion Helper Functions
 
-
+// ***************************************************************************************
 // region Main Function
-
+// ***************************************************************************************
 
 const getHoleData = async () => {
   const start = performance.now();
   
-  // Get urls
+  // * Get urls
   const currentTournamentId = "R2026556" // cadillac tournament
-  const urls = generateTourCastUrls(currentTournamentId)
+  // for player in player id list try and see if they are actually in the tournament
+  const playerIds = getPlayerIds();
+  console.log(chalk.green(`Player Ids: ${playerIds}`));
+  const playersInTournament = [];
+  for (const pid of playerIds) {
+    console.log(chalk.green(`Checking player: ${pid}`));
+    // get test url
+    const testUrl = generateTestUrlForPlayer(currentTournamentId, pid);
+    console.log(chalk.green(`testUrl: ${testUrl}`));
+    // open browser
+    const browser = await puppeteer.launch({
+      args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+      headless: false, // Headless must be true for Docker
+      defaultViewport: { width: 1280, height: 800 },
+    });
+    const page = await browser.newPage();
+    await page.goto(testUrl, { waitUntil: "networkidle2" });
+    await dismissPopUp(page);
+    // check for shot data
+    const hasShots = await checkForShots(page, 1); // use hole 1
+    if (hasShots) {
+      playersInTournament.push(pid)
+    }
+  }
+  console.log(chalk.purple("Players in tournament:", playersInTournament))
+  const urls = generateTourCastUrlsForPlayer(currentTournamentId, playersInTournament)
 
   const finalTournamentData = {};
 
-  for (const item of urls) { 
+  for (const holeInfo of urls) { 
     // * Start new browser instance for each hole
     const browser = await puppeteer.launch({
       args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
@@ -154,33 +191,32 @@ const getHoleData = async () => {
     const page = await browser.newPage();
 
     // * Navigate to url
-    // for player in player id list try and see if they are actually in the tournament
     try {
-      console.log(`Navigating to Player ${item.playerId} Hole ${item.hole} Round ${item.round}...`);
-      console.log(`URL: ${item.url}`);
-      await page.goto(item.url, { waitUntil: "networkidle2" });
+      console.log(`Navigating to Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}...`);
+      console.log(`URL: ${holeInfo.url}`);
+      await page.goto(holeInfo.url, { waitUntil: "networkidle2" });
 
       // * Dismiss Pop-up
-      await dismissPopUp(page)
+      await dismissPopUp(page);
 
       // if no shot buttons then not correct player 
-      const hasShots = await checkForShots(page, task.hole);
+      const hasShots = await checkForShots(page, holeInfo.hole);
 
       // If false skip this hole and move to the next one
       if (!hasShots) {
-          continue; 
+          continue;
       }
 
       // * Get the count of shots available
       const shotsData = getShotData();
 
       // * Update the master object using the utility
-      updateTournamentData(finalTournamentData, task, allShotsData);
+      updateTournamentData(finalTournamentData, holeInfo, allShotsData);
 
       await browser.close();
 
     } catch (error) {
-      console.log(chalk.red(`Error: ${error}, Player ${item.playerId} not found.`));
+      console.log(chalk.red(`Error: ${error}, Player ${holeInfo.playerId} not found.`));
       continue;
     }
   }
