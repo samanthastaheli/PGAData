@@ -1,6 +1,7 @@
 import puppeteer from "puppeteer";
 import fs from "fs"; // file system module
 import { loadPlayerIds, generateTourCastUrls } from './utils.js';
+import chalk from 'chalk'; // change color in terminal
 
 
 // region Helper Functions
@@ -13,10 +14,10 @@ const dismissPopUp = async (page) => {
       const btn = document.querySelector(sel);
       if (btn) btn.click();
     }, closeSelector);
-    console.log("Pop-up dismissed.");
+    console.log(chalk.bgBlue.white("Pop-up dismissed."));
     
-  } catch (e) {
-    console.log("No pop-up detected.");
+  } catch (error) {
+    console.log(chalk.red(`Error: ${error}, No pop-up detected.`));
   }
 
   await new Promise(r => setTimeout(r, 1000));
@@ -35,7 +36,7 @@ const checkForShots = async (page, holeNum) => {
         await page.waitForSelector(shotButtonSelector, { timeout: 5000 });
         return true; 
     } catch (e) {
-        console.log(`No shots found for hole ${holeNum}, skipping.`);
+        console.log(chalk.magenta(`No shots found for hole ${holeNum}, skipping.`));
         return false;
     }
 };
@@ -66,8 +67,8 @@ const getShotData = async () => {
         const root = document.querySelector('[class*="primaryPlayerController_shotsContainer"]');
         return root && root.textContent.includes(`Shot ${expected}`);
       }, { timeout: 5000 }, shotLabel);
-    } catch (e) {
-      console.log(`Timed out waiting for Shot ${shotLabel} UI to update.`);
+    } catch (error) {
+      console.log(chalk.red(`Error: ${error}, Timed out waiting for Shot ${shotLabel} UI to update.`));
     }
 
     // Scrape the data for the current shot
@@ -94,7 +95,7 @@ const getShotData = async () => {
     if (data) {
       data.shotNumber = shotLabel; // Add the shot ID to the object
       allShotsData.push(data);
-      console.log(`Scraped Shot ${shotLabel}:`, data);
+      console.log(chalk.pink(`Scraped Shot ${shotLabel}:`), data);
     }
   }
   return allShotsData;
@@ -123,7 +124,7 @@ const updateTournamentData = (masterObj, task, shotData) => {
     // 3. Save the data to the Hole
     masterObj[playerId][roundKey][`Hole_${hole}`] = shotData;
 
-    console.log(`Saved: Player ${playerId} | Round ${round} | Hole ${hole}`);
+    console.log(chalk.pink(`Saved: Player ${playerId} | Round ${round} | Hole ${hole}`));
     
     return masterObj;
 };
@@ -178,8 +179,8 @@ const getHoleData = async () => {
 
       await browser.close();
 
-    } catch (e) {
-      console.log("Player", item.playerId, "not found.");
+    } catch (error) {
+      console.log(chalk.red(`Error: ${error}, Player ${item.playerId} not found.`));
       continue;
     }
   }
@@ -188,15 +189,15 @@ const getHoleData = async () => {
   const fileName = `${currentTournamentId}_data.json`;
   try {
     fs.writeFileSync(fileName, JSON.stringify(finalTournamentData, null, 2));
-    console.log(`Successfully saved all 18 holes to ${fileName}`);
-  } catch (err) {
-    console.error("Error writing to JSON file:", err);
+    console.log("Successfully saved all 18 holes to", chalk.pink(`${fileName}`));
+  } catch (error) {
+    console.error("Error writing to JSON file:", error);
   }
 
   // End time 
   const end = performance.now();
   const elapsed = (end - start) / 1000; 
-  console.log(`Execution time: ${elapsed.toFixed(3)} seconds`);
+  console.log(chalk.green(`Execution time: ${elapsed.toFixed(3)} seconds`));
 };
 
 getHoleData();
