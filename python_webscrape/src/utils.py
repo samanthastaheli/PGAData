@@ -27,6 +27,10 @@ def load_json(filepath):
         data = json.load(file)
     return data
 
+def save_json_to_file(data, filepath):
+    with open(filepath, "w") as file:
+        json.dump(data, file, indent=4)
+
 def get_script_id_dict(content, filename=None):
     # Parse request content
     # all stat data is located in a script tag with id '__NEXT_DATA__'

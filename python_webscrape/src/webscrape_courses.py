@@ -14,6 +14,8 @@ def get_course_ids():
     """
     Courses stats url:
     https://www.pgatour.com/tournaments/2025/u.s-open/R2025026/course-stats
+
+    PGS championship: https://www.pgatour.com/tournaments/2026/pga-championship/R2026033/course-stats 
     """
     courses = dict()
     

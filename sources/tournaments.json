@@ -1,0 +1,190 @@
+{
+    "026": {
+        "name": "U.S. Open",
+        "url": "https://www.pgatour.com/tournaments/<year>/u.s-open/R<year>026/course-stats"
+    },
+    "007": {
+        "name": "The Genesis Invitational",
+        "url": "https://www.pgatour.com/tournaments/<year>/the-genesis-invitational/R<year>007/course-stats"
+    },
+    "033": {
+        "name": "PGA Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/pga-championship/R<year>033/course-stats"
+    },
+    "023": {
+        "name": "the Memorial Tournament presented by Workday",
+        "url": "https://www.pgatour.com/tournaments/<year>/the-memorial-tournament-presented-by-workday/R<year>023/course-stats"
+    },
+    "518": {
+        "name": "ISCO Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/isco-championship/R<year>518/course-stats"
+    },
+    "475": {
+        "name": "Valspar Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/valspar-championship/R<year>475/course-stats"
+    },
+    "014": {
+        "name": "Masters Tournament",
+        "url": "https://www.pgatour.com/tournaments/<year>/masters-tournament/R<year>014/course-stats"
+    },
+    "009": {
+        "name": "Arnold Palmer Invitational presented by Mastercard",
+        "url": "https://www.pgatour.com/tournaments/<year>/arnold-palmer-invitational-presented-by-mastercard/R<year>009/course-stats"
+    },
+    "004": {
+        "name": "Farmers Insurance Open",
+        "url": "https://www.pgatour.com/tournaments/<year>/farmers-insurance-open/R<year>004/course-stats"
+    },
+    "100": {
+        "name": "The Open Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/the-open-championship/R<year>100/course-stats"
+    },
+    "041": {
+        "name": "Valero Texas Open",
+        "url": "https://www.pgatour.com/tournaments/<year>/valero-texas-open/R<year>041/course-stats"
+    },
+    "028": {
+        "name": "BMW Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/bmw-championship/R<year>028/course-stats"
+    },
+    "011": {
+        "name": "THE PLAYERS Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/the-players-championship/R<year>011/course-stats"
+    },
+    "528": {
+        "name": "Butterfield Bermuda Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/butterfield-bermuda-championship/R<year>528/course-stats"
+    },
+    "021": {
+        "name": "Charles Schwab Challenge",
+        "url": "https://www.pgatour.com/tournaments/<year>/charles-schwab-challenge/R<year>021/course-stats"
+    },
+    "541": {
+        "name": "Genesis Scottish Open",
+        "url": "https://www.pgatour.com/tournaments/<year>/genesis-scottish-open/R<year>541/course-stats"
+    },
+    "464": {
+        "name": "Procore Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/procore-championship/R<year>464/course-stats"
+    },
+    "472": {
+        "name": "Barracuda Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/barracuda-championship/R<year>472/course-stats"
+    },
+    "002": {
+        "name": "The American Express",
+        "url": "https://www.pgatour.com/tournaments/<year>/the-american-express/R<year>002/course-stats"
+    },
+    "553": {
+        "name": "ONEflight Myrtle Beach Classic",
+        "url": "https://www.pgatour.com/tournaments/<year>/oneflight-myrtle-beach-classic/R<year>553/course-stats"
+    },
+    "034": {
+        "name": "Travelers Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/travelers-championship/R<year>034/course-stats"
+    },
+    "522": {
+        "name": "Corales Puntacana Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/corales-puntacana-championship/R<year>522/course-stats"
+    },
+    "013": {
+        "name": "Wyndham Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/wyndham-championship/R<year>013/course-stats"
+    },
+    "027": {
+        "name": "FedEx St. Jude Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/fedex-st.-jude-championship/R<year>027/course-stats"
+    },
+    "527": {
+        "name": "Baycurrent Classic",
+        "url": "https://www.pgatour.com/tournaments/<year>/baycurrent-classic/R<year>527/course-stats"
+    },
+    "480": {
+        "name": "Truist Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/truist-championship/R<year>480/course-stats"
+    },
+    "003": {
+        "name": "WM Phoenix Open",
+        "url": "https://www.pgatour.com/tournaments/<year>/wm-phoenix-open/R<year>003/course-stats"
+    },
+    "020": {
+        "name": "Texas Children's Houston Open",
+        "url": "https://www.pgatour.com/tournaments/<year>/texas-children's-houston-open/R<year>020/course-stats"
+    },
+    "554": {
+        "name": "Bank of Utah Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/bank-of-utah-championship/R<year>554/course-stats"
+    },
+    "032": {
+        "name": "RBC Canadian Open",
+        "url": "https://www.pgatour.com/tournaments/<year>/rbc-canadian-open/R<year>032/course-stats"
+    },
+    "006": {
+        "name": "Sony Open in Hawaii",
+        "url": "https://www.pgatour.com/tournaments/<year>/sony-open-in-hawaii/R<year>006/course-stats"
+    },
+    "540": {
+        "name": "Mexico Open at VidantaWorld",
+        "url": "https://www.pgatour.com/tournaments/<year>/mexico-open-at-vidantaworld/R<year>540/course-stats"
+    },
+    "030": {
+        "name": "John Deere Classic",
+        "url": "https://www.pgatour.com/tournaments/<year>/john-deere-classic/R<year>030/course-stats"
+    },
+    "012": {
+        "name": "RBC Heritage",
+        "url": "https://www.pgatour.com/tournaments/<year>/rbc-heritage/R<year>012/course-stats"
+    },
+    "010": {
+        "name": "Cognizant Classic in The Palm Beaches",
+        "url": "https://www.pgatour.com/tournaments/<year>/cognizant-classic-in-the-palm-beaches/R<year>010/course-stats"
+    },
+    "019": {
+        "name": "THE CJ CUP Byron Nelson",
+        "url": "https://www.pgatour.com/tournaments/<year>/the-cj-cup-byron-nelson/R<year>019/course-stats"
+    },
+    "005": {
+        "name": "AT&T Pebble Beach Pro-Am",
+        "url": "https://www.pgatour.com/tournaments/<year>/at&t-pebble-beach-pro-am/R<year>005/course-stats"
+    },
+    "054": {
+        "name": "Sanderson Farms Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/sanderson-farms-championship/R<year>054/course-stats"
+    },
+    "525": {
+        "name": "3M Open",
+        "url": "https://www.pgatour.com/tournaments/<year>/3m-open/R<year>525/course-stats"
+    },
+    "060": {
+        "name": "TOUR Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/tour-championship/R<year>060/course-stats"
+    },
+    "493": {
+        "name": "The RSM Classic",
+        "url": "https://www.pgatour.com/tournaments/<year>/the-rsm-classic/R<year>493/course-stats"
+    },
+    "483": {
+        "name": "Puerto Rico Open",
+        "url": "https://www.pgatour.com/tournaments/<year>/puerto-rico-open/R<year>483/course-stats"
+    },
+    "524": {
+        "name": "Rocket Classic",
+        "url": "https://www.pgatour.com/tournaments/<year>/rocket-classic/R<year>524/course-stats"
+    },
+    "457": {
+        "name": "World Wide Technology Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/world-wide-technology-championship/R<year>457/course-stats"
+    },
+    "016": {
+        "name": "The Sentry",
+        "url": "https://www.pgatour.com/tournaments/<year>/the-sentry/R<year>016/course-stats"
+    },
+    "018": {
+        "name": "Zurich Classic of New Orleans",
+        "url": "https://www.pgatour.com/tournaments/<year>/zurich-classic-of-new-orleans/R<year>018/course-stats"
+    },
+    "047": {
+        "name": "Shriners Children's Open",
+        "url": "https://www.pgatour.com/tournaments/<year>/shriners-childrens-open/R<year>047/course-stats"
+    }
+}
