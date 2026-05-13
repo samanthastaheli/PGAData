@@ -1,0 +1,4 @@
+{
+    "tourcast": "https://tourcast.pgatour.com/tourcast.html?id=R<year><tournamentId>#/hole-view?pid=&round=<roundNumber>&hole=<holeNumber>&gv=false",
+    "leaderboard": "https://www.pgatour.com/tournaments/<year>/<tournamentName>/R<year><tournamentId>/leaderboard"
+}
