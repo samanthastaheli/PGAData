@@ -74,5 +74,9 @@
     "556": {
         "name": "Cadillac Championship",
         "url": "https://www.pgatour.com/tournaments/<year>/cadillac-championship/R<year>556/course-stats"
+    },
+    "018": {
+        "name": "Zurich Classic of New Orleans",
+        "url": "https://www.pgatour.com/tournaments/<year>/zurich-classic-of-new-orleans/R<year>018/course-stats"
     }
 }

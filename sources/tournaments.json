@@ -186,5 +186,9 @@
     "047": {
         "name": "Shriners Children's Open",
         "url": "https://www.pgatour.com/tournaments/<year>/shriners-childrens-open/R<year>047/course-stats"
+    },
+    "556": {
+        "name": "Cadillac Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/cadillac-championship/R<year>556/course-stats"
     }
 }
