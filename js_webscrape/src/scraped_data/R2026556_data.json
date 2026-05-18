@@ -1,0 +1,104 @@
+{
+  "46046": {
+    "Round_1": {
+      "Hole_1": [
+        {
+          "shotDist": "303 yds",
+          "toHole": "261 yds",
+          "location": "Right Rough",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "211 yds",
+          "toHole": "52 yds",
+          "location": "Left Fairway",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "55 yds",
+          "toHole": "8 ft 8 in.",
+          "location": "Left Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "11 ft 2 in.",
+          "toHole": "2 ft 1 in.",
+          "location": "Left Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "2 ft 1 in.",
+          "shotNumber": "5"
+        }
+      ]
+    }
+  },
+  "54591": {
+    "Round_1": {
+      "Hole_1": [
+        {
+          "shotDist": "305 yds",
+          "toHole": "258 yds",
+          "location": "Right Bunker",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "207 yds",
+          "toHole": "51 yds",
+          "location": "Left Fairway",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "55 yds",
+          "toHole": "11 ft 8 in.",
+          "location": "Left Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "14 ft 10 in.",
+          "toHole": "3 ft 1 in.",
+          "location": "Left Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "3 ft 1 in.",
+          "shotNumber": "5"
+        }
+      ]
+    }
+  },
+  "57366": {
+    "Round_1": {
+      "Hole_1": [
+        {
+          "shotDist": "323 yds",
+          "toHole": "247 yds",
+          "location": "Left Intermediate",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "238 yds",
+          "toHole": "94 ft 8 in.",
+          "location": "Left Cart Path",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "40 yds",
+          "toHole": "15 ft 9 in.",
+          "location": "Right Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "16 ft 5 in.",
+          "toHole": "13 in",
+          "location": "Left Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "13 in",
+          "shotNumber": "5"
+        }
+      ]
+    }
+  }
+}

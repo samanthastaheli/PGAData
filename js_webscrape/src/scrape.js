@@ -118,9 +118,6 @@ const getShotData = async (page) => {
       console.log(chalk.magenta(`Scraped Shot ${shotLabel}:`), data);
     }
   }
-
-
-
   return allShotsData;
 };
 
@@ -131,7 +128,7 @@ const getShotData = async (page) => {
  * @param {array} shotData - The array of shots scraped from the page
  */
 const updateTournamentData = (masterObj, holeInfo, shotData) => {
-    const { playerId, round, hole } = holeInfo;
+    const { playerId, playerName, round, hole } = holeInfo;
 
     // 1. Ensure the Player exists
     if (!masterObj[playerId]) {
@@ -200,7 +197,7 @@ const getPlayersInTournament = async (tournamentId, browser) => {
 
 const getHoleData = async () => {
   const start = performance.now();
-  const browser = await startBrowser();
+  let browser = await startBrowser();
   
   // * Get urls
   // TODO: make current tournament dynamic
@@ -210,21 +207,27 @@ const getHoleData = async () => {
   const urls = generateTourCastUrlsForPlayer(currentTournamentId, playersInTournament);
   console.log(chalk.blue(`Generated URLs for ${urls.length} holes across all players and rounds.`));
   const finalTournamentData = {};
+  let i = 0;
 
   for (const holeInfo of urls) { 
-    // * Start new browser instance for each hole
-    // const [browser, page] = await startBrowser();
+    // * Close browser and start new one every 10 holes
+    // if (i > 0 && i % 10 === 0) {
+    //   await browser.close();
+    //   console.log(chalk.yellow(`Closed browser after 10 holes to manage resources. Starting new browser...`));
+    //   browser = await startBrowser();
+    // }
+    // * Create new page instance for each hole
     const page = await startPage(browser);
 
-    // * Navigate to url
     try {
+      // * Navigate to url
       console.log(`Navigating to Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}...`);
       await navigateToUrl(holeInfo.url, page);
-
+      
       // * Dismiss Pop-up
       await dismissPopUp(page);
 
-      // if no shot buttons then not correct player 
+      // if no shot buttons then not correct player
       const hasShots = await checkForShots(page, holeInfo.hole);
 
       // If false skip this hole and move to the next one
@@ -232,26 +235,28 @@ const getHoleData = async () => {
           continue;
       }
 
+      // * Save screenshot of hole
+      // path to images "C:\\Users\\Sam\\repos\\PGAImages"
+      await page.screenshot({ path: `C:\\Users\\Sam\\repos\\PGAImages\\tournament_${currentTournamentId}_player_${holeInfo.playerId}_hole_${holeInfo.hole}_round_${holeInfo.round}.png`, fullPage: true });
+
       // * Get the count of shots available
-      const shotsData = getShotData(page);
+      const shotsData = await getShotData(page);
 
       // * Update the master object with the new hole data
       updateTournamentData(finalTournamentData, holeInfo, shotsData);
 
-      // await browser.close(); // TODO: do I need this?
-
     } catch (error) {
-      console.log(chalk.red(`Error: ${error}, Player ${holeInfo.playerId} not found.`));
+      console.log(chalk.red(`Error: ${error}`));
       continue;
-    } 
-    // finally {
-    //   // Ensure the browser is closed in case of an error
-    //   await browser.close();
-    // }
+    } finally {
+      // This block always runs, ensuring your browser tabs close and counter increments
+      await page.close(); 
+      i++; 
+    }
   }
 
   // * Save the master object to the JSON file outside the loop
-  const fileName = `${currentTournamentId}_data.json`;
+  const fileName = `scraped_data/${currentTournamentId}_data.json`;
   try {
     fs.writeFileSync(fileName, JSON.stringify(finalTournamentData, null, 2));
     console.log("Successfully saved all 18 holes to", chalk.magenta(`${fileName}`));
@@ -259,7 +264,7 @@ const getHoleData = async () => {
     console.error("Error writing to JSON file:", error);
   } 
 
-  await browser.close(); // TODO: do I need this?
+  // await browser.close();
 
   // End time 
   const end = performance.now();

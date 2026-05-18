@@ -85,8 +85,10 @@ export const loadPlayerNames = () => {
  * @param {Array} playerObjects - An array of objects containing player information (e.g., [{ id: '57366', name: 'Cameron Young' }])
  */
 export const generateTourCastUrlsForPlayer = (tournamentId, playerObjects) => {
-    const rounds = [1, 2, 3, 4];
-    const holes = Array.from({ length: 18 }, (_, i) => i + 1);
+    // const rounds = [1, 2, 3, 4];
+    // const holes = Array.from({ length: 18 }, (_, i) => i + 1);
+    const rounds = [1]; // TODO: for testing
+    const holes = [1]; // TODO: for testing
 
     // Use flatMap to create one long list of 72 urls per player
     return playerObjects.flatMap(player =>
