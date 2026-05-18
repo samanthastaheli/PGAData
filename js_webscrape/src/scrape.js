@@ -9,16 +9,6 @@ const SHOT_BUTTON_SELECTOR = 'div[class*="shot_shotNum"]';
 // region Helper Functions
 // ***************************************************************************************
 
-// const startBrowser = async () => {
-//   const browser = await puppeteer.launch({
-//     args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
-//     headless: false, // Headless must be true for Docker
-//     defaultViewport: { width: 1280, height: 800 },
-//   });
-//   const page = await browser.newPage();
-//   return [browser, page];
-// }
-
 const startBrowser = async () => {
   const browser = await puppeteer.launch({
     args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
@@ -49,7 +39,7 @@ const dismissPopUp = async (page) => {
     console.log(chalk.bgBlue.white("Pop-up dismissed."));
     
   } catch (error) {
-    console.log(chalk.red(`Error: ${error}, No pop-up detected.`));
+    console.log(chalk.bgMagenta.white("No pop-up detected."));
   }
 
   await new Promise(r => setTimeout(r, 1000));
@@ -62,7 +52,6 @@ const dismissPopUp = async (page) => {
  * @returns {boolean} - Returns true if shots exist, false otherwise
  */
 const checkForShots = async (page, holeNum) => {
-    
     try {
         await page.waitForSelector(SHOT_BUTTON_SELECTOR, { timeout: 5000 });
         return true; 
@@ -164,15 +153,15 @@ const updateTournamentData = (masterObj, holeInfo, shotData) => {
 };
 
 /**
- * Generate an array of players IDs that are in the tournament.
+ * Generate an array of object of players names and IDs that are in the tournament.
  * @param {string} tournamentId - The unique ID for the tournament (e.g., 'R2026556')
+ * @param {object} browser - The Puppeteer browser instance
+ * @returns {array} - An array of player objects with names and IDs.
  */
-const getPlayersInTournament = async (tournamentId) => {
+const getPlayersInTournament = async (tournamentId, browser) => {
   // TODO: make url dynamic based on tournament
   const url = "https://www.pgatour.com/tournaments/2026/cadillac-championship/R2026556/leaderboard"
-  
-  // const [browser, page] = await startBrowser();
-  const browser = await startBrowser();
+
   const page = await startPage(browser);
   await navigateToUrl(url, page);
   
@@ -200,8 +189,6 @@ const getPlayersInTournament = async (tournamentId) => {
   
   console.log(chalk.magenta("Number of Players in tournament:", playersInTournament.length))
 
-  await browser.close();
-
   return playersInTournament;
 }
 
@@ -213,12 +200,13 @@ const getPlayersInTournament = async (tournamentId) => {
 
 const getHoleData = async () => {
   const start = performance.now();
+  const browser = await startBrowser();
   
   // * Get urls
   // TODO: make current tournament dynamic
   const currentTournamentId = "R2026556" // cadillac tournament
   // const currentTournamentId = "R2026480" // Truist Championship
-  const playersInTournament = await getPlayersInTournament(currentTournamentId);
+  const playersInTournament = await getPlayersInTournament(currentTournamentId, browser);
   const urls = generateTourCastUrlsForPlayer(currentTournamentId, playersInTournament);
   console.log(chalk.blue(`Generated URLs for ${urls.length} holes across all players and rounds.`));
   const finalTournamentData = {};
@@ -226,7 +214,6 @@ const getHoleData = async () => {
   for (const holeInfo of urls) { 
     // * Start new browser instance for each hole
     // const [browser, page] = await startBrowser();
-    const browser = await startBrowser();
     const page = await startPage(browser);
 
     // * Navigate to url
@@ -251,7 +238,7 @@ const getHoleData = async () => {
       // * Update the master object with the new hole data
       updateTournamentData(finalTournamentData, holeInfo, shotsData);
 
-      await browser.close(); // TODO: do I need this?
+      // await browser.close(); // TODO: do I need this?
 
     } catch (error) {
       console.log(chalk.red(`Error: ${error}, Player ${holeInfo.playerId} not found.`));
@@ -271,6 +258,8 @@ const getHoleData = async () => {
   } catch (error) {
     console.error("Error writing to JSON file:", error);
   } 
+
+  await browser.close(); // TODO: do I need this?
 
   // End time 
   const end = performance.now();
