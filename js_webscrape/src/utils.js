@@ -61,22 +61,42 @@ export const loadPlayers = () => {
 
 
 /**
+ * Loads players Ids and their names as a dict.
+ */
+export const loadPlayerNames = () => {
+    const data = loadAndProcessJSON('../../sources/players.json');
+    const playerDict = {};
+
+    if (!data) {
+        console.error("Could not load player data.");
+        return [];
+    }
+
+    Object.entries(data).forEach(([name, info]) => {
+        playerDict[name] = info.id;
+    });
+
+    return playerDict; 
+};
+
+/**
  * Generates a flat list of all URLs for specified tournament and player with 4 rounds and 18 holes.
  * @param {string} tournamentId - The unique ID for the tournament (e.g., 'R2026556')
- * @param {string} playerIds - An array of unique IDs for the player (e.g., ['57366'])
+ * @param {Array} playerObjects - An array of objects containing player information (e.g., [{ id: '57366', name: 'Cameron Young' }])
  */
-export const generateTourCastUrlsForPlayer = (tournamentId, playerIds) => {
+export const generateTourCastUrlsForPlayer = (tournamentId, playerObjects) => {
     const rounds = [1, 2, 3, 4];
     const holes = Array.from({ length: 18 }, (_, i) => i + 1);
 
     // Use flatMap to create one long list of 72 urls per player
-    return playerIds.flatMap(pid =>
+    return playerObjects.flatMap(player =>
         rounds.flatMap(r =>
             holes.map(h => ({
-                playerId: pid,
+                playerId: player.id,
+                playerName: player.name,
                 round: r,
                 hole: h,
-                url: `https://tourcast.pgatour.com/tourcast.html?id=${tournamentId}#/hole-view?pid=${pid}&round=${r}&hole=${h}&gv=false`
+                url: `https://tourcast.pgatour.com/tourcast.html?id=${tournamentId}#/hole-view?pid=${player.id}&round=${r}&hole=${h}&gv=false`
             }))
         )
     );

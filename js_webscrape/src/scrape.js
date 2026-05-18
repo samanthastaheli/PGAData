@@ -1,20 +1,36 @@
 import puppeteer from "puppeteer";
 import fs from "fs"; // file system module
-import { getPlayerIds, generateTourCastUrlsForPlayer, generateTestUrlForPlayer, loadPlayers } from './utils.js';
+import { getPlayerIds, generateTourCastUrlsForPlayer, generateTestUrlForPlayer, loadPlayerNames } from './utils.js';
 import chalk from 'chalk'; // change color in terminal
+
+const SHOT_BUTTON_SELECTOR = 'div[class*="shot_shotNum"]';
 
 // ***************************************************************************************
 // region Helper Functions
 // ***************************************************************************************
 
+// const startBrowser = async () => {
+//   const browser = await puppeteer.launch({
+//     args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+//     headless: false, // Headless must be true for Docker
+//     defaultViewport: { width: 1280, height: 800 },
+//   });
+//   const page = await browser.newPage();
+//   return [browser, page];
+// }
+
 const startBrowser = async () => {
   const browser = await puppeteer.launch({
-      args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
-      headless: false, // Headless must be true for Docker
-      defaultViewport: { width: 1280, height: 800 },
-    });
-    const page = await browser.newPage();
-    return page;
+    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+    headless: false, // Headless must be true for Docker
+    defaultViewport: { width: 1280, height: 800 },
+  });
+  return browser;
+}
+
+const startPage = async (browser) => {
+  const page = await browser.newPage();
+  return page;
 }
 
 const navigateToUrl = async (url, page) => {
@@ -46,10 +62,9 @@ const dismissPopUp = async (page) => {
  * @returns {boolean} - Returns true if shots exist, false otherwise
  */
 const checkForShots = async (page, holeNum) => {
-    const shotButtonSelector = 'div[class*="shot_shotNum"]';
     
     try {
-        await page.waitForSelector(shotButtonSelector, { timeout: 5000 });
+        await page.waitForSelector(SHOT_BUTTON_SELECTOR, { timeout: 5000 });
         return true; 
     } catch (e) {
         console.log(chalk.magenta(`No shots found for hole ${holeNum}, skipping.`));
@@ -58,7 +73,7 @@ const checkForShots = async (page, holeNum) => {
 };
 
 const getShotData = async (page) => {
-  const shotCount = await page.evaluate((sel) => document.querySelectorAll(sel).length, shotButtonSelector);
+  const shotCount = await page.evaluate((sel) => document.querySelectorAll(sel).length, SHOT_BUTTON_SELECTOR);
   const allShotsData = [];
 
   // Loop through each shot
@@ -75,7 +90,7 @@ const getShotData = async (page) => {
         return target.textContent.trim();
       }
       return null;
-    }, i, shotButtonSelector);
+    }, i, SHOT_BUTTON_SELECTOR);
 
     // Wait for the UI data container to match the shot number we just clicked
     try {
@@ -111,7 +126,7 @@ const getShotData = async (page) => {
     if (data) {
       data.shotNumber = shotLabel; // Add the shot ID to the object
       allShotsData.push(data);
-      console.log(chalk.pink(`Scraped Shot ${shotLabel}:`), data);
+      console.log(chalk.magenta(`Scraped Shot ${shotLabel}:`), data);
     }
   }
 
@@ -143,7 +158,7 @@ const updateTournamentData = (masterObj, holeInfo, shotData) => {
     // 3. Save the data to the Hole
     masterObj[playerId][roundKey][`Hole_${hole}`] = shotData;
 
-    console.log(chalk.pink(`Saved: Player ${playerId} | Round ${round} | Hole ${hole}`));
+    console.log(chalk.magenta(`Saved: Player ${playerId} | Round ${round} | Hole ${hole}`));
     
     return masterObj;
 };
@@ -153,28 +168,39 @@ const updateTournamentData = (masterObj, holeInfo, shotData) => {
  * @param {string} tournamentId - The unique ID for the tournament (e.g., 'R2026556')
  */
 const getPlayersInTournament = async (tournamentId) => {
-  // TODO: this method didn't work so try using this url to get the list from here:
-  // for player in player id list try and see if they are actually in the tournament
-  // const playersInTournament = [];
+  // TODO: make url dynamic based on tournament
   const url = "https://www.pgatour.com/tournaments/2026/cadillac-championship/R2026556/leaderboard"
   
-  const page = await startBrowser();
+  // const [browser, page] = await startBrowser();
+  const browser = await startBrowser();
+  const page = await startPage(browser);
   await navigateToUrl(url, page);
   
   // extract data
   await page.waitForSelector('.chakra-text.css-1v9q6zy');
-  const playersInTournament = await page.$$eval('.chakra-text.css-1v9q6zy', elements => {
+  const playersInTournamentNames = await page.$$eval('.chakra-text.css-1v9q6zy', elements => {
     return elements.map(el => el.innerText.trim());
   });
 
   // get player IDs 
-  const playerIds = [];
-  const playersDict = loadPlayers();
-  for (const playerName in playersInTournament) {
-    
+  const playersInTournament = []; // with be name and id 
+  const playersDict = loadPlayerNames();
+
+  for (const playerName of playersInTournamentNames) {
+    const playerId = playersDict[playerName];
+    if (playerId) {
+      playersInTournament.push({ name: playerName, id: playerId});
+    } else {
+      console.log(chalk.red(`Player ${playerName} not found in player dictionary.`));
+    }
   }
+
+  // TODO: remove after testing
+  playersInTournament.length = 3; // limit to 3 players for testing
   
-  console.log(chalk.magenta("Players in tournament:", playersInTournament))
+  console.log(chalk.magenta("Number of Players in tournament:", playersInTournament.length))
+
+  await browser.close();
 
   return playersInTournament;
 }
@@ -189,60 +215,67 @@ const getHoleData = async () => {
   const start = performance.now();
   
   // * Get urls
+  // TODO: make current tournament dynamic
   const currentTournamentId = "R2026556" // cadillac tournament
   // const currentTournamentId = "R2026480" // Truist Championship
   const playersInTournament = await getPlayersInTournament(currentTournamentId);
-  const urls = generateTourCastUrlsForPlayer(currentTournamentId, playersInTournament)
+  const urls = generateTourCastUrlsForPlayer(currentTournamentId, playersInTournament);
   console.log(chalk.blue(`Generated URLs for ${urls.length} holes across all players and rounds.`));
   const finalTournamentData = {};
 
-  // for (const holeInfo of urls) { 
-  //   // * Start new browser instance for each hole
-  //   const page = await startBrowser();
+  for (const holeInfo of urls) { 
+    // * Start new browser instance for each hole
+    // const [browser, page] = await startBrowser();
+    const browser = await startBrowser();
+    const page = await startPage(browser);
 
-  //   // * Navigate to url
-  //   try {
-  //     console.log(`Navigating to Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}...`);
-  //     await navigateToUrl(holeInfo.url, page);
+    // * Navigate to url
+    try {
+      console.log(`Navigating to Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}...`);
+      await navigateToUrl(holeInfo.url, page);
 
-  //     // * Dismiss Pop-up
-  //     await dismissPopUp(page);
+      // * Dismiss Pop-up
+      await dismissPopUp(page);
 
-  //     // if no shot buttons then not correct player 
-  //     const hasShots = await checkForShots(page, holeInfo.hole);
+      // if no shot buttons then not correct player 
+      const hasShots = await checkForShots(page, holeInfo.hole);
 
-  //     // If false skip this hole and move to the next one
-  //     if (!hasShots) {
-  //         continue;
-  //     }
+      // If false skip this hole and move to the next one
+      if (!hasShots) {
+          continue;
+      }
 
-  //     // * Get the count of shots available
-  //     const shotsData = getShotData(page);
+      // * Get the count of shots available
+      const shotsData = getShotData(page);
 
-  //     // * Update the master object with the new hole data
-  //     updateTournamentData(finalTournamentData, holeInfo, allShotsData);
+      // * Update the master object with the new hole data
+      updateTournamentData(finalTournamentData, holeInfo, shotsData);
 
-  //     await browser.close();
+      await browser.close(); // TODO: do I need this?
 
-  //   } catch (error) {
-  //     console.log(chalk.red(`Error: ${error}, Player ${holeInfo.playerId} not found.`));
-  //     continue;
-  //   }
-  // }
+    } catch (error) {
+      console.log(chalk.red(`Error: ${error}, Player ${holeInfo.playerId} not found.`));
+      continue;
+    } 
+    // finally {
+    //   // Ensure the browser is closed in case of an error
+    //   await browser.close();
+    // }
+  }
 
-  // // * Save the master object to the JSON file outside the loop
-  // const fileName = `${currentTournamentId}_data.json`;
-  // try {
-  //   fs.writeFileSync(fileName, JSON.stringify(finalTournamentData, null, 2));
-  //   console.log("Successfully saved all 18 holes to", chalk.pink(`${fileName}`));
-  // } catch (error) {
-  //   console.error("Error writing to JSON file:", error);
-  // }
+  // * Save the master object to the JSON file outside the loop
+  const fileName = `${currentTournamentId}_data.json`;
+  try {
+    fs.writeFileSync(fileName, JSON.stringify(finalTournamentData, null, 2));
+    console.log("Successfully saved all 18 holes to", chalk.magenta(`${fileName}`));
+  } catch (error) {
+    console.error("Error writing to JSON file:", error);
+  } 
 
-  // // End time 
-  // const end = performance.now();
-  // const elapsed = (end - start) / 1000; 
-  // console.log(chalk.green(`Execution time: ${elapsed.toFixed(3)} seconds`));
+  // End time 
+  const end = performance.now();
+  const elapsed = (end - start) / 1000; 
+  console.log(chalk.green(`Execution time: ${elapsed.toFixed(3)} seconds`));
 };
 
 
