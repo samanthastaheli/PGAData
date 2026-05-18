@@ -59,6 +59,7 @@ export const loadPlayers = () => {
     return playerDict; 
 };
 
+
 /**
  * Generates a flat list of all URLs for specified tournament and player with 4 rounds and 18 holes.
  * @param {string} tournamentId - The unique ID for the tournament (e.g., 'R2026556')

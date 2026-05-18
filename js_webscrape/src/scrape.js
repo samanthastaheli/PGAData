@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
 import fs from "fs"; // file system module
-import { getPlayerIds, generateTourCastUrlsForPlayer, generateTestUrlForPlayer } from './utils.js';
+import { getPlayerIds, generateTourCastUrlsForPlayer, generateTestUrlForPlayer, loadPlayers } from './utils.js';
 import chalk from 'chalk'; // change color in terminal
 
 // ***************************************************************************************
@@ -14,9 +14,10 @@ const startBrowser = async () => {
       defaultViewport: { width: 1280, height: 800 },
     });
     const page = await browser.newPage();
+    return page;
 }
 
-const navigateToUrl = async (url) => {
+const navigateToUrl = async (url, page) => {
   console.log(chalk.magenta(`Navigating to ${url}`));
   await page.goto(url, { waitUntil: "networkidle2" });
 }
@@ -56,7 +57,7 @@ const checkForShots = async (page, holeNum) => {
     }
 };
 
-const getShotData = async () => {
+const getShotData = async (page) => {
   const shotCount = await page.evaluate((sel) => document.querySelectorAll(sel).length, shotButtonSelector);
   const allShotsData = [];
 
@@ -154,22 +155,28 @@ const updateTournamentData = (masterObj, holeInfo, shotData) => {
 const getPlayersInTournament = async (tournamentId) => {
   // TODO: this method didn't work so try using this url to get the list from here:
   // for player in player id list try and see if they are actually in the tournament
-  const playerIds = getPlayerIds();
-  const playersInTournament = [];
+  // const playersInTournament = [];
   const url = "https://www.pgatour.com/tournaments/2026/cadillac-championship/R2026556/leaderboard"
   
-  for (const pid of playerIds) {
-    startBrowser();
-    navigateToUrl(url);
-    
-    // extract data
-    await page.waitForSelector('.chakra-text.css-1v9q6zy');
-    const playersInTournament = await page.$$eval('.chakra-text.css-1v9q6zy', elements => {
-      return elements.map(el => el.innerText.trim());
-    });
+  const page = await startBrowser();
+  await navigateToUrl(url, page);
+  
+  // extract data
+  await page.waitForSelector('.chakra-text.css-1v9q6zy');
+  const playersInTournament = await page.$$eval('.chakra-text.css-1v9q6zy', elements => {
+    return elements.map(el => el.innerText.trim());
+  });
+
+  // get player IDs 
+  const playerIds = [];
+  const playersDict = loadPlayers();
+  for (const playerName in playersInTournament) {
     
   }
+  
   console.log(chalk.magenta("Players in tournament:", playersInTournament))
+
+  return playersInTournament;
 }
 
 // endregion Helper Functions
@@ -184,19 +191,19 @@ const getHoleData = async () => {
   // * Get urls
   const currentTournamentId = "R2026556" // cadillac tournament
   // const currentTournamentId = "R2026480" // Truist Championship
-  const playersInTournament = getPlayersInTournament(currentTournamentId);
+  const playersInTournament = await getPlayersInTournament(currentTournamentId);
   const urls = generateTourCastUrlsForPlayer(currentTournamentId, playersInTournament)
   console.log(chalk.blue(`Generated URLs for ${urls.length} holes across all players and rounds.`));
   const finalTournamentData = {};
 
   // for (const holeInfo of urls) { 
   //   // * Start new browser instance for each hole
-  //   startBrowser();
+  //   const page = await startBrowser();
 
   //   // * Navigate to url
   //   try {
   //     console.log(`Navigating to Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}...`);
-  //     navigateToUrl(holeInfo.url);
+  //     await navigateToUrl(holeInfo.url, page);
 
   //     // * Dismiss Pop-up
   //     await dismissPopUp(page);
@@ -210,7 +217,7 @@ const getHoleData = async () => {
   //     }
 
   //     // * Get the count of shots available
-  //     const shotsData = getShotData();
+  //     const shotsData = getShotData(page);
 
   //     // * Update the master object with the new hole data
   //     updateTournamentData(finalTournamentData, holeInfo, allShotsData);
