@@ -7,6 +7,20 @@ import chalk from 'chalk'; // change color in terminal
 // region Helper Functions
 // ***************************************************************************************
 
+const startBrowser = async () => {
+  const browser = await puppeteer.launch({
+      args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+      headless: false, // Headless must be true for Docker
+      defaultViewport: { width: 1280, height: 800 },
+    });
+    const page = await browser.newPage();
+}
+
+const navigateToUrl = async (url) => {
+  console.log(chalk.magenta(`Navigating to ${url}`));
+  await page.goto(url, { waitUntil: "networkidle2" });
+}
+
 const dismissPopUp = async (page) => {
   try {
     const closeSelector = 'div[class*="informationContent_close"]';
@@ -137,34 +151,25 @@ const updateTournamentData = (masterObj, holeInfo, shotData) => {
  * Generate an array of players IDs that are in the tournament.
  * @param {string} tournamentId - The unique ID for the tournament (e.g., 'R2026556')
  */
-const getPlayersInTournament = (tournamentId) => {
+const getPlayersInTournament = async (tournamentId) => {
   // TODO: this method didn't work so try using this url to get the list from here:
-  // https://www.pgatour.com/tournaments/2026/truist-championship/R2026480/tourcast
   // for player in player id list try and see if they are actually in the tournament
   const playerIds = getPlayerIds();
-  console.log(chalk.green(`Player Ids: ${playerIds}`));
   const playersInTournament = [];
+  const url = "https://www.pgatour.com/tournaments/2026/cadillac-championship/R2026556/leaderboard"
+  
   for (const pid of playerIds) {
-    console.log(chalk.green(`Checking player: ${pid}`));
-    // get test url
-    const testUrl = generateTestUrlForPlayer(currentTournamentId, pid);
-    console.log(chalk.green(`testUrl: ${testUrl}`));
-    // open browser
-    const browser = await puppeteer.launch({
-      args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
-      headless: false, // Headless must be true for Docker
-      defaultViewport: { width: 1280, height: 800 },
+    startBrowser();
+    navigateToUrl(url);
+    
+    // extract data
+    await page.waitForSelector('.chakra-text.css-1v9q6zy');
+    const playersInTournament = await page.$$eval('.chakra-text.css-1v9q6zy', elements => {
+      return elements.map(el => el.innerText.trim());
     });
-    const page = await browser.newPage();
-    await page.goto(testUrl, { waitUntil: "networkidle2" });
-    await dismissPopUp(page);
-    // check for shot data
-    const hasShots = await checkForShots(page, 1); // use hole 1
-    if (hasShots) {
-      playersInTournament.push(pid)
-    }
+    
   }
-  console.log(chalk.purple("Players in tournament:", playersInTournament))
+  console.log(chalk.magenta("Players in tournament:", playersInTournament))
 }
 
 // endregion Helper Functions
@@ -181,64 +186,59 @@ const getHoleData = async () => {
   // const currentTournamentId = "R2026480" // Truist Championship
   const playersInTournament = getPlayersInTournament(currentTournamentId);
   const urls = generateTourCastUrlsForPlayer(currentTournamentId, playersInTournament)
-
+  console.log(chalk.blue(`Generated URLs for ${urls.length} holes across all players and rounds.`));
   const finalTournamentData = {};
 
-  for (const holeInfo of urls) { 
-    // * Start new browser instance for each hole
-    const browser = await puppeteer.launch({
-      args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
-      headless: false, // Headless must be true for Docker
-      defaultViewport: { width: 1280, height: 800 },
-    });
-    const page = await browser.newPage();
+  // for (const holeInfo of urls) { 
+  //   // * Start new browser instance for each hole
+  //   startBrowser();
 
-    // * Navigate to url
-    try {
-      console.log(`Navigating to Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}...`);
-      console.log(`URL: ${holeInfo.url}`);
-      await page.goto(holeInfo.url, { waitUntil: "networkidle2" });
+  //   // * Navigate to url
+  //   try {
+  //     console.log(`Navigating to Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}...`);
+  //     navigateToUrl(holeInfo.url);
 
-      // * Dismiss Pop-up
-      await dismissPopUp(page);
+  //     // * Dismiss Pop-up
+  //     await dismissPopUp(page);
 
-      // if no shot buttons then not correct player 
-      const hasShots = await checkForShots(page, holeInfo.hole);
+  //     // if no shot buttons then not correct player 
+  //     const hasShots = await checkForShots(page, holeInfo.hole);
 
-      // If false skip this hole and move to the next one
-      if (!hasShots) {
-          continue;
-      }
+  //     // If false skip this hole and move to the next one
+  //     if (!hasShots) {
+  //         continue;
+  //     }
 
-      // * Get the count of shots available
-      const shotsData = getShotData();
+  //     // * Get the count of shots available
+  //     const shotsData = getShotData();
 
-      // * Update the master object using the utility
-      updateTournamentData(finalTournamentData, holeInfo, allShotsData);
+  //     // * Update the master object with the new hole data
+  //     updateTournamentData(finalTournamentData, holeInfo, allShotsData);
 
-      await browser.close();
+  //     await browser.close();
 
-    } catch (error) {
-      console.log(chalk.red(`Error: ${error}, Player ${holeInfo.playerId} not found.`));
-      continue;
-    }
-  }
+  //   } catch (error) {
+  //     console.log(chalk.red(`Error: ${error}, Player ${holeInfo.playerId} not found.`));
+  //     continue;
+  //   }
+  // }
 
-  // * Save the master object to the JSON file outside the loop
-  const fileName = `${currentTournamentId}_data.json`;
-  try {
-    fs.writeFileSync(fileName, JSON.stringify(finalTournamentData, null, 2));
-    console.log("Successfully saved all 18 holes to", chalk.pink(`${fileName}`));
-  } catch (error) {
-    console.error("Error writing to JSON file:", error);
-  }
+  // // * Save the master object to the JSON file outside the loop
+  // const fileName = `${currentTournamentId}_data.json`;
+  // try {
+  //   fs.writeFileSync(fileName, JSON.stringify(finalTournamentData, null, 2));
+  //   console.log("Successfully saved all 18 holes to", chalk.pink(`${fileName}`));
+  // } catch (error) {
+  //   console.error("Error writing to JSON file:", error);
+  // }
 
-  // End time 
-  const end = performance.now();
-  const elapsed = (end - start) / 1000; 
-  console.log(chalk.green(`Execution time: ${elapsed.toFixed(3)} seconds`));
+  // // End time 
+  // const end = performance.now();
+  // const elapsed = (end - start) / 1000; 
+  // console.log(chalk.green(`Execution time: ${elapsed.toFixed(3)} seconds`));
 };
 
-getHoleData();
+
+getHoleData(); // * main function call
 
 // endregion Main Function
