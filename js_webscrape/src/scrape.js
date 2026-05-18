@@ -151,13 +151,12 @@ const updateTournamentData = (masterObj, holeInfo, shotData) => {
 
 /**
  * Generate an array of object of players names and IDs that are in the tournament.
- * @param {string} tournamentId - The unique ID for the tournament (e.g., 'R2026556')
+ * @param {string} tournamentInfo - An object containing the tournament ID and name
  * @param {object} browser - The Puppeteer browser instance
  * @returns {array} - An array of player objects with names and IDs.
  */
-const getPlayersInTournament = async (tournamentId, browser) => {
-  // TODO: make url dynamic based on tournament
-  const url = "https://www.pgatour.com/tournaments/2026/cadillac-championship/R2026556/leaderboard"
+const getPlayersInTournament = async (tournamentInfo, browser) => {
+  const url = `https://www.pgatour.com/tournaments/2026/${tournamentInfo.name.replace(/\s+/g, '-').toLowerCase()}/${tournamentInfo.id}/leaderboard`;
 
   const page = await startPage(browser);
   await navigateToUrl(url, page);
@@ -201,70 +200,74 @@ const getHoleData = async () => {
   
   // * Get urls
   // TODO: make current tournament dynamic
-  const currentTournamentId = "R2026556" // cadillac tournament
-  // const currentTournamentId = "R2026480" // Truist Championship
-  const playersInTournament = await getPlayersInTournament(currentTournamentId, browser);
-  const urls = generateTourCastUrlsForPlayer(currentTournamentId, playersInTournament);
-  console.log(chalk.blue(`Generated URLs for ${urls.length} holes across all players and rounds.`));
-  const finalTournamentData = {};
-  let i = 0;
+  const tournamentIds = [{id: "R2026556", name: "Cadillac Championship"}, {id: "R2026480", name: "Truist Championship"}]; // cadillac and truist
+  for (const currentTournament of tournamentIds) { 
+    // const currentTournament.id = "R2026556" // cadillac tournament
+    // const currentTournament.id = "R2026480" // Truist Championship
+    const playersInTournament = await getPlayersInTournament(currentTournament, browser);
+    const urls = generateTourCastUrlsForPlayer(currentTournament.id, playersInTournament);
+    console.log(chalk.blue(`Generated URLs for ${urls.length} holes across all players and rounds.`));
+    const finalTournamentData = {};
+    let i = 0;
 
-  for (const holeInfo of urls) { 
-    // * Close browser and start new one every 10 holes
-    // if (i > 0 && i % 10 === 0) {
-    //   await browser.close();
-    //   console.log(chalk.yellow(`Closed browser after 10 holes to manage resources. Starting new browser...`));
-    //   browser = await startBrowser();
-    // }
-    // * Create new page instance for each hole
-    const page = await startPage(browser);
+    for (const holeInfo of urls) { 
+      // * Close browser and start new one every 10 holes
+      // if (i > 0 && i % 10 === 0) {
+      //   await browser.close();
+      //   console.log(chalk.yellow(`Closed browser after 10 holes to manage resources. Starting new browser...`));
+      //   browser = await startBrowser();
+      // }
+      // * Create new page instance for each hole
+      const page = await startPage(browser);
 
-    try {
-      // * Navigate to url
-      console.log(`Navigating to Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}...`);
-      await navigateToUrl(holeInfo.url, page);
-      
-      // * Dismiss Pop-up
-      await dismissPopUp(page);
+      try {
+        // * Navigate to url
+        console.log(`Navigating to Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}...`);
+        await navigateToUrl(holeInfo.url, page);
+        
+        // * Dismiss Pop-up
+        await dismissPopUp(page);
 
-      // if no shot buttons then not correct player
-      const hasShots = await checkForShots(page, holeInfo.hole);
+        // if no shot buttons then not correct player
+        const hasShots = await checkForShots(page, holeInfo.hole);
 
-      // If false skip this hole and move to the next one
-      if (!hasShots) {
-          continue;
+        // If false skip this hole and move to the next one
+        if (!hasShots) {
+            continue;
+        }
+
+        // * Save screenshot of hole
+        // path to images "C:\\Users\\Sam\\repos\\PGAImages"
+        await page.screenshot({ path: `C:\\Users\\Sam\\repos\\PGAImages\\tournament_${currentTournament.id}_player_${holeInfo.playerId}_hole_${holeInfo.hole}_round_${holeInfo.round}.png`, fullPage: true });
+
+        // * Get the count of shots available
+        const shotsData = await getShotData(page);
+
+        // * Update the master object with the new hole data
+        updateTournamentData(finalTournamentData, holeInfo, shotsData);
+
+      } catch (error) {
+        console.log(chalk.red(`Error: ${error}`));
+        continue;
+      } finally {
+        // This block always runs, ensuring your browser tabs close and counter increments
+        await page.close(); 
+        i++; 
       }
+    }
 
-      // * Save screenshot of hole
-      // path to images "C:\\Users\\Sam\\repos\\PGAImages"
-      await page.screenshot({ path: `C:\\Users\\Sam\\repos\\PGAImages\\tournament_${currentTournamentId}_player_${holeInfo.playerId}_hole_${holeInfo.hole}_round_${holeInfo.round}.png`, fullPage: true });
-
-      // * Get the count of shots available
-      const shotsData = await getShotData(page);
-
-      // * Update the master object with the new hole data
-      updateTournamentData(finalTournamentData, holeInfo, shotsData);
-
+    // * Save the master object to the JSON file outside the loop
+    const fileName = `scraped_data/${currentTournament.id}_data.json`;
+    try {
+      fs.writeFileSync(fileName, JSON.stringify(finalTournamentData, null, 2));
+      console.log("Successfully saved all 18 holes to", chalk.magenta(`${fileName}`));
     } catch (error) {
-      console.log(chalk.red(`Error: ${error}`));
-      continue;
-    } finally {
-      // This block always runs, ensuring your browser tabs close and counter increments
-      await page.close(); 
-      i++; 
+      console.error("Error writing to JSON file:", error);
     }
   }
+   
 
-  // * Save the master object to the JSON file outside the loop
-  const fileName = `scraped_data/${currentTournamentId}_data.json`;
-  try {
-    fs.writeFileSync(fileName, JSON.stringify(finalTournamentData, null, 2));
-    console.log("Successfully saved all 18 holes to", chalk.magenta(`${fileName}`));
-  } catch (error) {
-    console.error("Error writing to JSON file:", error);
-  } 
-
-  // await browser.close();
+  // await browser.close(); // TODO: do I need this is it is not closing?
 
   // End time 
   const end = performance.now();
