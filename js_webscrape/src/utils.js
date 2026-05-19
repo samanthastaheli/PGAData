@@ -4,7 +4,7 @@ import fs from 'fs';
  * Reads a JSON file and returns the parsed data.
  * @param {string} filePath - Path to your .json file
  */
-const loadAndProcessJSON = (filePath) => {
+export const loadAndProcessJSON = (filePath) => {
   try {
     // 1. Read the file (utf-8 ensures it returns a string, not a Buffer)
     const rawData = fs.readFileSync(filePath, 'utf-8');
@@ -114,5 +114,15 @@ export const generateTestUrlForPlayer = (tournamentId, playerId) => {
 };
 
 /**
- * Generate browser and page.
+ * Get a list of years from 2019 to the current year to loop through for scraping tournament data.
  */
+export const scrapeYears = () => {
+  const startYear = 2019;
+  const currentYear = new Date().getFullYear();
+  const yearsList = [];
+
+  for (let year = startYear; year <= currentYear; year++) {
+    yearsList.push(year);
+  }
+  return yearsList;
+}

@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
 import fs from "fs"; // file system module
-import { getPlayerIds, generateTourCastUrlsForPlayer, generateTestUrlForPlayer, loadPlayerNames } from './utils.js';
+import { getPlayerIds, generateTourCastUrlsForPlayer, generateTestUrlForPlayer, loadPlayerNames, scrapeYears, loadAndProcessJSON } from './utils.js';
 import chalk from 'chalk'; // change color in terminal
 
 const SHOT_BUTTON_SELECTOR = 'div[class*="shot_shotNum"]';
@@ -42,7 +42,7 @@ const dismissPopUp = async (page) => {
     console.log(chalk.bgMagenta.white("No pop-up detected."));
   }
 
-  await new Promise(r => setTimeout(r, 1000));
+  await new Promise(r => setTimeout(r, 1000)); // * sleep 
 }
 
 /**
@@ -156,10 +156,11 @@ const updateTournamentData = (masterObj, holeInfo, shotData) => {
  * @returns {array} - An array of player objects with names and IDs.
  */
 const getPlayersInTournament = async (tournamentInfo, browser) => {
+  // TODO: make years dynamic
   const url = `https://www.pgatour.com/tournaments/2026/${tournamentInfo.name.replace(/\s+/g, '-').toLowerCase()}/${tournamentInfo.id}/leaderboard`;
 
   const page = await startPage(browser);
-  await navigateToUrl(url, page);
+  await await (url, page);
   
   // extract data
   await page.waitForSelector('.chakra-text.css-1v9q6zy');
@@ -180,12 +181,64 @@ const getPlayersInTournament = async (tournamentInfo, browser) => {
     }
   }
 
-  // TODO: remove after testing
-  playersInTournament.length = 3; // limit to 3 players for testing
-  
   console.log(chalk.magenta("Number of Players in tournament:", playersInTournament.length))
 
+  // TODO: remove after testing
+  playersInTournament.length = 1; // limit to 1 player for testing
+  
   return playersInTournament;
+}
+
+/**
+ * Get all tournament IDs and names as a dict.
+ */
+const getTournamentInfo = async (browser) => {
+  const tournamentJson = loadAndProcessJSON('../../sources/tournaments_test.json');
+  const tournaments = []; // object with id and name
+  const years = scrapeYears();
+
+  for (const [tournamentId, tournamentInfo] of Object.entries(tournamentJson)) {
+    // test if tournament tour cast url will work
+    for (const year of years) {
+      const testUrl = `https://www.pgatour.com/tournaments/${year}/${tournamentInfo.name.replace(/\s+/g, '-').toLowerCase()}/R${year}${tournamentId}/course-stats`;
+
+      const page = await startPage(browser);
+      try {
+        await navigateToUrl(testUrl, page);
+        // await page.waitForSelector('a[aria-label="TOURCAST"]', { 
+        //   timeout: 8000, // If it doesn't appear in 8 seconds, it likely doesn't exist
+        //   visible: true
+        // });
+        await new Promise(r => setTimeout(r, 2000)); // * sleep 
+
+        const isTourcastReal = await page.evaluate(() => {
+          // Look for the anchor tag with the specific label
+          const link = document.querySelector('a[aria-label="TOURCAST"]');
+          if (!link) return false;
+
+          // Check if the element is actually visible to a human
+          const style = window.getComputedStyle(link);
+          return style.display !== 'none' && style.visibility !== 'hidden' && link.offsetWidth > 0;
+        });
+        
+        if (isTourcastReal) {
+          tournaments.push({ id: `R${year}${tournamentId}`, name: tournamentInfo.name });
+          console.log(chalk.green(`Found TOURCAST for ${tournamentInfo.name} ${year}`));
+        } else {
+          console.log(chalk.yellow(`No TOURCAST found for ${tournamentInfo.name} ${year}`));
+        }
+      } catch (error) {
+        console.log(chalk.red(`Error: ${error} while checking ${tournamentInfo.name} ${year}`));
+      } finally { 
+        await page.close();
+      }
+    }
+  }
+
+  console.log(chalk.blue(`Total tournaments with TOURCAST: ${tournaments.length}`));
+  console.log(tournaments[0]); // TODO: remove after testing
+  tournaments.length = 1; // TODO: remove after testing
+  return tournaments;
 }
 
 // endregion Helper Functions
@@ -200,7 +253,8 @@ const getHoleData = async () => {
   
   // * Get urls
   // TODO: make current tournament dynamic
-  const tournamentIds = [{id: "R2026556", name: "Cadillac Championship"}, {id: "R2026480", name: "Truist Championship"}]; // cadillac and truist
+  // const tournamentIds = [{id: "R2026556", name: "Cadillac Championship"}, {id: "R2026480", name: "Truist Championship"}]; // cadillac and truist
+  const tournamentIds = await getTournamentInfo(browser);
   for (const currentTournament of tournamentIds) { 
     // const currentTournament.id = "R2026556" // cadillac tournament
     // const currentTournament.id = "R2026480" // Truist Championship
@@ -223,7 +277,7 @@ const getHoleData = async () => {
       try {
         // * Navigate to url
         console.log(`Navigating to Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}...`);
-        await navigateToUrl(holeInfo.url, page);
+        await await (holeInfo.url, page);
         
         // * Dismiss Pop-up
         await dismissPopUp(page);

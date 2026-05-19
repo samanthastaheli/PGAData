@@ -1,0 +1,14 @@
+{
+    "033": {
+        "name": "PGA Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/pga-championship/R<year>033/course-stats"
+    },
+    "023": {
+        "name": "the Memorial Tournament presented by Workday",
+        "url": "https://www.pgatour.com/tournaments/<year>/the-memorial-tournament-presented-by-workday/R<year>023/course-stats"
+    },
+    "556": {
+        "name": "Cadillac Championship",
+        "url": "https://www.pgatour.com/tournaments/<year>/cadillac-championship/R<year>556/course-stats"
+    }
+}
