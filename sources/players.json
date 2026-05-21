@@ -17236,5 +17236,101 @@
         "firstName": "Richard",
         "lastName": "Zokol",
         "url": "https://www.pgatour.com/player/02322/richard-zokol/stats"
+    },
+    "Michael Lorenzo-Vera": {
+        "id": "29772",
+        "firstName": "Michael",
+        "lastName": "Lorenzo-Vera",
+        "url": "https://www.pgatour.com/player/29772/michael-lorenzo-vera/stats"
+    },
+    "Ryan Vermeer": {
+        "id": "24964",
+        "firstName": "Ryan",
+        "lastName": "Vermeer",
+        "url": "https://www.pgatour.com/player/24964/ryan-vermeer/stats"
+    },
+    "Marty Jertson": {
+        "id": "26735",
+        "firstName": "Marty",
+        "lastName": "Jertson",
+        "url": "https://www.pgatour.com/player/26735/marty-jertson/stats"
+    },
+    "Mikko Korhonen": {
+        "id": "29370",
+        "firstName": "Mikko",
+        "lastName": "Korhonen",
+        "url": "https://www.pgatour.com/player/29370/mikko-korhonen/stats"
+    },
+    "Michael Block": {
+        "id": "22764",
+        "firstName": "Michael",
+        "lastName": "Block",
+        "url": "https://www.pgatour.com/player/22764/michael-block/stats"
+    },
+    "Braden Shattuck": {
+        "id": "63181",
+        "firstName": "Braden",
+        "lastName": "Shattuck",
+        "url": "https://www.pgatour.com/player/63181/braden-shattuck/stats"
+    },
+    "Rob Labritz": {
+        "id": "25431",
+        "firstName": "Rob",
+        "lastName": "Labritz",
+        "url": "https://www.pgatour.com/player/25431/rob-labritz/stats"
+    },
+    "Alex Beach": {
+        "id": "52633",
+        "firstName": "Alex",
+        "lastName": "Beach",
+        "url": "https://www.pgatour.com/player/52633/alex-beach/stats"
+    },
+    "Wyatt Worthington II": {
+        "id": "50012",
+        "firstName": "Wyatt",
+        "lastName": "Worthington-ii",
+        "url": "https://www.pgatour.com/player/50012/wyatt-worthington-ii/stats"
+    },
+    "Tyler Hall": {
+        "id": "28483",
+        "firstName": "Tyler",
+        "lastName": "Hall",
+        "url": "https://www.pgatour.com/player/28483/tyler-hall/stats"
+    },
+    "Rich Berberian, Jr.": {
+        "id": "11079",
+        "firstName": "Rich",
+        "lastName": "Berberian",
+        "url": "https://www.pgatour.com/player/11079/rich-berberian/stats"
+    },
+    "Daniel Balin": {
+        "id": "34387",
+        "firstName": "Daniel",
+        "lastName": "Balin",
+        "url": "https://www.pgatour.com/player/34387/daniel-balin/stats"
+    },
+    "John O'Leary": {
+        "id": "17500",
+        "firstName": "John",
+        "lastName": "O'Leary",
+        "url": "https://www.pgatour.com/player/17500/john-oleary/stats"
+    },
+    "Stuart Deane": {
+        "id": "24610",
+        "firstName": "Stuart",
+        "lastName": "Deane",
+        "url": "https://www.pgatour.com/player/24610/stuart-deane/stats"
+    },
+    "Jeff Schmid": {
+        "id": "07775",
+        "firstName": "Jeff",
+        "lastName": "Schmid",
+        "url": "https://www.pgatour.com/player/07775/jeff-schmid/stats"
+    },
+    "Cory Schneider": {
+        "id": "30683",
+        "firstName": "Cory",
+        "lastName": "Schneider",
+        "url": "https://www.pgatour.com/player/30683/cory-schneider/stats"
     }
 }

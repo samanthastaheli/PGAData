@@ -156,11 +156,10 @@ const updateTournamentData = (masterObj, holeInfo, shotData) => {
  * @returns {array} - An array of player objects with names and IDs.
  */
 const getPlayersInTournament = async (tournamentInfo, browser) => {
-  // TODO: make years dynamic
   const url = `https://www.pgatour.com/tournaments/2026/${tournamentInfo.name.replace(/\s+/g, '-').toLowerCase()}/${tournamentInfo.id}/leaderboard`;
 
   const page = await startPage(browser);
-  await await (url, page);
+  await navigateToUrl(url, page);
   
   // extract data
   await page.waitForSelector('.chakra-text.css-1v9q6zy');
@@ -183,8 +182,7 @@ const getPlayersInTournament = async (tournamentInfo, browser) => {
 
   console.log(chalk.magenta("Number of Players in tournament:", playersInTournament.length))
 
-  // TODO: remove after testing
-  playersInTournament.length = 1; // limit to 1 player for testing
+  playersInTournament.length = 1; // TODO: remove after testing
   
   return playersInTournament;
 }
@@ -205,27 +203,32 @@ const getTournamentInfo = async (browser) => {
       const page = await startPage(browser);
       try {
         await navigateToUrl(testUrl, page);
-        // await page.waitForSelector('a[aria-label="TOURCAST"]', { 
-        //   timeout: 8000, // If it doesn't appear in 8 seconds, it likely doesn't exist
-        //   visible: true
-        // });
-        await new Promise(r => setTimeout(r, 2000)); // * sleep 
 
-        const isTourcastReal = await page.evaluate(() => {
-          // Look for the anchor tag with the specific label
-          const link = document.querySelector('a[aria-label="TOURCAST"]');
-          if (!link) return false;
-
-          // Check if the element is actually visible to a human
-          const style = window.getComputedStyle(link);
-          return style.display !== 'none' && style.visibility !== 'hidden' && link.offsetWidth > 0;
-        });
+        const isPageLoaded = await page.waitForSelector('svg[aria-label="Spinner"]', { 
+          hidden: true, 
+          timeout: 8000 
+        })
+        .then(() => true)   // If it succeeds, return true
+        .catch(() => false); // If it times out or fails, return false
         
-        if (isTourcastReal) {
-          tournaments.push({ id: `R${year}${tournamentId}`, name: tournamentInfo.name });
-          console.log(chalk.green(`Found TOURCAST for ${tournamentInfo.name} ${year}`));
+        if (isPageLoaded) {
+          const foundTourCastTab = await page.evaluate(() => {
+            // Look for the anchor tag with the specific label
+            const link = document.querySelector('a[aria-label="TOURCAST"]');
+            if (!link) return false;
+
+            // Check if the element is actually visible to a human
+            const style = window.getComputedStyle(link);
+            return style.display !== 'none' && style.visibility !== 'hidden' && link.offsetWidth > 0;
+          });
+          if (foundTourCastTab) {
+            tournaments.push({ id: `R${year}${tournamentId}`, name: tournamentInfo.name });
+            console.log(chalk.green(`Found TOURCAST for ${tournamentInfo.name} ${year}`));
+          } else {
+            console.log(chalk.yellow(`No TOURCAST found for ${tournamentInfo.name} ${year}`));
+          }
         } else {
-          console.log(chalk.yellow(`No TOURCAST found for ${tournamentInfo.name} ${year}`));
+          console.log(chalk.yellow(`No page loaded for ${tournamentInfo.name} ${year}`));
         }
       } catch (error) {
         console.log(chalk.red(`Error: ${error} while checking ${tournamentInfo.name} ${year}`));
@@ -249,15 +252,11 @@ const getTournamentInfo = async (browser) => {
 
 const getHoleData = async () => {
   const start = performance.now();
-  let browser = await startBrowser();
+  const browser = await startBrowser();
   
   // * Get urls
-  // TODO: make current tournament dynamic
-  // const tournamentIds = [{id: "R2026556", name: "Cadillac Championship"}, {id: "R2026480", name: "Truist Championship"}]; // cadillac and truist
   const tournamentIds = await getTournamentInfo(browser);
   for (const currentTournament of tournamentIds) { 
-    // const currentTournament.id = "R2026556" // cadillac tournament
-    // const currentTournament.id = "R2026480" // Truist Championship
     const playersInTournament = await getPlayersInTournament(currentTournament, browser);
     const urls = generateTourCastUrlsForPlayer(currentTournament.id, playersInTournament);
     console.log(chalk.blue(`Generated URLs for ${urls.length} holes across all players and rounds.`));
@@ -277,7 +276,7 @@ const getHoleData = async () => {
       try {
         // * Navigate to url
         console.log(`Navigating to Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}...`);
-        await await (holeInfo.url, page);
+        await navigateToUrl(holeInfo.url, page);
         
         // * Dismiss Pop-up
         await dismissPopUp(page);
@@ -292,7 +291,12 @@ const getHoleData = async () => {
 
         // * Save screenshot of hole
         // path to images "C:\\Users\\Sam\\repos\\PGAImages"
-        await page.screenshot({ path: `C:\\Users\\Sam\\repos\\PGAImages\\tournament_${currentTournament.id}_player_${holeInfo.playerId}_hole_${holeInfo.hole}_round_${holeInfo.round}.png`, fullPage: true });
+        try {
+          await page.screenshot({ path: `C:\\Users\\Sam\\repos\\PGAImages\\tournament_${currentTournament.id}_player_${holeInfo.playerId}_hole_${holeInfo.hole}_round_${holeInfo.round}.png`, fullPage: true });
+          console.log(chalk.green(`Screenshot saved for Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}.`));
+        } catch (error) {
+          console.error(chalk.red(`Error saving screenshot for Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}: ${error}`));
+        }
 
         // * Get the count of shots available
         const shotsData = await getShotData(page);
