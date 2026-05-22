@@ -117,12 +117,13 @@ export const generateTestUrlForPlayer = (tournamentId, playerId) => {
  * Get a list of years from 2019 to the current year to loop through for scraping tournament data.
  */
 export const scrapeYears = () => {
-  const startYear = 2019;
-  const currentYear = new Date().getFullYear();
-  const yearsList = [];
+//   const startYear = 2019; // TODO: 2019 is too many years
+    const startYear = 2025; 
+    const currentYear = new Date().getFullYear();
+    const yearsList = [];
 
-  for (let year = startYear; year <= currentYear; year++) {
-    yearsList.push(year);
-  }
-  return yearsList;
+    for (let year = startYear; year <= currentYear; year++) {
+        yearsList.push(year);
+    }
+    return yearsList;
 }

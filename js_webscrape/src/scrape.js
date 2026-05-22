@@ -53,7 +53,7 @@ const dismissPopUp = async (page) => {
  */
 const checkForShots = async (page, holeNum) => {
     try {
-        await page.waitForSelector(SHOT_BUTTON_SELECTOR, { timeout: 5000 });
+        await page.waitForSelector(SHOT_BUTTON_SELECTOR, { timeout: 8000 });
         return true; 
     } catch (e) {
         console.log(chalk.magenta(`No shots found for hole ${holeNum}, skipping.`));
@@ -191,8 +191,8 @@ const getPlayersInTournament = async (tournamentInfo, browser) => {
  * Get all tournament IDs and names as a dict.
  */
 const getTournamentInfo = async (browser) => {
-  const tournamentJson = loadAndProcessJSON('../../sources/tournaments.json');
-  // const tournamentJson = loadAndProcessJSON('../../sources/tournaments_test.json'); // TODO: change back after testing
+  // const tournamentJson = loadAndProcessJSON('../../sources/tournaments.json');
+  const tournamentJson = loadAndProcessJSON('../../sources/tournaments_test.json'); // TODO: change back after testing
   const tournaments = []; // object with id and name
   const years = scrapeYears();
 
@@ -287,7 +287,13 @@ const getHoleData = async () => {
 
         // If false skip this hole and move to the next one
         if (!hasShots) {
-            continue;
+          continue; // skip to next hole
+          // if (holeInfo.hole === 1) {
+          //   console.log(chalk.red(`No shots for Hole 1, likely page is not working. Skipping all holes for this player.`));
+          //   break; // exit the hole loop and move to the next player
+          // } else {
+          //   continue; 
+          // }
         }
 
         // * Save screenshot of hole
