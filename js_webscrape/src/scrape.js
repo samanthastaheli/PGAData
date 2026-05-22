@@ -306,13 +306,13 @@ const getHoleData = async () => {
 
         // If false skip this hole and move to the next one
         if (!hasShots) {
-          continue; // skip to next hole
-          // if (holeInfo.hole === 1) {
-          //   console.log(chalk.red(`No shots for Hole 1, likely page is not working. Skipping all holes for this player.`));
-          //   break; // exit the hole loop and move to the next player
-          // } else {
-          //   continue; 
-          // }
+          // continue; // skip to next hole
+          if (holeInfo.hole === 1) {
+            console.log(chalk.red(`No shots for Hole 1, likely page is not working. Skipping all holes for this player.`));
+            break; // exit the hole loop and move to the next player
+          } else {
+            continue; 
+          }
         }
 
         // * Save screenshot of hole
