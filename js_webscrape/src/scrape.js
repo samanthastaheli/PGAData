@@ -182,7 +182,7 @@ const getPlayersInTournament = async (tournamentInfo, browser) => {
 
   console.log(chalk.magenta("Number of Players in tournament:", playersInTournament.length))
 
-  playersInTournament.length = 1; // TODO: remove after testing
+  // playersInTournament.length = 1; // TODO: remove after testing
   
   return playersInTournament;
 }
@@ -191,7 +191,8 @@ const getPlayersInTournament = async (tournamentInfo, browser) => {
  * Get all tournament IDs and names as a dict.
  */
 const getTournamentInfo = async (browser) => {
-  const tournamentJson = loadAndProcessJSON('../../sources/tournaments_test.json');
+  const tournamentJson = loadAndProcessJSON('../../sources/tournaments.json');
+  // const tournamentJson = loadAndProcessJSON('../../sources/tournaments_test.json'); // TODO: change back after testing
   const tournaments = []; // object with id and name
   const years = scrapeYears();
 
@@ -239,8 +240,8 @@ const getTournamentInfo = async (browser) => {
   }
 
   console.log(chalk.blue(`Total tournaments with TOURCAST: ${tournaments.length}`));
-  console.log(tournaments[0]); // TODO: remove after testing
-  tournaments.length = 1; // TODO: remove after testing
+  // console.log(tournaments[0]); // TODO: remove after testing
+  // tournaments.length = 1; // TODO: remove after testing
   return tournaments;
 }
 
