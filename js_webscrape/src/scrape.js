@@ -3,7 +3,9 @@ import fs from "fs"; // file system module
 import { getPlayerIds, generateTourCastUrlsForPlayer, generateTestUrlForPlayer, loadPlayerNames, scrapeYears, loadAndProcessJSON } from './utils.js';
 import chalk from 'chalk'; // change color in terminal
 
-const SHOT_BUTTON_SELECTOR = 'div[class*="shot_shotNum"]';
+// const SHOT_BUTTON_SELECTOR = 'div[class*="shot_shotNum"]';
+const SHOT_BUTTON_SELECTOR = 'button[class*="shot_shotNum"]'; // Updated selector for shot buttons
+const CLOSE_SELECTOR = 'button[class*="informationContent_close"]';
 
 // ***************************************************************************************
 // region Helper Functions
@@ -11,7 +13,13 @@ const SHOT_BUTTON_SELECTOR = 'div[class*="shot_shotNum"]';
 
 const startBrowser = async () => {
   const browser = await puppeteer.launch({
-    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+    args: [
+      "--no-sandbox", 
+      "--disable-setuid-sandbox", 
+      "--disable-dev-shm-usage", 
+      "--disable-blink-features=AutomationControlled", 
+      // "--disable-features=IsolateOrigins,site-per-process"
+    ],
     headless: false, // Headless must be true for Docker
     defaultViewport: { width: 1280, height: 800 },
   });
@@ -28,6 +36,7 @@ const navigateToUrl = async (url, page) => {
   await page.goto(url, { waitUntil: "networkidle2" });
 }
 
+
 const dismissPopUp = async (page) => {
   try {
     const closeSelector = 'div[class*="informationContent_close"]';
@@ -35,11 +44,12 @@ const dismissPopUp = async (page) => {
     await page.evaluate((sel) => {
       const btn = document.querySelector(sel);
       if (btn) btn.click();
-    }, closeSelector);
+    }, CLOSE_SELECTOR);
     console.log(chalk.bgBlue.white("Pop-up dismissed."));
     
   } catch (error) {
     console.log(chalk.bgMagenta.white("No pop-up detected."));
+    // console.log(chalk.yellow(`Error or timeout while trying to dismiss pop-up: ${error}`)); // TODO: remove after testing
   }
 
   await new Promise(r => setTimeout(r, 1000)); // * sleep 
@@ -54,10 +64,11 @@ const dismissPopUp = async (page) => {
 const checkForShots = async (page, holeNum) => {
     try {
         await page.waitForSelector(SHOT_BUTTON_SELECTOR, { timeout: 8000 });
-        return true; 
-    } catch (e) {
-        console.log(chalk.magenta(`No shots found for hole ${holeNum}, skipping.`));
-        return false;
+      return true; 
+    } catch (error) {
+      console.log(chalk.magenta(`No shots found for hole ${holeNum}, skipping.`));
+      // console.log(chalk.yellow(`Error or timeout while waiting for shots: ${error}`)); // TODO: remove after testing
+      return false;
     }
 };
 
@@ -183,6 +194,7 @@ const getPlayersInTournament = async (tournamentInfo, browser) => {
   console.log(chalk.magenta("Number of Players in tournament:", playersInTournament.length))
 
   // playersInTournament.length = 1; // TODO: remove after testing
+  await page.close();
   
   return playersInTournament;
 }
@@ -256,7 +268,11 @@ const getHoleData = async () => {
   const browser = await startBrowser();
   
   // * Get urls
-  const tournamentIds = await getTournamentInfo(browser);
+  // const tournamentIds = await getTournamentInfo(browser);
+  const tournamentIds = [ // TODO: remove after testing
+    { id: "R2026556", name: "Cadillac Championship" },
+    { id: "R2026023", name: "the Memorial Tournament presented by Workday" },
+  ];
   for (const currentTournament of tournamentIds) { 
     const playersInTournament = await getPlayersInTournament(currentTournament, browser);
     const urls = generateTourCastUrlsForPlayer(currentTournament.id, playersInTournament);
@@ -278,6 +294,9 @@ const getHoleData = async () => {
         // * Navigate to url
         console.log(`Navigating to Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}...`);
         await navigateToUrl(holeInfo.url, page);
+
+        // * Wait for page to load by waiting for a key element
+        await page.waitForSelector('[class*="primaryPlayerController_"]', { timeout: 15000 });
         
         // * Dismiss Pop-up
         await dismissPopUp(page);
@@ -331,13 +350,12 @@ const getHoleData = async () => {
     }
   }
    
-
-  // await browser.close(); // TODO: do I need this is it is not closing?
-
   // End time 
   const end = performance.now();
   const elapsed = (end - start) / 1000; 
   console.log(chalk.green(`Execution time: ${elapsed.toFixed(3)} seconds`));
+
+  // await browser.close(); // TODO: do I need this is it is not closing?
 };
 
 
