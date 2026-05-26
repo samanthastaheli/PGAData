@@ -2,6 +2,7 @@
 Clean up the scraped JSON data. Turn the JSON into csv files.
 """
 
+import os
 import json
 import csv
 import pandas as pd
@@ -44,8 +45,21 @@ def create_csv_from_json(tour_id):
     print(f"Success! {csv_filename} has been created.")
 
 
+def get_tour_ids():
+    """
+    Get all tournament IDs that are in js_webscrape\src\scraped_data folder.
+    """
+    data_files = os.listdir("js_webscrape\src\scraped_data")
+    tour_ids = []
+
+    for file in data_files:
+        tour_ids.append(file.split("_")[0])
+
+    return tour_ids
+
 def main():
-    tour_ids = ["R2026556", "R2026480"]
+    # tour_ids = ["R2026556", "R2026480"]
+    tour_ids = get_tour_ids()
 
     for tour_id in tour_ids:
         create_csv_from_json(tour_id)
