@@ -270,8 +270,10 @@ const getHoleData = async () => {
   // * Get urls
   // const tournamentIds = await getTournamentInfo(browser);
   const tournamentIds = [ // TODO: remove after testing
-    { id: "R2026556", name: "Cadillac Championship" },
-    { id: "R2026023", name: "the Memorial Tournament presented by Workday" },
+    // { id: "R2026556", name: "Cadillac Championship" },
+    // { id: "R2025023", name: "the Memorial Tournament presented by Workday" },
+    { id: "R2025011", name: "THE PLAYERS Championship" },
+    { id: "R2026011", name: "THE PLAYERS Championship" },
   ];
   for (const currentTournament of tournamentIds) { 
     const playersInTournament = await getPlayersInTournament(currentTournament, browser);
