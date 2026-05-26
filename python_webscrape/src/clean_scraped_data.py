@@ -8,39 +8,46 @@ import csv
 import pandas as pd
 
 
-def create_csv_from_json(tour_id):
+def get_json_data(tour_id):
+    json_filename = f"js_webscrape\src\scraped_data\{tour_id}_data.json"
+    with open(json_filename, 'r') as file:
+        data = json.load(file)
+    return data
+
+def create_csv_from_json(tour_ids):
     """
     Create the csv file for the tournament ID json file.
     """
-    json_filename = f"js_webscrape\src\scraped_data\{tour_id}_data.json"
-    csv_filename = f"data\scraped_tournament_data\{tour_id}_data.csv"
+    # csv_filename = f"data\scraped_tournament_data\{tour_id}_data.csv"
+    csv_filename = "data\\scraped_tournament_data\\tournament_shots_data.csv"
     header = ["tournament", "player", "round", "hole", "shotNumber", "shotDist", "toHole", "location"]
-
-    with open(json_filename, 'r') as file:
-        data = json.load(file)
 
     with open(csv_filename, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerow(header)
 
-        # tournament, player, round, hole, shotDist, toHole, location, shotNumber 
-        for player_id, rounds in data.items():
-            for round_num, holes in rounds.items():
-                for hole_num, shots in holes.items():
-                    for shot in shots:
-                        # Use .get() in case 'toHole' or 'location' are missing (like shot #5)
-                        writer.writerow(
-                            [
-                                "R2026556",
-                                player_id,
-                                round_num,
-                                hole_num,
-                                shot.get("shotNumber"),
-                                shot.get("shotDist"),
-                                shot.get("toHole", ""),
-                                shot.get("location", ""),
-                            ]
-                        )
+        # get every tournament data
+        for tour_id in tour_ids:
+            data = get_json_data(tour_id)
+
+            # tournament, player, round, hole, shotDist, toHole, location, shotNumber 
+            for player_id, rounds in data.items():
+                for round_num, holes in rounds.items():
+                    for hole_num, shots in holes.items():
+                        for shot in shots:
+                            # Use .get() when 'toHole' or 'location' are missing for last shots
+                            writer.writerow(
+                                [
+                                    tour_id,
+                                    player_id,
+                                    round_num,
+                                    hole_num,
+                                    shot.get("shotNumber"),
+                                    shot.get("shotDist"),
+                                    shot.get("toHole", ""),
+                                    shot.get("location", ""),
+                                ]
+                            )
 
     print(f"Success! {csv_filename} has been created.")
 
@@ -60,10 +67,8 @@ def get_tour_ids():
 def main():
     # tour_ids = ["R2026556", "R2026480"]
     tour_ids = get_tour_ids()
+    create_csv_from_json(tour_ids)
 
-    for tour_id in tour_ids:
-        create_csv_from_json(tour_id)
-    
 
 if __name__ == "__main__":
     main()
