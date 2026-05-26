@@ -35,7 +35,19 @@ def create_csv_from_json(tour_ids):
                 for round_num, holes in rounds.items():
                     for hole_num, shots in holes.items():
                         for shot in shots:
-                            # Use .get() when 'toHole' or 'location' are missing for last shots
+                            default_to_hole = 0
+                            default_location = "In Hole"
+
+                            to_hole_val = shot.get("toHole")
+                            location_val = shot.get("location")
+
+                            # set to_hole and loc to default if empty
+                            if to_hole_val is None or to_hole_val == "":
+                                to_hole_val = default_to_hole
+                                
+                            if location_val is None or location_val == "":
+                                location_val = default_location
+
                             writer.writerow(
                                 [
                                     tour_id,
@@ -44,8 +56,8 @@ def create_csv_from_json(tour_ids):
                                     hole_num,
                                     shot.get("shotNumber"),
                                     shot.get("shotDist"),
-                                    shot.get("toHole", ""),
-                                    shot.get("location", ""),
+                                    to_hole_val,
+                                    location_val,
                                 ]
                             )
 
@@ -63,6 +75,7 @@ def get_tour_ids():
         tour_ids.append(file.split("_")[0])
 
     return tour_ids
+
 
 def main():
     # tour_ids = ["R2026556", "R2026480"]
