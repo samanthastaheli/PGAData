@@ -276,7 +276,8 @@ const getHoleData = async () => {
     { id: "R2026011", name: "THE PLAYERS Championship" },
   ];
   for (const currentTournament of tournamentIds) { 
-    const playersInTournament = await getPlayersInTournament(currentTournament, browser);
+    // const playersInTournament = await getPlayersInTournament(currentTournament, browser);
+    const playersInTournament = [{name: "Cameron Young", id: "57366"}]; // TODO: remove after testing
     const urls = generateTourCastUrlsForPlayer(currentTournament.id, playersInTournament);
     console.log(chalk.blue(`Generated URLs for ${urls.length} holes across all players and rounds.`));
     const finalTournamentData = {};
