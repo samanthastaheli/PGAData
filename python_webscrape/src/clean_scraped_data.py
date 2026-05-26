@@ -32,9 +32,14 @@ def create_csv_from_json(tour_ids):
 
             # tournament, player, round, hole, shotDist, toHole, location, shotNumber 
             for player_id, rounds in data.items():
-                for round_num, holes in rounds.items():
-                    for hole_num, shots in holes.items():
+                for round, holes in rounds.items():
+                    for hole, shots in holes.items():
                         for shot in shots:
+                            # Get round and hole numbers only
+                            round_num = round.split("_")[1]
+                            hole_num = hole.split("_")[1]
+
+                            # Get toHole and location
                             default_to_hole = 0
                             default_location = "In Hole"
 
