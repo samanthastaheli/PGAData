@@ -1,0 +1,362 @@
+{
+    "1": {
+        "parValue": "4",
+        "yards": 423,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.6917186803865583,
+                "y": 0.4712184197048177,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.4712184197048177,
+                "y": 0.30828131961344174,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "2": {
+        "parValue": "5",
+        "yards": 532,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.5329517925723491,
+                "y": 0.6729322984148579,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.6729322984148579,
+                "y": 0.46704820742765085,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "3": {
+        "parValue": "3",
+        "yards": 177,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.6586447201713721,
+                "y": 0.34816904170288226,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.34816904170288226,
+                "y": 0.3413552798286279,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "4": {
+        "parValue": "4",
+        "yards": 384,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.6418014454052943,
+                "y": 0.2419937428778169,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.2419937428778169,
+                "y": 0.35819855459470573,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "5": {
+        "parValue": "4",
+        "yards": 471,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.5478865100705242,
+                "y": 0.688824987996788,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.688824987996788,
+                "y": 0.45211348992947575,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "6": {
+        "parValue": "4",
+        "yards": 393,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.4381921944420025,
+                "y": 0.6633748966805366,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.6633748966805366,
+                "y": 0.5618078055579975,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "7": {
+        "parValue": "4",
+        "yards": 451,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.5379918595856177,
+                "y": 0.36403308283904745,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.36403308283904745,
+                "y": 0.4620081404143823,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "8": {
+        "parValue": "3",
+        "yards": 237,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.4110118939643515,
+                "y": 0.4447856323650948,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.4447856323650948,
+                "y": 0.5889881060356486,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "9": {
+        "parValue": "5",
+        "yards": 602,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.6585656712604808,
+                "y": 0.3590978267925875,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.3590978267925875,
+                "y": 0.3414343287395192,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "10": {
+        "parValue": "4",
+        "yards": 424,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.4082576490110241,
+                "y": 0.28336502292168864,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.28336502292168864,
+                "y": 0.5917423509889759,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "11": {
+        "parValue": "5",
+        "yards": 558,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.30922025386281654,
+                "y": 0.5707134060146687,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.5707134060146687,
+                "y": 0.6907797461371834,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "12": {
+        "parValue": "4",
+        "yards": 369,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.49496925136314146,
+                "y": 0.4206770984530957,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.4206770984530957,
+                "y": 0.5050307486368586,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "13": {
+        "parValue": "3",
+        "yards": 181,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.48135659003186065,
+                "y": 0.31602402840534743,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.31602402840534743,
+                "y": 0.5186434099681394,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "14": {
+        "parValue": "4",
+        "yards": 481,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.4392207480346256,
+                "y": 0.6771174298910545,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.6771174298910545,
+                "y": 0.5607792519653745,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "15": {
+        "parValue": "4",
+        "yards": 470,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.4748383416129119,
+                "y": 0.350807730362144,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.350807730362144,
+                "y": 0.5251616583870882,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "16": {
+        "parValue": "5",
+        "yards": 523,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.6982063428193191,
+                "y": 0.45671312722446233,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.45671312722446233,
+                "y": 0.30179365718068085,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "17": {
+        "parValue": "3",
+        "yards": 137,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.49861123118504286,
+                "y": 0.7754859883226786,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.7754859883226786,
+                "y": 0.5013887688149572,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    },
+    "18": {
+        "parValue": "4",
+        "yards": 462,
+        "pin": {
+            "leftToRightCoords": {
+                "x": 0.6764742139905372,
+                "y": 0.3071313280265744,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            },
+            "bottomToTopCoords": {
+                "x": 0.3071313280265744,
+                "y": 0.3235257860094628,
+                "z": -1,
+                "enhancedX": -1,
+                "enhancedY": -1
+            }
+        }
+    }
+}
