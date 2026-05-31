@@ -272,12 +272,12 @@ const getHoleData = async () => {
   const tournamentIds = [ // TODO: remove after testing
     // { id: "R2026556", name: "Cadillac Championship" },
     // { id: "R2025023", name: "the Memorial Tournament presented by Workday" },
-    { id: "R2025011", name: "THE PLAYERS Championship" },
-    { id: "R2026011", name: "THE PLAYERS Championship" },
+    { id: "R2024011", name: "THE PLAYERS Championship" },
+    { id: "R2023011", name: "THE PLAYERS Championship" },
   ];
   for (const currentTournament of tournamentIds) { 
-    // const playersInTournament = await getPlayersInTournament(currentTournament, browser);
-    const playersInTournament = [{name: "Cameron Young", id: "57366"}]; // TODO: remove after testing
+    const playersInTournament = await getPlayersInTournament(currentTournament, browser);
+    // const playersInTournament = [{name: "Cameron Young", id: "57366"}]; // TODO: remove after testing
     const urls = generateTourCastUrlsForPlayer(currentTournament.id, playersInTournament);
     console.log(chalk.blue(`Generated URLs for ${urls.length} holes across all players and rounds.`));
     const finalTournamentData = {};
@@ -321,7 +321,8 @@ const getHoleData = async () => {
         // * Save screenshot of hole
         // path to images "C:\\Users\\Sam\\repos\\PGAImages"
         try {
-          await page.screenshot({ path: `C:\\Users\\Sam\\repos\\PGAImages\\tournament_${currentTournament.id}_player_${holeInfo.playerId}_hole_${holeInfo.hole}_round_${holeInfo.round}.png`, fullPage: true });
+          await page.screenshot({ path: `C:\\Users\\Edge\\source\\repos\\PGAImages\\tournament_${currentTournament.id}_player_${holeInfo.playerId}_hole_${holeInfo.hole}_round_${holeInfo.round}.png`, fullPage: true });
+          // await page.screenshot({ path: `C:\\Users\\Sam\\repos\\PGAImages\\tournament_${currentTournament.id}_player_${holeInfo.playerId}_hole_${holeInfo.hole}_round_${holeInfo.round}.png`, fullPage: true });
           console.log(chalk.green(`Screenshot saved for Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}.`));
         } catch (error) {
           console.error(chalk.red(`Error saving screenshot for Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}: ${error}`));
