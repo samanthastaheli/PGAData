@@ -1,0 +1,1726 @@
+{
+  "57366": {
+    "Round_1": {
+      "Hole_1": [
+        {
+          "shotDist": "328 yds",
+          "toHole": "86 yds",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "96 yds",
+          "toHole": "40 ft 1 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "38 ft 6 in.",
+          "toHole": "3 ft 7 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "5 ft 4 in.",
+          "toHole": "17 in",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "17 in",
+          "shotNumber": "5"
+        }
+      ],
+      "Hole_2": [
+        {
+          "shotDist": "326 yds",
+          "toHole": "211 yds",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "221 yds",
+          "toHole": "67 ft 0 in.",
+          "location": "Left Rough",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "94 ft 2 in.",
+          "toHole": "27 ft 0 in.",
+          "location": "Right Intermediate",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "26 ft 5 in.",
+          "toHole": "8 in",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "8 in",
+          "shotNumber": "5"
+        }
+      ],
+      "Hole_3": [
+        {
+          "shotDist": "187 yds",
+          "toHole": "14 ft 0 in.",
+          "location": "Green",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "14 ft 0 in.",
+          "shotNumber": "2"
+        }
+      ],
+      "Hole_4": [
+        {
+          "shotDist": "232 yds",
+          "toHole": "141 yds",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "134 yds",
+          "toHole": "23 ft 1 in.",
+          "location": "Right Fairway",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "24 ft 4 in.",
+          "toHole": "14 in",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "14 in",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_5": [
+        {
+          "shotDist": "323 yds",
+          "toHole": "142 yds",
+          "location": "Left Rough",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "133 yds",
+          "toHole": "34 ft 8 in.",
+          "location": "Right Fairway",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "27 ft 8 in.",
+          "toHole": "7 ft 1 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "7 ft 1 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_6": [
+        {
+          "shotDist": "242 yds",
+          "toHole": "153 yds",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "167 yds",
+          "toHole": "43 ft 10 in.",
+          "location": "Right Rough",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "56 ft 11 in.",
+          "toHole": "12 ft 11 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "13 ft 2 in.",
+          "toHole": "3 in",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "3 in",
+          "shotNumber": "5"
+        }
+      ],
+      "Hole_7": [
+        {
+          "shotDist": "301 yds",
+          "toHole": "131 yds",
+          "location": "Right Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "123 yds",
+          "toHole": "26 ft 7 in.",
+          "location": "Right Fairway",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "29 ft 2 in.",
+          "toHole": "2 ft 4 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "2 ft 4 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_8": [
+        {
+          "shotDist": "213 yds",
+          "toHole": "52 ft 9 in.",
+          "location": "Green",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "47 ft 2 in.",
+          "toHole": "5 ft 8 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "5 ft 8 in.",
+          "shotNumber": "3"
+        }
+      ],
+      "Hole_9": [
+        {
+          "shotDist": "363 yds",
+          "toHole": "271 yds",
+          "location": "Unknown",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "157 yds",
+          "toHole": "136 yds",
+          "location": "Left Fairway",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "136 yds",
+          "toHole": "7 ft 6 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "7 ft 6 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_10": [
+        {
+          "shotDist": "261 yds",
+          "toHole": "155 yds",
+          "location": "Right Rough",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "136 yds",
+          "toHole": "62 ft 5 in.",
+          "location": "Right Front Greenside Bunker",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "53 ft 11 in.",
+          "toHole": "8 ft 7 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "9 ft 8 in.",
+          "toHole": "9 in",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "9 in",
+          "shotNumber": "5"
+        }
+      ],
+      "Hole_11": [
+        {
+          "shotDist": "332 yds",
+          "toHole": "230 yds",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "220 yds",
+          "toHole": "29 ft 1 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "28 ft 1 in.",
+          "toHole": "17 in",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "17 in",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_12": [
+        {
+          "shotDist": "259 yds",
+          "toHole": "95 yds",
+          "location": "Right Fairway Bunker",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "84 yds",
+          "toHole": "34 ft 8 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "35 ft 3 in.",
+          "toHole": "9 in",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "9 in",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_13": [
+        {
+          "shotDist": "200 yds",
+          "toHole": "33 ft 6 in.",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "32 ft 11 in.",
+          "toHole": "3 ft 7 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "3 ft 7 in.",
+          "shotNumber": "3"
+        }
+      ],
+      "Hole_14": [
+        {
+          "shotDist": "306 yds",
+          "toHole": "185 yds",
+          "location": "Right Rough",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "114 yds",
+          "toHole": "72 yds",
+          "location": "Left Intermediate",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "72 yds",
+          "toHole": "3 ft 3 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "3 ft 3 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_15": [
+        {
+          "shotDist": "320 yds",
+          "toHole": "127 yds",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "132 yds",
+          "toHole": "15 ft 4 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "17 ft 7 in.",
+          "toHole": "2 ft 1 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "2 ft 1 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_16": [
+        {
+          "shotDist": "299 yds",
+          "toHole": "210 yds",
+          "location": "Tree Outline",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "189 yds",
+          "toHole": "85 ft 0 in.",
+          "location": "Left Fairway",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "88 ft 1 in.",
+          "toHole": "5 ft 6 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "5 ft 6 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_17": [
+        {
+          "shotDist": "126 yds",
+          "toHole": "6 ft 6 in.",
+          "location": "Green",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "6 ft 6 in.",
+          "shotNumber": "2"
+        }
+      ],
+      "Hole_18": [
+        {
+          "shotDist": "239 yds",
+          "toHole": "241 yds",
+          "location": "Right Rough",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "120 yds",
+          "toHole": "123 yds",
+          "location": "Right Fairway",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "116 yds",
+          "toHole": "21 ft 6 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "18 ft 4 in.",
+          "toHole": "3 ft 4 in.",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "3 ft 4 in.",
+          "shotNumber": "5"
+        }
+      ]
+    },
+    "Round_2": {
+      "Hole_1": [
+        {
+          "shotDist": "281 yds",
+          "toHole": "137 yds",
+          "location": "Right Rough",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "114 yds",
+          "toHole": "69 ft 8 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "68 ft 9 in.",
+          "toHole": "5 ft 6 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "5 ft 6 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_2": [
+        {
+          "shotDist": "301 yds",
+          "toHole": "216 yds",
+          "location": "Left Rough",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "189 yds",
+          "toHole": "85 ft 7 in.",
+          "location": "Left Rough",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "71 ft 7 in.",
+          "toHole": "14 ft 5 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "14 ft 5 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_3": [
+        {
+          "shotDist": "174 yds",
+          "toHole": "9 ft 3 in.",
+          "location": "Green",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "8 ft 3 in.",
+          "toHole": "12 in",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "12 in",
+          "shotNumber": "3"
+        }
+      ],
+      "Hole_4": [
+        {
+          "shotDist": "255 yds",
+          "toHole": "123 yds",
+          "location": "Right Intermediate",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "117 yds",
+          "toHole": "42 ft 2 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "46 ft 5 in.",
+          "toHole": "3 ft 11 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "3 ft 11 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_5": [
+        {
+          "shotDist": "351 yds",
+          "toHole": "127 yds",
+          "location": "Water",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "Penalty",
+          "location": "Primary Rough",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "116 yds",
+          "toHole": "46 ft 5 in.",
+          "location": "Right Rough",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "57 ft 9 in.",
+          "toHole": "11 ft 2 in.",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "13 ft 7 in.",
+          "toHole": "2 ft 1 in.",
+          "location": "Green",
+          "shotNumber": "5"
+        },
+        {
+          "shotDist": "2 ft 1 in.",
+          "shotNumber": "6"
+        }
+      ],
+      "Hole_6": [
+        {
+          "shotDist": "232 yds",
+          "toHole": "146 yds",
+          "location": "Tree Outline",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "161 yds",
+          "toHole": "44 ft 10 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "42 ft 0 in.",
+          "toHole": "8 ft 0 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "8 ft 1 in.",
+          "toHole": "3 in",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "3 in",
+          "shotNumber": "5"
+        }
+      ],
+      "Hole_7": [
+        {
+          "shotDist": "292 yds",
+          "toHole": "159 yds",
+          "location": "Right Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "162 yds",
+          "toHole": "11 ft 7 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "11 ft 7 in.",
+          "shotNumber": "3"
+        }
+      ],
+      "Hole_8": [
+        {
+          "shotDist": "236 yds",
+          "toHole": "19 ft 8 in.",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "19 ft 8 in.",
+          "shotNumber": "2"
+        }
+      ],
+      "Hole_9": [
+        {
+          "shotDist": "270 yds",
+          "toHole": "311 yds",
+          "location": "Right Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "214 yds",
+          "toHole": "97 yds",
+          "location": "Left Fairway Bunker",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "104 yds",
+          "toHole": "24 ft 10 in.",
+          "location": "Right Rough",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "19 ft 0 in.",
+          "toHole": "11 ft 5 in.",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "12 ft 10 in.",
+          "toHole": "14 in",
+          "location": "Green",
+          "shotNumber": "5"
+        },
+        {
+          "shotDist": "14 in",
+          "shotNumber": "6"
+        }
+      ],
+      "Hole_10": [
+        {
+          "shotDist": "280 yds",
+          "toHole": "150 yds",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "150 yds",
+          "toHole": "15 ft 2 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "14 ft 11 in.",
+          "toHole": "11 in",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "11 in",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_11": [
+        {
+          "shotDist": "284 yds",
+          "toHole": "244 yds",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "255 yds",
+          "toHole": "67 ft 1 in.",
+          "location": "Left Fairway",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "74 ft 0 in.",
+          "toHole": "6 ft 8 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "8 ft 9 in.",
+          "toHole": "21 in",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "21 in",
+          "shotNumber": "5"
+        }
+      ],
+      "Hole_12": [
+        {
+          "shotDist": "240 yds",
+          "toHole": "131 yds",
+          "location": "Right Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "122 yds",
+          "toHole": "40 ft 2 in.",
+          "location": "Right Greenside Bunker",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "52 ft 3 in.",
+          "toHole": "12 ft 4 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "12 ft 4 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_13": [
+        {
+          "shotDist": "194 yds",
+          "toHole": "51 ft 1 in.",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "40 ft 8 in.",
+          "toHole": "10 ft 6 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "10 ft 6 in.",
+          "shotNumber": "3"
+        }
+      ],
+      "Hole_14": [
+        {
+          "shotDist": "300 yds",
+          "toHole": "162 yds",
+          "location": "Right Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "166 yds",
+          "toHole": "26 ft 11 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "27 ft 1 in.",
+          "toHole": "5 in",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "5 in",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_15": [
+        {
+          "shotDist": "324 yds",
+          "toHole": "145 yds",
+          "location": "Right Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "141 yds",
+          "toHole": "21 ft 7 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "23 ft 3 in.",
+          "toHole": "18 in",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "18 in",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_16": [
+        {
+          "shotDist": "281 yds",
+          "toHole": "224 yds",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "239 yds",
+          "toHole": "47 ft 7 in.",
+          "location": "Left Intermediate",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "92 ft 10 in.",
+          "toHole": "45 ft 1 in.",
+          "location": "Right Fairway",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "47 ft 6 in.",
+          "toHole": "2 ft 4 in.",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "2 ft 4 in.",
+          "shotNumber": "5"
+        }
+      ],
+      "Hole_17": [
+        {
+          "shotDist": "143 yds",
+          "toHole": "15 ft 7 in.",
+          "location": "Green",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "15 ft 7 in.",
+          "shotNumber": "2"
+        }
+      ],
+      "Hole_18": [
+        {
+          "shotDist": "276 yds",
+          "toHole": "189 yds",
+          "location": "Tree Outline",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "175 yds",
+          "toHole": "57 ft 5 in.",
+          "location": "Right Rough",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "58 ft 11 in.",
+          "toHole": "8 ft 10 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "10 ft 4 in.",
+          "toHole": "15 in",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "15 in",
+          "shotNumber": "5"
+        }
+      ]
+    },
+    "Round_3": {
+      "Hole_1": [
+        {
+          "shotDist": "331 yds",
+          "toHole": "75 yds",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "61 yds",
+          "toHole": "43 ft 10 in.",
+          "location": "Right Fairway",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "43 ft 1 in.",
+          "toHole": "11 in",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "11 in",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_2": [
+        {
+          "shotDist": "335 yds",
+          "toHole": "196 yds",
+          "location": "Right Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "183 yds",
+          "toHole": "40 ft 2 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "42 ft 7 in.",
+          "toHole": "2 ft 2 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "2 ft 2 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_3": [
+        {
+          "shotDist": "154 yds",
+          "toHole": "45 ft 3 in.",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "35 ft 8 in.",
+          "toHole": "9 ft 11 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "11 ft 4 in.",
+          "toHole": "13 in",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "13 in",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_4": [
+        {
+          "shotDist": "268 yds",
+          "toHole": "119 yds",
+          "location": "Right Rough",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "129 yds",
+          "toHole": "43 ft 2 in.",
+          "location": "Right Fairway",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "39 ft 0 in.",
+          "toHole": "4 ft 3 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "4 ft 3 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_5": [
+        {
+          "shotDist": "346 yds",
+          "toHole": "154 yds",
+          "location": "Cart Path",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "49 yds",
+          "toHole": "120 yds",
+          "location": "Left Fairway Bunker",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "103 yds",
+          "toHole": "50 ft 2 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "48 ft 11 in.",
+          "toHole": "2 ft 4 in.",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "2 ft 4 in.",
+          "shotNumber": "5"
+        }
+      ],
+      "Hole_6": [
+        {
+          "shotDist": "237 yds",
+          "toHole": "148 yds",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "145 yds",
+          "toHole": "8 ft 9 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "8 ft 9 in.",
+          "toHole": "4 in",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "4 in",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_7": [
+        {
+          "shotDist": "309 yds",
+          "toHole": "125 yds",
+          "location": "Right Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "119 yds",
+          "toHole": "30 ft 6 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "28 ft 11 in.",
+          "toHole": "21 in",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "21 in",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_8": [
+        {
+          "shotDist": "213 yds",
+          "toHole": "95 ft 8 in.",
+          "location": "Front Left Greenside Bunker",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "85 ft 1 in.",
+          "toHole": "11 ft 1 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "13 ft 8 in.",
+          "toHole": "2 ft 3 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "2 ft 3 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_9": [
+        {
+          "shotDist": "272 yds",
+          "toHole": "299 yds",
+          "location": "Right Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "270 yds",
+          "toHole": "41 yds",
+          "location": "Right Rough",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "87 ft 8 in.",
+          "toHole": "36 ft 3 in.",
+          "location": "Right Fairway",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "33 ft 11 in.",
+          "toHole": "2 ft 7 in.",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "2 ft 7 in.",
+          "shotNumber": "5"
+        }
+      ],
+      "Hole_10": [
+        {
+          "shotDist": "274 yds",
+          "toHole": "135 yds",
+          "location": "Left Fairway Bunker",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "132 yds",
+          "toHole": "10 ft 5 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "10 ft 5 in.",
+          "shotNumber": "3"
+        }
+      ],
+      "Hole_11": [
+        {
+          "shotDist": "330 yds",
+          "toHole": "223 yds",
+          "location": "Right Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "213 yds",
+          "toHole": "50 ft 5 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "53 ft 6 in.",
+          "toHole": "2 ft 9 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "2 ft 9 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_12": [
+        {
+          "shotDist": "290 yds",
+          "toHole": "6 ft 10 in.",
+          "location": "Green",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "7 ft 9 in.",
+          "toHole": "11 in",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "11 in",
+          "shotNumber": "3"
+        }
+      ],
+      "Hole_13": [
+        {
+          "shotDist": "152 yds",
+          "toHole": "33 ft 3 in.",
+          "location": "Fringe",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "33 ft 1 in.",
+          "toHole": "3 in",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "3 in",
+          "shotNumber": "3"
+        }
+      ],
+      "Hole_14": [
+        {
+          "shotDist": "347 yds",
+          "toHole": "139 yds",
+          "location": "Left Fairway Bunker",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "142 yds",
+          "toHole": "20 ft 10 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "20 ft 11 in.",
+          "toHole": "11 in",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "11 in",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_15": [
+        {
+          "shotDist": "285 yds",
+          "toHole": "169 yds",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "168 yds",
+          "toHole": "6 ft 9 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "6 ft 9 in.",
+          "shotNumber": "3"
+        }
+      ],
+      "Hole_16": [
+        {
+          "shotDist": "296 yds",
+          "toHole": "222 yds",
+          "location": "Right Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "219 yds",
+          "toHole": "24 ft 3 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "23 ft 9 in.",
+          "toHole": "15 in",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "15 in",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_17": [
+        {
+          "shotDist": "117 yds",
+          "toHole": "17 ft 9 in.",
+          "location": "Green",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "20 ft 4 in.",
+          "toHole": "2 ft 3 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "2 ft 3 in.",
+          "shotNumber": "3"
+        }
+      ],
+      "Hole_18": [
+        {
+          "shotDist": "301 yds",
+          "toHole": "135 yds",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "135 yds",
+          "toHole": "19 in",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "19 in",
+          "shotNumber": "3"
+        }
+      ]
+    },
+    "Round_4": {
+      "Hole_1": [
+        {
+          "shotDist": "321 yds",
+          "toHole": "131 yds",
+          "location": "Unknown",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "131 yds",
+          "toHole": "30 ft 7 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "31 ft 3 in.",
+          "toHole": "14 in",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "14 in",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_2": [
+        {
+          "shotDist": "294 yds",
+          "toHole": "232 yds",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "224 yds",
+          "toHole": "29 ft 0 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "29 ft 0 in.",
+          "shotNumber": "3"
+        }
+      ],
+      "Hole_3": [
+        {
+          "shotDist": "181 yds",
+          "toHole": "13 ft 5 in.",
+          "location": "Green",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "13 ft 5 in.",
+          "shotNumber": "2"
+        }
+      ],
+      "Hole_4": [
+        {
+          "shotDist": "229 yds",
+          "toHole": "164 yds",
+          "location": "Right Rough",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "123 yds",
+          "toHole": "46 yds",
+          "location": "Right Rough",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "34 yds",
+          "toHole": "37 ft 5 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "37 ft 3 in.",
+          "toHole": "2 ft 5 in.",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "2 ft 5 in.",
+          "shotNumber": "5"
+        }
+      ],
+      "Hole_5": [
+        {
+          "shotDist": "331 yds",
+          "toHole": "118 yds",
+          "location": "Right Rough",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "108 yds",
+          "toHole": "30 ft 9 in.",
+          "location": "Right Rough",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "29 ft 10 in.",
+          "toHole": "22 in",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "22 in",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_6": [
+        {
+          "shotDist": "236 yds",
+          "toHole": "139 yds",
+          "location": "Left Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "139 yds",
+          "toHole": "19 ft 6 in.",
+          "location": "Right Rough",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "21 ft 11 in.",
+          "toHole": "3 ft 11 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "3 ft 11 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_7": [
+        {
+          "shotDist": "288 yds",
+          "toHole": "154 yds",
+          "location": "Right Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "149 yds",
+          "toHole": "17 ft 10 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "21 ft 5 in.",
+          "toHole": "3 ft 4 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "3 ft 4 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_8": [
+        {
+          "shotDist": "207 yds",
+          "toHole": "34 ft 1 in.",
+          "location": "Right Front Greenside Bunker",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "39 yds",
+          "toHole": "83 ft 0 in.",
+          "location": "Left Rough",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "92 ft 7 in.",
+          "toHole": "11 ft 1 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "11 ft 1 in.",
+          "toHole": "6 in",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "6 in",
+          "shotNumber": "5"
+        }
+      ],
+      "Hole_9": [
+        {
+          "shotDist": "275 yds",
+          "toHole": "337 yds",
+          "location": "Tree Outline",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "199 yds",
+          "toHole": "143 yds",
+          "location": "Left Fairway",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "129 yds",
+          "toHole": "45 ft 2 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "52 ft 8 in.",
+          "toHole": "7 ft 2 in.",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "7 ft 2 in.",
+          "shotNumber": "5"
+        }
+      ],
+      "Hole_10": [
+        {
+          "shotDist": "271 yds",
+          "toHole": "127 yds",
+          "location": "Left Fairway Bunker",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "125 yds",
+          "toHole": "5 ft 1 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "5 ft 1 in.",
+          "shotNumber": "3"
+        }
+      ],
+      "Hole_11": [
+        {
+          "shotDist": "259 yds",
+          "toHole": "296 yds",
+          "location": "Tree Outline",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "113 yds",
+          "toHole": "184 yds",
+          "location": "Left Fairway Bunker",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "92 ft 3 in.",
+          "toHole": "166 yds",
+          "location": "Right Fairway",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "161 yds",
+          "toHole": "16 ft 7 in.",
+          "location": "Fringe",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "16 ft 7 in.",
+          "shotNumber": "5"
+        }
+      ],
+      "Hole_12": [
+        {
+          "shotDist": "297 yds",
+          "toHole": "94 ft 3 in.",
+          "location": "Right Rough",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "78 ft 2 in.",
+          "toHole": "22 ft 6 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "21 ft 6 in.",
+          "toHole": "13 in",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "13 in",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_13": [
+        {
+          "shotDist": "158 yds",
+          "toHole": "31 ft 4 in.",
+          "location": "Water",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "Penalty",
+          "location": "Drop Zone",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "143 yds",
+          "toHole": "59 ft 2 in.",
+          "location": "Fringe",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "63 ft 10 in.",
+          "toHole": "5 ft 3 in.",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "5 ft 3 in.",
+          "shotNumber": "5"
+        }
+      ],
+      "Hole_14": [
+        {
+          "shotDist": "317 yds",
+          "toHole": "148 yds",
+          "location": "Right Fairway",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "159 yds",
+          "toHole": "53 ft 6 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "57 ft 1 in.",
+          "toHole": "3 ft 6 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "3 ft 6 in.",
+          "shotNumber": "4"
+        }
+      ],
+      "Hole_15": [
+        {
+          "shotDist": "305 yds",
+          "toHole": "143 yds",
+          "location": "Right Fairway Bunker",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "132 yds",
+          "toHole": "44 ft 11 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "50 ft 11 in.",
+          "toHole": "5 ft 9 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "5 ft 10 in.",
+          "toHole": "1 in",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "1 in",
+          "shotNumber": "5"
+        }
+      ],
+      "Hole_16": [
+        {
+          "shotDist": "277 yds",
+          "toHole": "273 yds",
+          "location": "Right Rough",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "165 yds",
+          "toHole": "124 yds",
+          "location": "Left Fairway",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "108 yds",
+          "toHole": "48 ft 2 in.",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "46 ft 10 in.",
+          "toHole": "3 ft 8 in.",
+          "location": "Green",
+          "shotNumber": "4"
+        },
+        {
+          "shotDist": "3 ft 8 in.",
+          "shotNumber": "5"
+        }
+      ],
+      "Hole_17": [
+        {
+          "shotDist": "130 yds",
+          "toHole": "10 ft 10 in.",
+          "location": "Green",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "13 ft 6 in.",
+          "toHole": "2 ft 4 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "2 ft 4 in.",
+          "shotNumber": "3"
+        }
+      ],
+      "Hole_18": [
+        {
+          "shotDist": "303 yds",
+          "toHole": "186 yds",
+          "location": "Tree Outline",
+          "shotNumber": "1"
+        },
+        {
+          "shotDist": "175 yds",
+          "toHole": "36 ft 4 in.",
+          "location": "Green",
+          "shotNumber": "2"
+        },
+        {
+          "shotDist": "34 ft 9 in.",
+          "toHole": "20 in",
+          "location": "Green",
+          "shotNumber": "3"
+        },
+        {
+          "shotDist": "20 in",
+          "shotNumber": "4"
+        }
+      ]
+    }
+  }
+}
