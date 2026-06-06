@@ -12,7 +12,7 @@ from utils import make_request, get_script_id_dict, BASE_URL, load_json, save_ht
 
 def get_hole_locations():
     # url = "https://www.pgatour.com/tournaments/2026/cadillac-championship/R2026556/course-stats"
-    tour_info = [["011", 2026], ["011", 2025], ["011", 2024], ["011", 2023],  ["033", 2025],  ["556", 2026]]
+    tour_info = [["011", 2026], ["011", 2025], ["011", 2024], ["011", 2023], ["556", 2026], ["023", 2025]]
     for id, year in tour_info:
         url = f"https://www.pgatour.com/tournaments/{year}/the-players-championship/R{year}{id}/course-stats"
         content = make_request(url)
