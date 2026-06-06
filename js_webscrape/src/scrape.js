@@ -167,7 +167,8 @@ const updateTournamentData = (masterObj, holeInfo, shotData) => {
  * @returns {array} - An array of player objects with names and IDs.
  */
 const getPlayersInTournament = async (tournamentInfo, browser) => {
-  const url = `https://www.pgatour.com/tournaments/2026/${tournamentInfo.name.replace(/\s+/g, '-').toLowerCase()}/${tournamentInfo.id}/leaderboard`;
+  const year = tournamentInfo.id.substring(1, 5)
+  const url = `https://www.pgatour.com/tournaments/${year}/${tournamentInfo.name.replace(/\s+/g, '-').toLowerCase()}/${tournamentInfo.id}/leaderboard`;
 
   const page = await startPage(browser);
   await navigateToUrl(url, page);
@@ -272,8 +273,9 @@ const getHoleData = async () => {
   const tournamentIds = [ // TODO: remove after testing
     // { id: "R2026556", name: "Cadillac Championship" },
     // { id: "R2025023", name: "the Memorial Tournament presented by Workday" },
-    { id: "R2024011", name: "THE PLAYERS Championship" },
     { id: "R2023011", name: "THE PLAYERS Championship" },
+    { id: "R2022011", name: "THE PLAYERS Championship" },
+    { id: "R2021011", name: "THE PLAYERS Championship" },
   ];
   for (const currentTournament of tournamentIds) { 
     const playersInTournament = await getPlayersInTournament(currentTournament, browser);
