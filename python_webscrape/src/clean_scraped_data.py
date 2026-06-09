@@ -127,10 +127,42 @@ def get_tour_ids():
     return tour_ids
 
 
+def remove_incomplete_data():
+    """
+    Remove players that don't have a full 4 rounds and 18 holes. 
+    """
+    csv_filename = "data\\scraped_tournament_data\\tournament_shots_data.csv"
+
+    # Get tournaments csv as pandas df
+    df = pd.read_csv(csv_filename, encoding='latin-1')
+
+    data_check = df.groupby(['tournament_id', 'player']).agg(
+        rounds_played=('round', 'nunique'),
+        unique_holes_played=('hole', 'nunique')
+    ).reset_index()
+
+    # Flag any player that doesn't have 4 rounds and 18 holes
+    is_complete = (data_check['rounds_played'] == 4) & (data_check['unique_holes_played'] == 18)
+    complete_players_data = data_check[is_complete][['tournament_id', 'player']]
+    missing_players_data = data_check[~is_complete]
+
+    # Remove missing players from csv
+    filtered_df = df.merge(complete_players_data, on=['tournament_id', 'player'], how='inner')
+
+    # Overwrite the csv
+    filtered_df.to_csv(csv_filename, index=False)
+        
+    if missing_players_data.empty:
+        print("All players have complete data (4 rounds, 18 holes each).")
+    else:
+        print(f"Removed {len(missing_players_data)} player-tournament records due to incomplete data:")
+        print(missing_players_data.to_string(index=False))
+
 def main():
     # tour_ids = ["R2026556", "R2026480"]
     tour_ids = get_tour_ids()
     create_csv_from_json(tour_ids)
+    remove_incomplete_data()
 
 
 if __name__ == "__main__":
