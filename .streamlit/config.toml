@@ -1,0 +1,15 @@
+[theme]
+# Primary branding color
+primaryColor = "#FE7295"
+
+# Main background color (White)
+backgroundColor = "#FFFFFF"
+
+# Secondary background color used for the sidebar (Gray)
+secondaryBackgroundColor = "#7bb784d0"
+
+# Main text color
+textColor = "#31333F"
+
+# Font family
+font = "sans serif"
