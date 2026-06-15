@@ -3,8 +3,8 @@ import fs from "fs"; // file system module
 import { getPlayerIds, generateTourCastUrlsForPlayer, generateTestUrlForPlayer, loadPlayerNames, scrapeYears, loadAndProcessJSON } from './utils.js';
 import chalk from 'chalk'; // change color in terminal
 
-// const SHOT_BUTTON_SELECTOR = 'div[class*="shot_shotNum"]';
-const SHOT_BUTTON_SELECTOR = 'button[class*="shot_shotNum"]'; // Updated selector for shot buttons
+const YOUR_FILE_PATH = 'C:\\Users\\Sam\\repos\\PGAImages\\'; // TODO: change this path for your machine 
+const SHOT_BUTTON_SELECTOR = 'button[class*="shot_shotNum"]';
 const CLOSE_SELECTOR = 'button[class*="informationContent_close"]';
 
 // ***************************************************************************************
@@ -49,7 +49,6 @@ const dismissPopUp = async (page) => {
     
   } catch (error) {
     console.log(chalk.bgMagenta.white("No pop-up detected."));
-    // console.log(chalk.yellow(`Error or timeout while trying to dismiss pop-up: ${error}`)); // TODO: remove after testing
   }
 
   await new Promise(r => setTimeout(r, 1000)); // * sleep 
@@ -67,7 +66,6 @@ const checkForShots = async (page, holeNum) => {
       return true; 
     } catch (error) {
       console.log(chalk.magenta(`No shots found for hole ${holeNum}, skipping.`));
-      // console.log(chalk.yellow(`Error or timeout while waiting for shots: ${error}`)); // TODO: remove after testing
       return false;
     }
 };
@@ -194,7 +192,6 @@ const getPlayersInTournament = async (tournamentInfo, browser) => {
 
   console.log(chalk.magenta("Number of Players in tournament:", playersInTournament.length))
 
-  // playersInTournament.length = 1; // TODO: remove after testing
   await page.close();
   
   return playersInTournament;
@@ -204,8 +201,8 @@ const getPlayersInTournament = async (tournamentInfo, browser) => {
  * Get all tournament IDs and names as a dict.
  */
 const getTournamentInfo = async (browser) => {
-  // const tournamentJson = loadAndProcessJSON('../../sources/tournaments.json');
-  const tournamentJson = loadAndProcessJSON('../../sources/tournaments_test.json'); // TODO: change back after testing
+  const tournamentJson = loadAndProcessJSON('../../sources/tournaments.json');
+  // const tournamentJson = loadAndProcessJSON('../../sources/tournaments_test.json'); // TODO: change back after testing
   const tournaments = []; // object with id and name
   const years = scrapeYears();
 
@@ -253,8 +250,7 @@ const getTournamentInfo = async (browser) => {
   }
 
   console.log(chalk.blue(`Total tournaments with TOURCAST: ${tournaments.length}`));
-  // console.log(tournaments[0]); // TODO: remove after testing
-  // tournaments.length = 1; // TODO: remove after testing
+
   return tournaments;
 }
 
@@ -269,29 +265,22 @@ const getHoleData = async () => {
   const browser = await startBrowser();
   
   // * Get urls
-  // const tournamentIds = await getTournamentInfo(browser);
-  const tournamentIds = [ // TODO: remove after testing
-    // { id: "R2026556", name: "Cadillac Championship" },
-    // { id: "R2025023", name: "the Memorial Tournament presented by Workday" },
-    { id: "R2023011", name: "THE PLAYERS Championship" },
-    { id: "R2022011", name: "THE PLAYERS Championship" },
-    { id: "R2021011", name: "THE PLAYERS Championship" },
-  ];
+  const tournamentIds = await getTournamentInfo(browser);
+  // To scrape specific tournaments, comment out the line above and use the array below.
+  // const tournamentIds = [
+  //   { id: "R2023011", name: "THE PLAYERS Championship" },
+  //   { id: "R2022011", name: "THE PLAYERS Championship" },
+  //   { id: "R2021011", name: "THE PLAYERS Championship" },
+  // ];
   for (const currentTournament of tournamentIds) { 
     const playersInTournament = await getPlayersInTournament(currentTournament, browser);
-    // const playersInTournament = [{name: "Cameron Young", id: "57366"}]; // TODO: remove after testing
+    // To scrape specific players in a tournament, comment out the line above and use the array below.
+    // const playersInTournament = [{name: "Cameron Young", id: "57366"}];
     const urls = generateTourCastUrlsForPlayer(currentTournament.id, playersInTournament);
     console.log(chalk.blue(`Generated URLs for ${urls.length} holes across all players and rounds.`));
     const finalTournamentData = {};
-    let i = 0;
 
     for (const holeInfo of urls) { 
-      // * Close browser and start new one every 10 holes
-      // if (i > 0 && i % 10 === 0) {
-      //   await browser.close();
-      //   console.log(chalk.yellow(`Closed browser after 10 holes to manage resources. Starting new browser...`));
-      //   browser = await startBrowser();
-      // }
       // * Create new page instance for each hole
       const page = await startPage(browser);
 
@@ -321,10 +310,8 @@ const getHoleData = async () => {
         }
 
         // * Save screenshot of hole
-        // path to images "C:\\Users\\Sam\\repos\\PGAImages"
         try {
-          await page.screenshot({ path: `C:\\Users\\Edge\\source\\repos\\PGAImages\\tournament_${currentTournament.id}_player_${holeInfo.playerId}_hole_${holeInfo.hole}_round_${holeInfo.round}.png`, fullPage: true });
-          // await page.screenshot({ path: `C:\\Users\\Sam\\repos\\PGAImages\\tournament_${currentTournament.id}_player_${holeInfo.playerId}_hole_${holeInfo.hole}_round_${holeInfo.round}.png`, fullPage: true });
+          await page.screenshot({ path: `${YOUR_FILE_PATH}tournament_${currentTournament.id}_player_${holeInfo.playerId}_hole_${holeInfo.hole}_round_${holeInfo.round}.png`, fullPage: true });
           console.log(chalk.green(`Screenshot saved for Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}.`));
         } catch (error) {
           console.error(chalk.red(`Error saving screenshot for Player ${holeInfo.playerId} Hole ${holeInfo.hole} Round ${holeInfo.round}: ${error}`));
@@ -342,7 +329,6 @@ const getHoleData = async () => {
       } finally {
         // This block always runs, ensuring your browser tabs close and counter increments
         await page.close(); 
-        i++; 
       }
     }
 
@@ -361,7 +347,7 @@ const getHoleData = async () => {
   const elapsed = (end - start) / 1000; 
   console.log(chalk.green(`Execution time: ${elapsed.toFixed(3)} seconds`));
 
-  // await browser.close(); // TODO: do I need this is it is not closing?
+  // await browser.close(); // TODO: figure out what this isn't closing properly
 };
 
 
