@@ -550,12 +550,12 @@ def plot_putt_percentages(putt_percentages):
 
 def get_putt_make_shot_dist_percentages(df):
     putts_only_df = df[df["shot_type"] == "Putt"].copy()
-    putts_only_df["is_made"] = putts_only_df["location"].str.lower().str.contains("in hole", na=False)
+    putts_only_df["is_made"] = putts_only_df["location"].str.lower().str.contains("hole", na=False)
 
     # Create boolean flags for putt distances
-    putts_only_df['is_under_5'] = putts_only_df['to_hole_yards'] > 5/3
-    putts_only_df['is_5_10'] = (putts_only_df['to_hole_yards'] <= 5/3) & (putts_only_df['to_hole_yards'] >= 10/3)
-    putts_only_df['is_over_10'] = putts_only_df['to_hole_yards'] < 10/3
+    putts_only_df['is_under_5'] = putts_only_df['shot_dist_yards'] <= 5/3
+    putts_only_df['is_5_10'] = (putts_only_df['shot_dist_yards'] > 5/3) & (putts_only_df['shot_dist_yards'] <= 10/3)
+    putts_only_df['is_over_10'] = putts_only_df['shot_dist_yards'] > 10/3
 
     # Calculate percentage of 1, 2, 3, 3+ putts
     putt_make_percentages = pd.DataFrame({
@@ -565,9 +565,26 @@ def get_putt_make_shot_dist_percentages(df):
     }).reset_index()
 
     # Clean up any players who had 0 putts in a specific distance bin (fills NaN with 0)
-    percentage_cols = ['under_5_make_%', '5_to_10_make_%', 'over_10_make_%']
-    putt_make_percentages[percentage_cols] = putt_make_percentages[percentage_cols].fillna(0.0)
+    putts_only_df['dist_bin'] = pd.cut(
+        putts_only_df['shot_dist_yards'],
+        bins=[0, 5/3, 10/3, np.inf],
+        labels=['under_5', '5_to_10', 'over_10']
+    )
 
+    putt_make_percentages = (
+        putts_only_df
+        .groupby(['tournament_id', 'player', 'dist_bin'])['is_made']
+        .mean()
+        .mul(100)
+        .round(2)
+        .unstack(fill_value=0)
+        .reset_index()
+        .rename(columns={
+            'under_5': 'under_5_make_%',
+            '5_to_10': '5_to_10_make_%',
+            'over_10': 'over_10_make_%'
+        })
+    )
     # Sort by the best short-range putters
     return putt_make_percentages.sort_values(by='under_5_make_%', ascending=False).reset_index(drop=True)
 
@@ -732,11 +749,20 @@ st.markdown("---")
 st.markdown("## Scrambling Percentage")
 st.markdown("$$Scrambling \ Percentage = \\frac{Number \ Par \ Saves \ When \ Miss \ GIR}{Total \ Num \ Holes \ Where \ GIR \ Missed} \\times 100$$")
 scrambles = get_scrambling_percentage(working_df)
+
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.metric("Field Avg Scrambling", f"{scrambles['scrambling_%'].mean():.1f}%")
+
 st.dataframe(scrambles.sort_values("player").reset_index(drop=True), width='stretch')
 
 st.markdown("---")
 st.markdown("## Sand Saves")
 sand_saves_df = get_player_sand_saves(working_df)
+
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.metric("Field Avg Sand Saves", f"{sand_saves_df['sand_save_%'].mean():.1f}%")
 
 if not sand_saves_df.empty:
     plot_sand_saves(sand_saves_df, num_players)
@@ -749,6 +775,16 @@ st.markdown("### Putt Percentages")
 st.markdown("Percentages for one putts, two putts, three putts, and more than three putts.")
 putt_percentage_df = get_putt_percentages(working_df)
 
+col1, col2, col3, col4 = st.columns(4)
+with col1:
+    st.metric("Field Avg 1-Putt", f"{putt_percentage_df['1_putt_%'].mean():.1f}%")
+with col2:
+    st.metric("Field Avg 2-Putt", f"{putt_percentage_df['2_putt_%'].mean():.1f}%")
+with col3:
+    st.metric("Field Avg 3-Putt", f"{putt_percentage_df['3_putt_%'].mean():.1f}%")
+with col4:
+    st.metric("Field Avg 3+ Putt", f"{putt_percentage_df['3+_putt_%'].mean():.1f}%")
+
 if not putt_percentage_df.empty:
     plot_putt_percentages(putt_percentage_df)
 else:
@@ -757,13 +793,27 @@ st.dataframe(putt_percentage_df.reset_index(drop=True), width='stretch')
 
 st.markdown("### Putt Make Percentages by Distance")
 putt_make_percentage_df = get_putt_make_shot_dist_percentages(working_df)
-st.dataframe(putt_make_percentage_df.sort_values("player").reset_index(drop=True), width='stretch')
+
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.metric("Field Avg Under 5 Feet", f"{putt_make_percentage_df['under_5_make_%'].mean():.1f}%")
+with col2:
+    st.metric("Field Avg 5-10 Feet", f"{putt_make_percentage_df['5_to_10_make_%'].mean():.1f}%")
+with col3:
+    st.metric("Field Avg Over 10 Feet", f"{putt_make_percentage_df['over_10_make_%'].mean():.1f}%")
+
+# st.dataframe(putt_make_percentage_df.sort_values("player").reset_index(drop=True), width='stretch')
+st.dataframe(putt_make_percentage_df, width='stretch')
 
 st.markdown("---")
 st.markdown("## Shot Make Distance")
 st.markdown("The average distance it takes to make the shot in the hole.")
 shot_make_df = get_avg_shot_make_distance(working_df)
 
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.metric("Field Avg Shot Make Distance", f"{shot_make_df['avg_in_hole_shot_dist_feet'].mean():.1f} Feet")
+    
 if not shot_make_df.empty:
     plot_shot_make_dist_histogram(shot_make_df)
 else:
