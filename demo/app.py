@@ -178,20 +178,21 @@ def get_top_players_by_tournament(df, amount=3):
 
 # region Driving Accuracy 
 def get_drive_accuracy(dataframe):
-    # Filter out Par 3 tee shots to isolate actual drives
-    drives_df = dataframe[(dataframe['shot_type'] == 'Tee') & (dataframe['par'] != 3)].copy()
-    
-    # Map fairway location checks
+    # Get drives only
+    drives_df = df[(df['shot_type'] == 'Tee') & (df['par'] != 3)].copy()
+
+    # If fairway in location then True, else False
     drives_df['hit_fairway'] = drives_df['location'].str.lower().str.contains('fairway', na=False)
 
-    # Aggregate accuracy metrics, counts, and distances per player
+    # Get new df with driving accuracy and sort by driving accuracy
     player_accuracy_df = pd.DataFrame({
-        'driving_accuracy_%': (drives_df.groupby('player')['hit_fairway'].mean() * 100).round(2),
-        'total_drives_tracked': drives_df.groupby('player')['hit_fairway'].count(),
-        'avg_drive_distance': drives_df.groupby('player')['shot_dist_yards'].mean().round(1)
+        'driving_accuracy_%': (drives_df.groupby(['tournament_id', 'player'])['hit_fairway'].mean() * 100).round(2),
+        'total_drives_tracked': drives_df.groupby(['tournament_id', 'player'])['hit_fairway'].count(),
+        'avg_drive_distance': drives_df.groupby(['tournament_id', 'player'])['shot_dist_yards'].mean()
     }).reset_index()
-    
-    return player_accuracy_df.sort_values(by='driving_accuracy_%', ascending=False).reset_index(drop=True)
+    player_accuracy_df = player_accuracy_df.sort_values(by='driving_accuracy_%', ascending=False).reset_index(drop=True)
+
+    return player_accuracy_df
 
 def plot_top_players_drive_accuracy(data, num_players):
     # Isolate top slice based on slider adjustment
@@ -283,7 +284,7 @@ def get_gir(df):
 
     # Find the first shot that hit the green for every player on every hole
     # (Using groupby + min ensures we catch the exact shot number they reached the surface)
-    first_green_shot = green_shots.groupby(['round', 'hole', 'player', 'par'])['shot_number'].min().reset_index()
+    first_green_shot = green_shots.groupby(['tournament_id', 'round', 'hole', 'player', 'par'])['shot_number'].min().reset_index()
     first_green_shot.rename(columns={'shot_number': 'shot_reached_green'}, inplace=True)
 
     # Apply the official GIR condition: shot_reached_green <= (par - 2)
@@ -296,7 +297,7 @@ def get_gir_percentage(df):
     gir = get_gir(df)
 
     # Calculate final GIR %
-    player_gir_df = gir.groupby('player')['GIR'].mean().reset_index()
+    player_gir_df = gir.groupby(['tournament_id', 'player'])['GIR'].mean().reset_index()
 
     # Get the percentage
     player_gir_df['GIR_%'] = (player_gir_df['GIR'] * 100).round(2)
@@ -388,11 +389,11 @@ def get_scrambling_percentage(df):
     # Identify missed GIR and final scores
     hole_scores = get_hole_scores(df)
     green_shots = df[df['location'].str.lower().str.contains('green', na=False)].copy()
-    first_green_shot = green_shots.groupby(['round', 'hole', 'player', 'par'])['shot_number'].min().reset_index()
+    first_green_shot = green_shots.groupby(['tournament_id', 'round', 'hole', 'player', 'par'])['shot_number'].min().reset_index()
     first_green_shot.rename(columns={'shot_number': 'shot_reached_green'}, inplace=True)
 
     # Merge hole scores and green data together
-    scramble_base = pd.merge(hole_scores, first_green_shot, on=['round', 'hole', 'player'], how='left')
+    scramble_base = pd.merge(hole_scores, first_green_shot, on=['tournament_id', 'round', 'hole', 'player'], how='left')
 
     # If 'shot_reached_green' is NaN, it means they never hit the green at all
     # Let's fill those with a high dummy number so it safely counts as a missed GIR.
@@ -413,9 +414,9 @@ def get_scrambling_percentage(df):
 
     # Create the new standalone DataFrame
     player_scrambling_df = pd.DataFrame({
-        'scrambling_%': (scramble_opportunities.groupby('player')['saved_par'].mean() * 100).round(2),
-        'scramble_opportunities': scramble_opportunities.groupby('player')['saved_par'].count(),
-        'scramble_saves': scramble_opportunities.groupby('player')['saved_par'].sum()
+        'scrambling_%': (scramble_opportunities.groupby(['tournament_id', 'player'])['saved_par'].mean() * 100).round(2),
+        'scramble_opportunities': scramble_opportunities.groupby(['tournament_id', 'player'])['saved_par'].count(),
+        'scramble_saves': scramble_opportunities.groupby(['tournament_id', 'player'])['saved_par'].sum()
     }).reset_index()
 
     # Sort from best scrambler to worst
@@ -428,10 +429,10 @@ def get_player_sand_saves(df):
     hole_scores = get_hole_scores(df)
 
     # Make sure shots are in order
-    df_sorted = df.sort_values(by=['round', 'hole', 'player', 'shot_number']).copy()
+    df_sorted = df.sort_values(by=['tournament_id', 'round', 'hole', 'player', 'shot_number']).copy()
 
     # Look at the next shot's location using .shift(-1)
-    df_sorted['next_location'] = df_sorted.groupby(['round', 'hole', 'player'])['location'].shift(-1)
+    df_sorted['next_location'] = df_sorted.groupby(['tournament_id', 'round', 'hole', 'player'])['location'].shift(-1)
 
     # Filter for shots hit from a bunker that landed on the green (Using 'bunker' catches green-side sand shots)
     sand_to_green = df_sorted[
@@ -448,8 +449,8 @@ def get_player_sand_saves(df):
     # Merge and flag sand saves
     sand_base = pd.merge(
         hole_scores,
-        sand_opportunities[['round', 'hole', 'player', 'had_sand_opportunity', 'par']],
-        on=['round', 'hole', 'player'],
+        sand_opportunities[['tournament_id', 'round', 'hole', 'player', 'had_sand_opportunity', 'par']],
+        on=['tournament_id', 'round', 'hole', 'player'],
         how='inner' # 'inner' drops any holes where they never went bunker-to-green
     )
 
@@ -458,9 +459,9 @@ def get_player_sand_saves(df):
 
     # Create leaderboard
     player_sand_saves_df = pd.DataFrame({
-        'sand_save_%': (sand_base.groupby('player')['is_sand_save'].mean() * 100).round(2),
-        'sand_opportunities': sand_base.groupby('player')['is_sand_save'].count(),
-        'sand_saves_made': sand_base.groupby('player')['is_sand_save'].sum()
+        'sand_save_%': (sand_base.groupby(['tournament_id', 'player'])['is_sand_save'].mean() * 100).round(2),
+        'sand_opportunities': sand_base.groupby(['tournament_id', 'player'])['is_sand_save'].count(),
+        'sand_saves_made': sand_base.groupby(['tournament_id', 'player'])['is_sand_save'].sum()
     }).reset_index()
 
     # Sort the table from best sand-scrambler to worst
@@ -510,7 +511,7 @@ def get_putt_percentages(df):
     # Get putts
     putts_df = df[df['shot_type'] == 'Putt'].copy()
 
-    hole_putts = putts_df.groupby(["round", "hole", "par", "player"]).size().reset_index(name="total_putts")
+    hole_putts = putts_df.groupby(["tournament_id", "round", "hole", "par", "player"]).size().reset_index(name="total_putts")
     hole_putts.head()
 
     # Create boolean flags for putt numbers
@@ -521,10 +522,10 @@ def get_putt_percentages(df):
 
     # Calculate percentage of 1, 2, 3, 3+ putts
     return pd.DataFrame({
-        '1_putt_%': (hole_putts.groupby('player')['is_1_putt'].mean() * 100).round(2),
-        '2_putt_%': (hole_putts.groupby('player')['is_2_putt'].mean() * 100).round(2),
-        '3_putt_%': (hole_putts.groupby('player')['is_3_putt'].mean() * 100).round(2),
-        '3+_putt_%': (hole_putts.groupby('player')['is_3+_putt'].mean() * 100).round(2),
+        '1_putt_%': (hole_putts.groupby(['tournament_id', 'player'])['is_1_putt'].mean() * 100).round(2),
+        '2_putt_%': (hole_putts.groupby(['tournament_id', 'player'])['is_2_putt'].mean() * 100).round(2),
+        '3_putt_%': (hole_putts.groupby(['tournament_id', 'player'])['is_3_putt'].mean() * 100).round(2),
+        '3+_putt_%': (hole_putts.groupby(['tournament_id', 'player'])['is_3+_putt'].mean() * 100).round(2),
     }).reset_index()
 
 def plot_putt_percentages(putt_percentages):
@@ -548,19 +549,19 @@ def plot_putt_percentages(putt_percentages):
     st.pyplot(fig)
 
 def get_putt_make_shot_dist_percentages(df):
-    putts_df = df[df["shot_type"] == "Putt"].copy()
-    putts_df["is_made"] = putts_df["location"].str.lower().str.contains("in hole", na=False)
+    putts_only_df = df[df["shot_type"] == "Putt"].copy()
+    putts_only_df["is_made"] = putts_only_df["location"].str.lower().str.contains("in hole", na=False)
 
     # Create boolean flags for putt distances
-    putts_df['is_under_5'] = putts_df['to_hole_yards'] > 5/3
-    putts_df['is_5_10'] = (putts_df['to_hole_yards'] <= 5/3) & (putts_df['to_hole_yards'] >= 10/3)
-    putts_df['is_over_10'] = putts_df['to_hole_yards'] < 10/3
+    putts_only_df['is_under_5'] = putts_only_df['to_hole_yards'] > 5/3
+    putts_only_df['is_5_10'] = (putts_only_df['to_hole_yards'] <= 5/3) & (putts_only_df['to_hole_yards'] >= 10/3)
+    putts_only_df['is_over_10'] = putts_only_df['to_hole_yards'] < 10/3
 
     # Calculate percentage of 1, 2, 3, 3+ putts
     putt_make_percentages = pd.DataFrame({
-        'under_5_make_%': (putts_df.groupby('player')['is_under_5'].mean() * 100).round(2),
-        '5_to_10_make_%': (putts_df.groupby('player')['is_5_10'].mean() * 100).round(2),
-        'over_10_make_%': (putts_df.groupby('player')['is_over_10'].mean() * 100).round(2),
+        'under_5_make_%': (putts_only_df.groupby(['tournament_id', 'player'])['is_under_5'].mean() * 100).round(2),
+        '5_to_10_make_%': (putts_only_df.groupby(['tournament_id', 'player'])['is_5_10'].mean() * 100).round(2),
+        'over_10_make_%': (putts_only_df.groupby(['tournament_id', 'player'])['is_over_10'].mean() * 100).round(2),
     }).reset_index()
 
     # Clean up any players who had 0 putts in a specific distance bin (fills NaN with 0)
@@ -568,14 +569,49 @@ def get_putt_make_shot_dist_percentages(df):
     putt_make_percentages[percentage_cols] = putt_make_percentages[percentage_cols].fillna(0.0)
 
     # Sort by the best short-range putters
-    return putt_make_percentages.sort_values(by='player', ascending=False).reset_index(drop=True)
+    return putt_make_percentages.sort_values(by='under_5_make_%', ascending=False).reset_index(drop=True)
+
+def get_player_putts_per_gir(df):
+    # Get putts
+    putts_df = df[df['shot_type'] == 'Putt'].copy()
+
+    # Group by player and round to count their total putts
+    round_putts = putts_df.groupby(["tournament_id", "round", "player"]).size().reset_index(name="total_putts")
+
+    # Get average putts per round
+    player_putts_per_round = round_putts.groupby(["tournament_id", "player"])["total_putts"].mean().reset_index(name="putts_per_round")
+    player_putts_per_round["putts_per_round"] = player_putts_per_round["putts_per_round"].round(2)
+
+    # Get Putts per GIR
+
+    # Count the number of putts taken on every hole
+    hole_putts = putts_df.groupby(["tournament_id", "round", "hole", "player"]).size().reset_index(name='hole_putt_count')
+
+    # Get 'GIR' boolean column (True/False)
+    gir_df = get_gir(df)
+    gir_putts_base = pd.merge(
+        gir_df[['tournament_id', 'round', 'hole', 'player', 'GIR']],
+        hole_putts,
+        on=['tournament_id', 'round', 'hole', 'player'],
+        how='left'
+    )
+
+    # Fill NaN with 0 for holes where they holed out from off the green and took 0 putts
+    gir_putts_base['hole_putt_count'] = gir_putts_base['hole_putt_count'].fillna(0)
+
+    # Isolate only the holes where the player successfully made a GIR
+    gir_only_holes = gir_putts_base[gir_putts_base['GIR'] == True]
+
+    # Calculate the final average putts per GIR
+    # player_putts_per_gir = gir_only_holes.groupby(['tournament_id', 'player']).size().reset_index(name='putts_per_gir') # total counts
+    return gir_only_holes.groupby(['tournament_id', 'player'])['hole_putt_count'].mean().reset_index(name='putts_per_gir') # average
 
 # region Shot Make Distance
 
 def get_avg_shot_make_distance(df):
     hole_shots = df[df['location'] == 'In Hole'].copy()
 
-    avg_in_hole_dist = hole_shots.groupby(["player"])["shot_dist_yards"].mean().reset_index(name="avg_in_hole_shot_dist")
+    avg_in_hole_dist = hole_shots.groupby(["tournament_id", "player"])["shot_dist_yards"].mean().reset_index(name="avg_in_hole_shot_dist")
 
     # convert yards to feet
     avg_in_hole_dist['avg_in_hole_shot_dist_feet'] = (avg_in_hole_dist['avg_in_hole_shot_dist'] * 3).round(2)
@@ -659,7 +695,9 @@ with col1:
 with col2:
     st.metric("Field Avg Distance", f"{player_accuracy_df['avg_drive_distance'].mean():.1f} yds")
 with col3:
-    st.metric("Total Active Players", len(player_accuracy_df))
+    # st.metric("Total Active Players", len(player_accuracy_df))
+    player_count = player_accuracy_df['player'].nunique()
+    st.metric("Total Active Players", player_count)
 
 st.markdown("### Driving Accuracy Distribution")
 if not player_accuracy_df.empty:
@@ -680,6 +718,10 @@ st.dataframe(player_accuracy_df.reset_index(drop=True), width='stretch')
 st.markdown("---")
 st.markdown("## Greens in Regulation (GIR)")
 gir = get_gir_percentage(working_df)
+
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.metric("Field Avg GIR", f"{gir['GIR_%'].mean():.1f}%")
 
 if not gir.empty:
     plot_top_players_gir(gir, num_players)
@@ -703,7 +745,7 @@ else:
 
 st.markdown("---")
 st.markdown("## Putting Analysis")
-st.markdown("## Putt Percentages")
+st.markdown("### Putt Percentages")
 st.markdown("Percentages for one putts, two putts, three putts, and more than three putts.")
 putt_percentage_df = get_putt_percentages(working_df)
 
