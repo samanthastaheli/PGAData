@@ -588,7 +588,7 @@ def get_putt_make_shot_dist_percentages(df):
     # Sort by the best short-range putters
     return putt_make_percentages.sort_values(by='under_5_make_%', ascending=False).reset_index(drop=True)
 
-def get_player_putts_per_gir(df):
+def get_putts_per_gir(df):
     # Get putts
     putts_df = df[df['shot_type'] == 'Putt'].copy()
 
@@ -702,7 +702,7 @@ st.title(app_title)
 st.markdown("---")
 
 st.markdown("## Driving Accuracy")
-# st.markdown("Evaluating the relationship between fairway-finding precision and overall yardage off the tee.")
+st.markdown("The percentage of drives a player makes onto the fairway.")
 player_accuracy_df = get_drive_accuracy(working_df)
 
 # KPI Summary Cards
@@ -734,6 +734,7 @@ st.dataframe(player_accuracy_df.reset_index(drop=True), width='stretch')
 
 st.markdown("---")
 st.markdown("## Greens in Regulation (GIR)")
+st.markdown("The amount of shots it takes to make it onto the green is within the standard threshold. The GIR for par 3 is one stroke, for 4 par it’s two strokes, for par 5 it’s three strokes.")
 gir = get_gir_percentage(working_df)
 
 col1, col2, col3 = st.columns(3)
@@ -747,6 +748,7 @@ else:
 
 st.markdown("---")
 st.markdown("## Scrambling Percentage")
+st.markdown("The percentage a player scores par or better after missing the GIR.")
 st.markdown("$$Scrambling \ Percentage = \\frac{Number \ Par \ Saves \ When \ Miss \ GIR}{Total \ Num \ Holes \ Where \ GIR \ Missed} \\times 100$$")
 scrambles = get_scrambling_percentage(working_df)
 
@@ -758,6 +760,7 @@ st.dataframe(scrambles.sort_values("player").reset_index(drop=True), width='stre
 
 st.markdown("---")
 st.markdown("## Sand Saves")
+st.markdown("The percentage a player makes 2 shots or fewer when they have to hit from a bunker that is within 50 feet from the hole.")
 sand_saves_df = get_player_sand_saves(working_df)
 
 col1, col2, col3 = st.columns(3)
@@ -791,19 +794,30 @@ else:
     st.error("No putting data found in selected criteria.")
 st.dataframe(putt_percentage_df.reset_index(drop=True), width='stretch')
 
-st.markdown("### Putt Make Percentages by Distance")
-putt_make_percentage_df = get_putt_make_shot_dist_percentages(working_df)
+st.markdown("### Putts per GIR")
+st.markdown("The average number of putts a player takes on holes where they hit the GIR.")
+putt_gir = get_putts_per_gir(working_df)
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.metric("Field Avg Under 5 Feet", f"{putt_make_percentage_df['under_5_make_%'].mean():.1f}%")
-with col2:
-    st.metric("Field Avg 5-10 Feet", f"{putt_make_percentage_df['5_to_10_make_%'].mean():.1f}%")
-with col3:
-    st.metric("Field Avg Over 10 Feet", f"{putt_make_percentage_df['over_10_make_%'].mean():.1f}%")
+    st.metric("Field Avg Putt per GIR", f"{putt_gir['putts_per_gir'].mean():.1f}")
 
-# st.dataframe(putt_make_percentage_df.sort_values("player").reset_index(drop=True), width='stretch')
-st.dataframe(putt_make_percentage_df, width='stretch')
+# st.dataframe(putt_gir.sort_values("player").reset_index(drop=True), width='stretch')
+st.dataframe(putt_gir, width='stretch')
+
+# st.markdown("### Putt Make Percentages by Distance")
+# putt_make_percentage_df = get_putt_make_shot_dist_percentages(working_df)
+
+# col1, col2, col3 = st.columns(3)
+# with col1:
+#     st.metric("Field Avg Under 5 Feet", f"{putt_make_percentage_df['under_5_make_%'].mean():.1f}%")
+# with col2:
+#     st.metric("Field Avg 5-10 Feet", f"{putt_make_percentage_df['5_to_10_make_%'].mean():.1f}%")
+# with col3:
+#     st.metric("Field Avg Over 10 Feet", f"{putt_make_percentage_df['over_10_make_%'].mean():.1f}%")
+
+# # st.dataframe(putt_make_percentage_df.sort_values("player").reset_index(drop=True), width='stretch')
+# st.dataframe(putt_make_percentage_df, width='stretch')
 
 st.markdown("---")
 st.markdown("## Shot Make Distance")
