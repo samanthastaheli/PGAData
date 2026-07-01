@@ -266,17 +266,15 @@ const getHoleData = async () => {
   const browser = await startBrowser();
   
   // * Get urls
-  const tournamentIds = await getTournamentInfo(browser);
+  // const tournamentIds = await getTournamentInfo(browser);
   // To scrape specific tournaments, comment out the line above and use the array below.
-  // const tournamentIds = [
-  //   { id: "R2023011", name: "THE PLAYERS Championship" },
-    // { id: "R2022011", name: "THE PLAYERS Championship" },
-    // { id: "R2021011", name: "THE PLAYERS Championship" },
-  // ];
+  const tournamentIds = [
+    { id: "R2026011", name: "THE PLAYERS Championship" },
+  ];
   for (const currentTournament of tournamentIds) { 
-    const playersInTournament = await getPlayersInTournament(currentTournament, browser);
+    // const playersInTournament = await getPlayersInTournament(currentTournament, browser);
     // To scrape specific players in a tournament, comment out the line above and use the array below.
-    // const playersInTournament = [{name: "Cameron Young", id: "57366"}]; 
+    const playersInTournament = [{name: "Cameron Young", id: "57366"}]; 
     const urls = generateTourCastUrlsForPlayer(currentTournament.id, playersInTournament);
     console.log(chalk.blue(`Generated URLs for ${urls.length} holes across all players and rounds.`));
     const finalTournamentData = {};
@@ -312,6 +310,8 @@ const getHoleData = async () => {
 
         // * Move mouse to have birds eye view of hole for screenshot
         
+        await new Promise(r => setTimeout(r, 1000)); // * sleep, to make sure page loads before screenshot 
+
         const { width, height } = page.viewport();
 
         const x = width / 2;
@@ -321,9 +321,9 @@ const getHoleData = async () => {
 
         await page.mouse.move(x, y);
         await page.mouse.down();
-
+        
         await page.mouse.move(x, y + 400, {
-          steps: 30,
+          // steps: 30, // makes movement slower
         });
 
         await page.mouse.up();
