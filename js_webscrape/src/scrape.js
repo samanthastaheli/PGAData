@@ -4,6 +4,7 @@ import { getPlayerIds, generateTourCastUrlsForPlayer, generateTestUrlForPlayer, 
 import chalk from 'chalk'; // change color in terminal
 
 const YOUR_FILE_PATH = 'C:\\Users\\Sam\\repos\\PGAImages\\'; // TODO: change this path for your machine 
+// const YOUR_FILE_PATH = "C:\\Users\\Sam\\repos\\PGAImagesTest\\"; // TODO: remove after testing
 const SHOT_BUTTON_SELECTOR = 'button[class*="shot_shotNum"]';
 const CLOSE_SELECTOR = 'button[class*="informationContent_close"]';
 
@@ -39,7 +40,7 @@ const navigateToUrl = async (url, page) => {
 
 const dismissPopUp = async (page) => {
   try {
-    const closeSelector = 'div[class*="informationContent_close"]';
+    const closeSelector = 'button[class*="informationContent_close"]';
     await page.waitForSelector(closeSelector, { visible: true, timeout: 8000 });
     await page.evaluate((sel) => {
       const btn = document.querySelector(sel);
@@ -268,14 +269,12 @@ const getHoleData = async () => {
   const tournamentIds = await getTournamentInfo(browser);
   // To scrape specific tournaments, comment out the line above and use the array below.
   // const tournamentIds = [
-  //   { id: "R2023011", name: "THE PLAYERS Championship" },
-  //   { id: "R2022011", name: "THE PLAYERS Championship" },
-  //   { id: "R2021011", name: "THE PLAYERS Championship" },
+  //   { id: "R2026011", name: "THE PLAYERS Championship" },
   // ];
   for (const currentTournament of tournamentIds) { 
     const playersInTournament = await getPlayersInTournament(currentTournament, browser);
     // To scrape specific players in a tournament, comment out the line above and use the array below.
-    // const playersInTournament = [{name: "Cameron Young", id: "57366"}];
+    // const playersInTournament = [{name: "Cameron Young", id: "57366"}]; 
     const urls = generateTourCastUrlsForPlayer(currentTournament.id, playersInTournament);
     console.log(chalk.blue(`Generated URLs for ${urls.length} holes across all players and rounds.`));
     const finalTournamentData = {};
@@ -308,6 +307,27 @@ const getHoleData = async () => {
             continue; 
           }
         }
+
+        // * Move mouse to have birds eye view of hole for screenshot
+        
+        await new Promise(r => setTimeout(r, 1000)); // * sleep, to make sure page loads before screenshot 
+
+        const { width, height } = page.viewport();
+
+        const x = width / 2;
+        const y = height / 2;
+
+        await page.keyboard.down('Control');
+
+        await page.mouse.move(x, y);
+        await page.mouse.down();
+        
+        await page.mouse.move(x, y + 400, {
+          // steps: 30, // makes movement slower
+        });
+
+        await page.mouse.up();
+        await page.keyboard.up('Control');
 
         // * Save screenshot of hole
         try {
