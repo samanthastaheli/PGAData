@@ -3,8 +3,8 @@ import fs from "fs"; // file system module
 import { getPlayerIds, generateTourCastUrlsForPlayer, generateTestUrlForPlayer, loadPlayerNames, scrapeYears, loadAndProcessJSON } from './utils.js';
 import chalk from 'chalk'; // change color in terminal
 
-// const YOUR_FILE_PATH = 'C:\\Users\\Sam\\repos\\PGAImages\\'; // TODO: change this path for your machine 
-const YOUR_FILE_PATH = "C:\\Users\\Edge\\source\\repos\\PGAImagesTest\\"; // TODO: remove after testing
+const YOUR_FILE_PATH = 'C:\\Users\\Sam\\repos\\PGAImages\\'; // TODO: change this path for your machine 
+// const YOUR_FILE_PATH = "C:\\Users\\Sam\\repos\\PGAImagesTest\\"; // TODO: remove after testing
 const SHOT_BUTTON_SELECTOR = 'button[class*="shot_shotNum"]';
 const CLOSE_SELECTOR = 'button[class*="informationContent_close"]';
 
@@ -266,15 +266,15 @@ const getHoleData = async () => {
   const browser = await startBrowser();
   
   // * Get urls
-  // const tournamentIds = await getTournamentInfo(browser);
+  const tournamentIds = await getTournamentInfo(browser);
   // To scrape specific tournaments, comment out the line above and use the array below.
-  const tournamentIds = [
-    { id: "R2026011", name: "THE PLAYERS Championship" },
-  ];
+  // const tournamentIds = [
+  //   { id: "R2026011", name: "THE PLAYERS Championship" },
+  // ];
   for (const currentTournament of tournamentIds) { 
-    // const playersInTournament = await getPlayersInTournament(currentTournament, browser);
+    const playersInTournament = await getPlayersInTournament(currentTournament, browser);
     // To scrape specific players in a tournament, comment out the line above and use the array below.
-    const playersInTournament = [{name: "Cameron Young", id: "57366"}]; 
+    // const playersInTournament = [{name: "Cameron Young", id: "57366"}]; 
     const urls = generateTourCastUrlsForPlayer(currentTournament.id, playersInTournament);
     console.log(chalk.blue(`Generated URLs for ${urls.length} holes across all players and rounds.`));
     const finalTournamentData = {};
