@@ -87,14 +87,14 @@ The table shows the average loss, learning rates, and data used for all the mode
 
 The image segmentation models were not as successful as the predictive player stats. That is due to the lack of segmented images data and complexity of trying to segment the images. The segmented images were created by hand in Canva. The color palette is shown in Figure 1. The dataset of segmented images are saved to `models\image_segmentation\dataset`. 
 
-![](models\image_segmentation\dataset\readme_images\segmentation_color_palette.png)
+![](models/image_segmentation/dataset/readme_images/segmentation_color_palette.png)
 
 <p align="center">Figure 1: Segmented images color palette with classes, class IDs, and RGB values.</p>
 
 You will notice there are two versions of the dataset, one with the UI (user interface) included as a segment and one that has no UI included. This was due to <model here> predicting images as mostly UI, so the UI segments were removed and the model was trained and tested again. While this helped the model to segment other classes, it was still not accurate. An example of the images are seen in Figure 2.
 
-![](models\image_segmentation\dataset\with_ui\segmented_tournament_R2021011_player_25804_hole_1_round_1.png)
-![](models\image_segmentation\dataset\segmented_tournament_R2021011_player_25804_hole_1_round_1_no_ui.png)
+![](models/image_segmentation/dataset/with_ui/segmented_tournament_R2021011_player_25804_hole_1_round_1.png)
+![](models/image_segmentation/dataset/segmented_tournament_R2021011_player_25804_hole_1_round_1_no_ui.png)
 
 <p align="center">Figure 2: Segmented Image with UI (top), Segmented Image without UI (bottom)</p>
 
@@ -114,7 +114,7 @@ You will notice there are two versions of the dataset, one with the UI (user int
   
 The most successful model was SAM 2.1. Although it was still not accurate it segmented a few things as seen in Figure 3.
 
-![](models\image_segmentation\dataset\readme_images\output_sam_2.png)
+![](models/image_segmentation/dataset/readme_images/output_sam_2.png)
 
 <p align="center">Figure 3: Test results of trained SAM 2.1 model.</p>
 
