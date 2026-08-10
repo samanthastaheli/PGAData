@@ -112,7 +112,7 @@ You will notice there are two versions of the dataset, one with the UI (user int
 5. YOLO (you only look once) v8 Segmentation
    * Code location: `models\image_segmentation\image_segmentation_yolov8_seg.ipynb`
   
-The most successful model was SAM 2.1. Although it was still not accurate it segmented a few things as seen in Figure 3.
+The most successful model was SAM 2.1. Although it was still not accurate it segmented a few things as seen in Figure 3. Further work to improve the model would be to add a Mask2Former, similar to what the paper [_Investigation into Few-Shot Instance Segmentation of Agricultural Landscapes Utilizing SAM-Driven Model_](https://www.semanticscholar.org/paper/Investigation-into-Few-Shot-Instance-Segmentation-Chen-Zhu/b7ea8673f2460636a9a1d03babda9824ee4d9d8e) did. 
 
 ![](models/image_segmentation/dataset/readme_images/output_sam_2.png)
 
